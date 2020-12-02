@@ -45,6 +45,9 @@ export class AppComponent implements OnInit {
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
+  loggedIn = false;
+  dark = false; 
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
