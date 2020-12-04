@@ -19,16 +19,10 @@ export class Teb1Page implements OnInit {
               public router: Router, 
               ) { 
 
-                const token = JSON.parse(localStorage.getItem('token'));
-                this.token = token;
               }
 
   ngOnInit() {
   
-  }
-
-  map(){
-    this.router.navigateByUrl('/map');
   }
 
 

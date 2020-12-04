@@ -8,11 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./teb3.page.scss']
 })
 export class Teb3Page implements OnInit {
-  token: any;
-  users: any;
-
-  username: any;
-
+  
   constructor(private plt: Platform, private router: Router) {
 
   }
