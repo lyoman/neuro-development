@@ -18,14 +18,9 @@ export class AppComponent implements OnInit {
       icon: 'home'
     },
     {
-      title: 'Accommodation',
-      url: '/accommodation',
+      title: 'Training',
+      url: '/training',
       icon: 'paper-plane'
-    },
-    {
-      title: 'Tutoring',
-      url: '/tutoring',
-      icon: 'book'
     },
     {
       title: 'Remediation',
@@ -33,13 +28,23 @@ export class AppComponent implements OnInit {
       icon: 'archive'
     },
     {
+      title: 'Tutoring',
+      url: '/tutoring',
+      icon: 'book'
+    },
+    {
       title: 'Help',
-      url: '/folder/Trash',
+      url: '/help',
       icon: 'help'
     },
     {
+      title: 'Contact',
+      url: '/contactus',
+      icon: 'call'
+    },
+    {
       title: 'About',
-      url: '/about',
+      url: '/aboutus',
       icon: 'information-circle'
     }
   ];

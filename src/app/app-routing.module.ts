@@ -20,6 +20,18 @@ const routes: Routes = [
   { path: 'teb1', loadChildren: './teb1/teb1.module#Teb1PageModule' },
   { path: 'teb2', loadChildren: './teb2/teb2.module#Teb2PageModule' },
   { path: 'teb3', loadChildren: './teb3/teb3.module#Teb3PageModule' },
+  {
+    path: 'aboutus',
+    loadChildren: () => import('./aboutus/aboutus.module').then( m => m.AboutusPageModule)
+  },
+  {
+    path: 'contactus',
+    loadChildren: () => import('./contactus/contactus.module').then( m => m.ContactusPageModule)
+  },
+  {
+    path: 'help',
+    loadChildren: () => import('./help/help.module').then( m => m.HelpPageModule)
+  },
 ];
 
 @NgModule({
