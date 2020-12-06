@@ -39,6 +39,16 @@ const routes: Routes = [
             ]
         },
         {
+          path: 'teb4',
+          children:
+            [
+              {
+                path: '',
+                loadChildren: '../teb4/teb4.module#Teb4PageModule'
+              }
+            ]
+        },
+        {
           path: '',
           redirectTo: '/tebs/teb1',
           pathMatch: 'full'

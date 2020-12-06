@@ -10,11 +10,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class Teb1Page implements OnInit {
 
-
- 
-  token: any;
-  users :any;
-
   constructor(
               public router: Router, 
               ) { 
@@ -23,6 +18,18 @@ export class Teb1Page implements OnInit {
 
   ngOnInit() {
   
+  }
+
+  tutoring () {
+    this.router.navigateByUrl('/tebs/teb4')
+  }
+
+  remediation () {
+    this.router.navigateByUrl('/tebs/teb3')
+  }
+
+  training () {
+    this.router.navigateByUrl('/tebs/teb2')
   }
 
 

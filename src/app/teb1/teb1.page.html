@@ -3,7 +3,7 @@
         <ion-buttons slot="start">
             <ion-menu-button autoHide="false"></ion-menu-button>
         </ion-buttons>
-        <ion-title style="margin-right:50px;" class="title" text-center>
+        <ion-title style="margin-right:50px;" class="title" class="ion-text-center">
             Home
         </ion-title>
     </ion-toolbar>
@@ -23,7 +23,7 @@
 
     <ion-grid tappable>
         <ion-row>
-            <ion-col [ngStyle]="{'background-position': 'center top','background-repeat': 'no-repeat','background-size': 'cover','max-width': '100%', 'height': 'auto'}" style="max-width: 100%;height: auto;" class="news">
+            <ion-col [routerLink]="['/division']" [ngStyle]="{'background-position': 'center top','background-repeat': 'no-repeat','background-size': 'cover','max-width': '100%', 'height': 'auto'}" style="max-width: 100%;height: auto;" class="news">
                 <ion-img src="../../assets/icon/banner.png"></ion-img>
                 <h1 class="banner ion-text-center">
                     Long division and the various levels of algebra
@@ -35,7 +35,7 @@
     <!-- <ion-footer> -->
     <ion-grid>
         <ion-row>
-            <ion-col size="4" no-padding>
+            <ion-col size="4" no-padding (click)="training()">
                 <ion-card>
                     <br>
                     <img src="../../assets/imgs/me/booking.png">
@@ -43,7 +43,7 @@
                 </ion-card>
             </ion-col>
 
-            <ion-col size="4" no-padding>
+            <ion-col size="4" no-padding (click)="remediation()">
                 <ion-card>
                     <br>
                     <img src="../../assets/imgs/me/medicine.png">
@@ -51,7 +51,7 @@
                 </ion-card>
             </ion-col>
 
-            <ion-col size="4" no-padding>
+            <ion-col size="4" no-padding (click)="tutoring()">
                 <ion-card>
                     <br>
                     <img src="../../assets/imgs/me/video-tutorials.png">
