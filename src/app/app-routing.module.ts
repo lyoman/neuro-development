@@ -44,6 +44,10 @@ const routes: Routes = [
     path: 'algebra',
     loadChildren: () => import('./training/algebra/algebra.module').then( m => m.AlgebraPageModule)
   },
+  {
+    path: 'algebra/details',
+    loadChildren: () => import('./training/division/view-division/view-division.module').then( m => m.ViewDivisionPageModule)
+  },
 ];
 
 @NgModule({

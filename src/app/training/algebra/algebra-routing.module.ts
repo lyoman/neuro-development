@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: AlgebraPage
+  },
+  {
+    path: 'view-algebra',
+    loadChildren: () => import('./view-algebra/view-algebra.module').then( m => m.ViewAlgebraPageModule)
   }
 ];
 

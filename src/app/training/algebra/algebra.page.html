@@ -14,44 +14,13 @@
     <h2>Links to YouTube Videos</h2>
 
     <ion-list>
-        <ion-item>
+        <ion-item *ngFor="let m of videos; let i = index" [routerLink]="['details', m]">
             <ion-icon name="videocam" color="primary"></ion-icon>
             <ion-label>
-                <a target="_blank" href="https://www.youtube.com/results?search_query=Kahn+Academy">Introduction to long division</a>
+                <h3>{{ m.title }}</h3>
+                {{ m.description }}
             </ion-label>
-            <ion-icon name="arrow-forward" color="primary"></ion-icon>
-        </ion-item>
-
-        <ion-item>
-            <ion-icon name="videocam" color="primary"></ion-icon>
-            <ion-label>
-                <a href="https://www.youtube.com/results?search_query=Kahn+Academy">Introduction to long division</a>
-            </ion-label>
-            <ion-icon name="arrow-forward" color="primary"></ion-icon>
-        </ion-item>
-
-        <ion-item>
-            <ion-icon name="videocam" color="primary"></ion-icon>
-            <ion-label>
-                <a href="https://www.youtube.com/results?search_query=Kahn+Academy">Introduction to long division</a>
-            </ion-label>
-            <ion-icon name="arrow-forward" color="primary"></ion-icon>
-        </ion-item>
-
-        <ion-item>
-            <ion-icon name="videocam" color="primary"></ion-icon>
-            <ion-label>
-                <a href="https://www.youtube.com/results?search_query=Kahn+Academy">Introduction to long division</a>
-            </ion-label>
-            <ion-icon name="arrow-forward" color="primary"></ion-icon>
-        </ion-item>
-
-        <ion-item>
-            <ion-icon name="videocam" color="primary"></ion-icon>
-            <ion-label>
-                <a href="https://www.youtube.com/results?search_query=Kahn+Academy">Introduction to long division</a>
-            </ion-label>
-            <ion-icon name="arrow-forward" color="primary"></ion-icon>
+            <!-- <ion-icon name="arrow-forward" color="primary"></ion-icon> -->
         </ion-item>
     </ion-list>
 
