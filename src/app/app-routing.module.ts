@@ -37,6 +37,10 @@ const routes: Routes = [
     loadChildren: () => import('./training/division/division.module').then( m => m.DivisionPageModule)
   },
   {
+    path: 'division/details',
+    loadChildren: () => import('./training/division/view-division/view-division.module').then( m => m.ViewDivisionPageModule)
+  },
+  {
     path: 'algebra',
     loadChildren: () => import('./training/algebra/algebra.module').then( m => m.AlgebraPageModule)
   },

@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: DivisionPage
+  },
+  {
+    path: 'view-division',
+    loadChildren: () => import('./view-division/view-division.module').then( m => m.ViewDivisionPageModule)
   }
 ];
 
