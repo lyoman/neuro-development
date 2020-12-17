@@ -9,6 +9,32 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col size="6" no-padding [routerLink]="['/division']">
+                <ion-card class="ion-padding">
+                    <img src="../../assets/imgs/me/division.png">
+                    <h6>Long Division</h6>
+                </ion-card>
+                <hr>
+            </ion-col>
 
+            <ion-col size="6" no-padding [routerLink]="['/algebra']">
+                <ion-card class="ion-padding">
+                    <img src="../../assets/imgs/me/algebra.png">
+                    <h6>Algebra</h6>
+                </ion-card>
+                <hr>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12">
+                <ion-img src="../../assets/imgs/me/video-tutorials-1.png"></ion-img>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
