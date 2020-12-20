@@ -48,6 +48,10 @@ const routes: Routes = [
     path: 'algebra/details',
     loadChildren: () => import('./training/division/view-division/view-division.module').then( m => m.ViewDivisionPageModule)
   },
+  {
+    path: 'sequential',
+    loadChildren: () => import('./memory/sequential/sequential.module').then( m => m.SequentialPageModule)
+  },
 ];
 
 @NgModule({
