@@ -6,6 +6,9 @@
         <ion-title class="title" style="margin-right: 50px;" class="ion-text-center">
             Training
         </ion-title>
+        <ion-buttons slot="end" [routerLink]="['/sequential']">
+            <ion-icon tappable color="light" name="arrow-forward"></ion-icon>
+        </ion-buttons>
     </ion-toolbar>
 </ion-header>
 
@@ -29,7 +32,7 @@
         <b>Materials Needed.</b> <a download="Yourfamilyclinic Symbols Handout" href="../../assets/pdfs/symbols2.pdf" target="_blank">Symbols Handout</a> and a cover or shield (e.g., Kleenex box, empty bank check box).
     </p>
 
-    <ion-buttons>
-        <ion-button [routerLink]="['/sequential']" color="Primary">Next</ion-button>
-    </ion-buttons>
+    <!-- <ion-buttons> -->
+    <ion-button expand="block" [routerLink]="['/sequential']" color="success">Next</ion-button>
+    <!-- </ion-buttons> -->
 </ion-content>

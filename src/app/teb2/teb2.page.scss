@@ -7,10 +7,9 @@ ion-grid {
     --ion-grid-column-padding: 2px;
 }
 
-ion-icon {
-    color: #2A1770;
-}
-
+// ion-icon {
+//     color: #2A1770;
+// }
 h3 {
     // text-align: center;
     font-size: 19px;
@@ -69,4 +68,8 @@ ion-img {
 p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: justify;
+}
+
+ion-icon {
+    font-size: larger;
 }
