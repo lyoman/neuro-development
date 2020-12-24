@@ -1,7 +1,7 @@
 {
-  "name": "neuro-development",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
+    "name": "Memory of Agebra",
+    "integrations": {
+        "capacitor": {}
+    },
+    "type": "angular"
 }
