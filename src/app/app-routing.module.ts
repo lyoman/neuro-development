@@ -52,6 +52,18 @@ const routes: Routes = [
     path: 'sequential',
     loadChildren: () => import('./memory/sequential/sequential.module').then( m => m.SequentialPageModule)
   },
+  {
+    path: 'sequential/footprints',
+    loadChildren: () => import('./memory/footprints/footprints.module').then( m => m.FootprintsPageModule)
+  },
+  {
+    path: 'sequential/animals',
+    loadChildren: () => import('./memory/animals/animals.module').then( m => m.AnimalsPageModule)
+  },
+  {
+    path: 'sequential/anime',
+    loadChildren: () => import('./memory/anime/anime.module').then( m => m.AnimePageModule)
+  },
 ];
 
 @NgModule({
