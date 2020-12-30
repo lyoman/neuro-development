@@ -32,7 +32,7 @@
             <ion-button *ngIf="originalFootSteps.length == 0" (click)="results(viewSteps)" expand="block" color="success">Finish</ion-button>
             <ion-row>
                 <ion-col *ngFor="let footstep of viewSteps; 
-                let i = index;" size="4" no-padding (click)="finish(i, footstep)">
+                let i = index;" size="4" no-padding (click)="Removefinish(i, footstep)">
                     <ion-card>
                         <br>
                         <img [src]="footstep">

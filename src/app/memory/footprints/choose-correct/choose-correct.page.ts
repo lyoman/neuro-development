@@ -47,6 +47,13 @@ export class ChooseCorrectPage implements OnInit {
     console.log('original arrary', this.originalFootSteps);
   }
 
+  Removefinish(stepIndex,step) {
+    this.originalFootSteps.push(step);
+    this.viewSteps.splice(stepIndex, 1);
+    console.log('new array', this.viewSteps);
+    console.log('original arrary', this.originalFootSteps);
+  }
+
   results (footsteps) {
     this.navData.setParamData(footsteps);
     this.router.navigateByUrl('/sequential/footprints/results');
