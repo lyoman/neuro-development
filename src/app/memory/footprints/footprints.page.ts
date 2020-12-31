@@ -16,6 +16,8 @@ export class FootprintsPage implements OnInit {
   firstDiv = "true";
   footsteps = [];
 
+  nextPage = [];
+
   constructor(
     private navData: NavigateDataService,
     private router: Router,
@@ -24,10 +26,9 @@ export class FootprintsPage implements OnInit {
     ) { }
 
   ngOnInit() {
-
-    this.shuffle(this.graphicsService.footsteps);
-    console.log('shuffle', this.graphicsService.footsteps);
     this.footsteps = this.graphicsService.footsteps;
+    const footsteps = this.shuffle(this.graphicsService.footsteps);
+     console.log('shuffle', this.footsteps);
   }
 
   shuffle(a) {
@@ -53,6 +54,9 @@ export class FootprintsPage implements OnInit {
 
   choose(footprints) {
     this.navData.setParamData(footprints);
+    console.log('me', footprints);
+    this.nextPage = footprints;
+    localStorage.setItem('userList', JSON.stringify(this.nextPage));
     // this.router.navigateByUrl('choose-correct');
     this.navCtrl.navigateRoot('/sequential/footprints/choose-correct');
   }

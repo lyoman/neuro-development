@@ -22,7 +22,7 @@ export class ResultsPage implements OnInit {
 
   ngOnInit() {
     this.loadingService.presentLoading();
-    this.footsteps = this.navData.getParamData();
+    this.footsteps = this.navData.getParamData1();
     console.log('user footsteps', this.footsteps);
   }
 

@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChooseCorrectPage implements OnInit {
 
-  footsteps: any;
+  footsteps = [];
   originalFootSteps = [];
 
   submitedArray = [];
@@ -34,9 +34,9 @@ export class ChooseCorrectPage implements OnInit {
 
   ngOnInit() {
     this.loadingService.presentLoading();
-    this.footsteps = this.navData.getParamData();
-    console.log('footsteps', this.footsteps);
-    this.originalFootSteps = this.graphicsService.footsteps;
+    this.footsteps = this.navData.getParamData(); //shufled footprints
+    console.log('me footsteps', JSON.parse(localStorage.getItem('userList')));
+    this.originalFootSteps = this.graphicsService.footsteps;//original order of footprints
     console.log('original footsteps', this.originalFootSteps);
   }
 
@@ -55,8 +55,18 @@ export class ChooseCorrectPage implements OnInit {
   }
 
   results (footsteps) {
-    this.navData.setParamData(footsteps);
-    this.router.navigateByUrl('/sequential/footprints/results');
+    this.navData.setParamData1(footsteps);// the foot prints that were chosen by the user
+    console.log('from html', footsteps);
+    console.log('from ts', JSON.parse(localStorage.getItem('userList')));
+    this.footsteps = JSON.parse(localStorage.getItem('userList'));
+    for (let i = 0; i <= 6; i++) {
+      if(footsteps[i] == this.footsteps[i])
+      {
+        console.log('matched ibdex '+i);
+      }
+    }
+
+    // this.router.navigateByUrl('/sequential/footprints/results');
   }
 
 }
