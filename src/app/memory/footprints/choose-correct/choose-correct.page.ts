@@ -1,3 +1,4 @@
+import { NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { GraphicsService } from './../../../services/graphics.service';
 import { LoadingService } from './../../../services/loading.service';
@@ -11,61 +12,67 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChooseCorrectPage implements OnInit {
 
-  footsteps = [];
+  Shuffledfootsteps = [];
   originalFootSteps = [];
 
   submitedArray = [];
   viewSteps = [];
 
-    step1 = '';
-    step2 = '';
-    step5: '';
-    step3: '';
-    step4: '';
-    step6: '';
-    step7: '';
+  pushedToResults = [];
+
+  Ogfootsteps = [
+    './../../../assets/imgs/graphics/1.png',
+    './../../../assets/imgs/graphics/2.png',
+    './../../../assets/imgs/graphics/3.png',
+    './../../../assets/imgs/graphics/4.png',
+    './../../../assets/imgs/graphics/5.png',
+    './../../../assets/imgs/graphics/6.png',
+    './../../../assets/imgs/graphics/7.png',
+  ];
 
   constructor(
     private navData: NavigateDataService,
     private loadingService: LoadingService,
     private graphicsService: GraphicsService,
     private router: Router,
+    private navCtrl: NavController,
     ) { }
 
   ngOnInit() {
     this.loadingService.presentLoading();
-    this.footsteps = this.navData.getParamData(); //shufled footprints
-    console.log('me footsteps', JSON.parse(localStorage.getItem('userList')));
+    // console.log('the shuffled array', JSON.parse(localStorage.getItem('userList')));
     this.originalFootSteps = this.graphicsService.footsteps;//original order of footprints
-    console.log('original footsteps', this.originalFootSteps);
+    // console.log('original footsteps', this.originalFootSteps);
   }
 
   finish(stepIndex,step) {
     this.viewSteps.push(step);
-    this.originalFootSteps.splice(stepIndex, 1);
-    console.log('new array', this.viewSteps);
-    console.log('original arrary', this.originalFootSteps);
+    this.Ogfootsteps.splice(stepIndex, 1);
+    // console.log('new array', this.viewSteps);
+    // console.log('original arrary', this.Ogfootsteps);
   }
 
   Removefinish(stepIndex,step) {
-    this.originalFootSteps.push(step);
+    this.Ogfootsteps.push(step);
     this.viewSteps.splice(stepIndex, 1);
-    console.log('new array', this.viewSteps);
-    console.log('original arrary', this.originalFootSteps);
+    // console.log('new array', this.viewSteps);
+    // console.log('original arrary', this.Ogfootsteps);
   }
 
   results (footsteps) {
     this.navData.setParamData1(footsteps);// the foot prints that were chosen by the user
-    console.log('from html', footsteps);
-    console.log('from ts', JSON.parse(localStorage.getItem('userList')));
-    this.footsteps = JSON.parse(localStorage.getItem('userList'));
+    // console.log('User selected footsteps', footsteps);
+    // console.log('Shuffledfootsteps', JSON.parse(localStorage.getItem('userList')));
+    this.Shuffledfootsteps = JSON.parse(localStorage.getItem('userList'));
     for (let i = 0; i <= 6; i++) {
-      if(footsteps[i] == this.footsteps[i])
+      if(footsteps[i] == this.Shuffledfootsteps[i])
       {
-        console.log('matched ibdex '+i);
+        // console.log('matched index ' + i);
+        this.pushedToResults.push(footsteps[i]);
       }
     }
-
+    this.navData.setParamData3(this.pushedToResults);
+    this.navCtrl.navigateRoot('/sequential/footprints/results');
     // this.router.navigateByUrl('/sequential/footprints/results');
   }
 

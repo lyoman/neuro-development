@@ -26,9 +26,10 @@ export class FootprintsPage implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.footsteps = this.graphicsService.footsteps;
-    const footsteps = this.shuffle(this.graphicsService.footsteps);
-     console.log('shuffle', this.footsteps);
+    // this.footsteps = this.graphicsService.footsteps;
+    // const footsteps = this.shuffle(this.graphicsService.footsteps);
+     this.footsteps = this.shuffle1(this.graphicsService.footsteps);
+    //  console.log('shuffle', this.footsteps);
   }
 
   shuffle(a) {
@@ -42,6 +43,25 @@ export class FootprintsPage implements OnInit {
     }
   }
 
+  shuffle1(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
+  }
+
   first (first) {
     this.firstDiv = first;
     this.secondDiv = "true";
@@ -53,8 +73,8 @@ export class FootprintsPage implements OnInit {
   }
 
   choose(footprints) {
-    this.navData.setParamData(footprints);
-    console.log('me', footprints);
+    this.navData.setParamData;
+    // console.log('me', footprints);
     this.nextPage = footprints;
     localStorage.setItem('userList', JSON.stringify(this.nextPage));
     // this.router.navigateByUrl('choose-correct');

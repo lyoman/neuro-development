@@ -11,11 +11,11 @@
 </ion-header>
 
 <ion-content>
-    <h2 *ngIf="originalFootSteps.length != 0">Tick the icons in the order they appeared before</h2>
+    <h2 *ngIf="Ogfootsteps.length != 0">Tick the icons in the order they appeared before</h2>
     <form>
-        <ion-grid *ngIf="originalFootSteps.length != 0">
+        <ion-grid *ngIf="Ogfootsteps.length != 0">
             <ion-row>
-                <ion-col *ngFor="let footstep of originalFootSteps; 
+                <ion-col *ngFor="let footstep of Ogfootsteps; 
                 let i = index;" size="4" no-padding (click)="finish(i, footstep)">
                     <ion-card>
                         <br>
@@ -28,14 +28,14 @@
         </ion-grid>
 
         <ion-grid *ngIf="viewSteps.length != 0">
-            <h2 *ngIf="originalFootSteps.length != 0">Selected Foot prints</h2>
-            <ion-button *ngIf="originalFootSteps.length == 0" (click)="results(viewSteps)" expand="block" color="success">Finish</ion-button>
+            <h2 *ngIf="Ogfootsteps.length != 0">Selected Foot prints</h2>
+            <ion-button *ngIf="Ogfootsteps.length == 0" (click)="results(viewSteps)" expand="block" color="success">Finish</ion-button>
             <ion-row>
-                <ion-col *ngFor="let footstep of viewSteps; 
-                let i = index;" size="4" no-padding (click)="Removefinish(i, footstep)">
+                <ion-col *ngFor="let footstep1 of viewSteps; 
+                let i = index;" size="4" no-padding (click)="Removefinish(i, footstep1)">
                     <ion-card>
                         <br>
-                        <img [src]="footstep">
+                        <img [src]="footstep1">
                         <h3>step {{i + 1}}</h3>
                     </ion-card>
                 </ion-col>
