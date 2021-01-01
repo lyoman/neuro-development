@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultsPage implements OnInit {
 
-  footsteps: any;
+  footsteps = [];
 
   constructor(
     private navData: NavigateDataService,
@@ -23,7 +23,7 @@ export class ResultsPage implements OnInit {
   ngOnInit() {
     this.loadingService.presentLoading();
     this.footsteps = this.navData.getParamData3();
-    // console.log('Correct footsteps', this.footsteps);
+    console.log('Correct footsteps', this.footsteps);
   }
 
 }
