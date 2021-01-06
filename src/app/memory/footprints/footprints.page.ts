@@ -16,6 +16,12 @@ export class FootprintsPage implements OnInit {
   firstDiv = "true";
   footsteps = [];
 
+  showImage;
+  showImage2;
+  showImage3;
+
+  myButton;
+
   nextPage = [];
 
   constructor(
@@ -23,14 +29,37 @@ export class FootprintsPage implements OnInit {
     private router: Router,
     private navCtrl: NavController,
     private graphicsService: GraphicsService,
-    ) { }
+  ) {
+    this.showImage = true;
+    this.showImage2 = false;
+    this.showImage3 = false;
+    this.myButton = false;
+    this.hidingDivs();
+  }
 
   ngOnInit() {
     // this.footsteps = this.graphicsService.footsteps;
     // const footsteps = this.shuffle(this.graphicsService.footsteps);
-     this.footsteps = this.shuffle1(this.graphicsService.footsteps);
+    this.footsteps = this.shuffle1(this.graphicsService.footsteps);
     //  console.log('shuffle', this.footsteps);
   }
+
+  hidingDivs() {
+    setTimeout(() => {
+      this.showImage = false;
+      this.showImage2 = true;
+    }, 3000);
+    setTimeout(() => {
+      this.showImage2 = false;
+      this.showImage3 = true;
+    }, 6000);
+    setTimeout(() => {
+      this.showImage3 = false;
+      this.myButton = true;
+    }, 9000);
+  }
+
+
 
   shuffle(a) {
     let b, c, d;
@@ -45,29 +74,29 @@ export class FootprintsPage implements OnInit {
 
   shuffle1(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
-  
+
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {
-  
+
       // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
-  
+
       // And swap it with the current element.
       temporaryValue = array[currentIndex];
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
     }
-  
+
     return array;
   }
 
-  first (first) {
+  first(first) {
     this.firstDiv = first;
     this.secondDiv = "true";
   }
 
-  second(second){
+  second(second) {
     this.secondDiv = second;
     this.thirdDiv = "true";
   }

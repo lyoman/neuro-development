@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content>
-    <ion-grid *ngIf="firstDiv=='true'">
+    <ion-grid *ngIf="showImage">
         <ion-row>
             <ion-col size="4" no-padding>
                 <ion-card>
@@ -36,10 +36,10 @@
                 </ion-card>
             </ion-col>
         </ion-row>
-        <ion-button expand="block" (click)="first('false')" color="primary">Next</ion-button>
+        <!-- <ion-button expand="block" (click)="first('false')" color="primary">Next</ion-button> -->
     </ion-grid>
 
-    <ion-grid *ngIf="secondDiv=='true'">
+    <ion-grid *ngIf="showImage2">
         <ion-row>
             <ion-col size="6" no-padding>
                 <ion-card>
@@ -57,10 +57,10 @@
                 </ion-card>
             </ion-col>
         </ion-row>
-        <ion-button expand="block" (click)="second('false')" color="primary">Next</ion-button>
+        <!-- <ion-button expand="block" (click)="second('false')" color="primary">Next</ion-button> -->
     </ion-grid>
 
-    <ion-grid *ngIf="thirdDiv=='true'">
+    <ion-grid *ngIf="showImage3">
         <ion-row>
             <ion-col size="6" no-padding>
                 <ion-card>
@@ -79,6 +79,11 @@
             </ion-col>
 
         </ion-row>
-        <ion-button expand="block" (click)="choose(footsteps)" color="success">Done</ion-button>
+    </ion-grid>
+
+    <ion-grid *ngIf="myButton">
+        <ion-row>
+            <ion-button expand="block" (click)="choose(footsteps)" color="primary">Continue...</ion-button>
+        </ion-row>
     </ion-grid>
 </ion-content>
