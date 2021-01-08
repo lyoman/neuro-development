@@ -13,6 +13,28 @@ export class GraphicsService {
     './../../../assets/imgs/graphics/5.png',
     './../../../assets/imgs/graphics/6.png',
     './../../../assets/imgs/graphics/7.png',
+
+    './../../../assets/imgs/graphics/1.png',
+    './../../../assets/imgs/graphics/2.png',
+    './../../../assets/imgs/graphics/3.png',
+    './../../../assets/imgs/graphics/4.png',
+    './../../../assets/imgs/graphics/5.png',
+    './../../../assets/imgs/graphics/6.png',
+    './../../../assets/imgs/graphics/7.png',
+
+    './../../../assets/imgs/graphics/1.png',
+    './../../../assets/imgs/graphics/2.png',
+    './../../../assets/imgs/graphics/3.png',
+    './../../../assets/imgs/graphics/4.png',
+    './../../../assets/imgs/graphics/5.png',
+    './../../../assets/imgs/graphics/6.png',
+    './../../../assets/imgs/graphics/7.png',
+
+    './../../../assets/imgs/graphics/1.png',
+    './../../../assets/imgs/graphics/2.png',
+    './../../../assets/imgs/graphics/3.png',
+    './../../../assets/imgs/graphics/4.png',
+
   ];
 
   animals = [

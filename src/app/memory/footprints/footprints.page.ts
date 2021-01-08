@@ -19,6 +19,10 @@ export class FootprintsPage implements OnInit {
   showImage;
   showImage2;
   showImage3;
+  showImage4;
+  showImage5;
+  showImage6;
+  showImage7;
 
   myButton;
 
@@ -33,6 +37,10 @@ export class FootprintsPage implements OnInit {
     this.showImage = true;
     this.showImage2 = false;
     this.showImage3 = false;
+    this.showImage4 = false;
+    this.showImage5 = false;
+    this.showImage6 = false;
+    this.showImage7 = false;
     this.myButton = false;
     this.hidingDivs();
   }
