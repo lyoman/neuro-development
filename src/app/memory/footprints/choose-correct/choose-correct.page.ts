@@ -20,7 +20,11 @@ export class ChooseCorrectPage implements OnInit {
 
   pushedToResults = [];
 
-  Ogfootsteps = [
+  getUserNum: any;
+
+  Ogfootsteps = [];
+
+  Ogfootsteps1 = [
     './../../../assets/imgs/graphics/1.png',
     './../../../assets/imgs/graphics/2.png',
     './../../../assets/imgs/graphics/3.png',
@@ -28,6 +32,27 @@ export class ChooseCorrectPage implements OnInit {
     './../../../assets/imgs/graphics/5.png',
     './../../../assets/imgs/graphics/6.png',
     './../../../assets/imgs/graphics/7.png',
+
+    './../../../assets/imgs/graphics/1.png',
+    './../../../assets/imgs/graphics/2.png',
+    './../../../assets/imgs/graphics/3.png',
+    './../../../assets/imgs/graphics/4.png',
+    './../../../assets/imgs/graphics/5.png',
+    './../../../assets/imgs/graphics/6.png',
+    './../../../assets/imgs/graphics/7.png',
+
+    './../../../assets/imgs/graphics/1.png',
+    './../../../assets/imgs/graphics/2.png',
+    './../../../assets/imgs/graphics/3.png',
+    './../../../assets/imgs/graphics/4.png',
+    './../../../assets/imgs/graphics/5.png',
+    './../../../assets/imgs/graphics/6.png',
+    './../../../assets/imgs/graphics/7.png',
+
+    './../../../assets/imgs/graphics/1.png',
+    './../../../assets/imgs/graphics/2.png',
+    './../../../assets/imgs/graphics/3.png',
+    './../../../assets/imgs/graphics/4.png',
   ];
 
   constructor(
@@ -43,6 +68,17 @@ export class ChooseCorrectPage implements OnInit {
     // console.log('the shuffled array', JSON.parse(localStorage.getItem('userList')));
     this.originalFootSteps = this.graphicsService.footsteps;//original order of footprints
     // console.log('original footsteps', this.originalFootSteps);
+
+    this.rebuildOriginal();
+  }
+
+  rebuildOriginal() {
+    this.getUserNum = JSON.parse(localStorage.getItem('userNum'));
+    console.log('number', this.getUserNum)
+    for (let i=0; i<this.getUserNum; i++) {
+      this.Ogfootsteps.push(this.Ogfootsteps1[i]);
+    }
+    console.log("orgSteps", this.Ogfootsteps);
   }
 
   finish(stepIndex,step) {

@@ -121,14 +121,15 @@ export class FootprintsPage implements OnInit {
   numberofSteps(){
     console.log('num', this.choosenNum);
     this.clickedNum = "true";
+    var realNum = (1000 * this.choosenNum)
     for(let i=0; i<this.choosenNum; i++) {
       this.newArray.push(this.footsteps[i]);
     }
     console.log('new array', this.newArray);
-    this.hidingDivs();
+    this.hidingDivs(realNum + 3000);
   }
 
-  hidingDivs() {
+  hidingDivs(numSeconds) {
     setTimeout(() => {
       this.showImage = false;
       this.showImage2 = true;
@@ -159,8 +160,10 @@ export class FootprintsPage implements OnInit {
     }, 21000);
     setTimeout(() => {
       this.showImage8 = false;
-      this.myButton = true;
     }, 24000);
+    setTimeout(() => {
+      this.myButton = true;
+    }, numSeconds);
   }
 
 
@@ -210,6 +213,7 @@ export class FootprintsPage implements OnInit {
     // console.log('me', footprints);
     this.nextPage = footprints;
     localStorage.setItem('userList', JSON.stringify(this.nextPage));
+    localStorage.setItem('userNum', JSON.stringify(this.choosenNum));
     // this.router.navigateByUrl('choose-correct');
     this.navCtrl.navigateRoot('/sequential/footprints/choose-correct');
   }

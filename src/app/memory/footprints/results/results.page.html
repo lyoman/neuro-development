@@ -31,7 +31,7 @@
         <ion-button [routerLink]="['/sequential']" expand="block" color="danger">Try Again !!!</ion-button>
     </ion-grid>
 
-    <h2 *ngIf="footsteps.length == 7">Congrats, you got all of them correct!</h2>
+    <h2 *ngIf="footsteps.length == 7">Way to go!</h2>
     <ion-grid *ngIf="footsteps.length == 7">
 
         <ion-button [routerLink]="['/sequential']" expand="block" color="success">Play again!</ion-button>
