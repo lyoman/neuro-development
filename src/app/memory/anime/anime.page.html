@@ -10,5 +10,256 @@
 </ion-header>
 
 <ion-content>
+    <div id="numberofsteps" *ngIf="clickedNum == 'false'">
+        <h2>Choose the number of animes</h2>
 
+        <ion-select placeholder="Select the number of anime you want" [(ngModel)]="choosenNum">
+            <ion-select-option *ngFor="let footstep of myNumbers; 
+            let i = index;">{{ footstep.num }}</ion-select-option>
+        </ion-select>
+
+        <ion-button tappable (click)="numberofSteps()" color="primary" expand="block">Submit</ion-button>
+    </div>
+
+    <div *ngIf="clickedNum == 'true'">
+        <ion-grid *ngIf="showImage">
+            <ion-row>
+                <ion-col size="4" no-padding>
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[0]">
+                        <h3>anime 1</h3>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col size="4" no-padding>
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[1]">
+                        <h3>anime 2</h3>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col size="4" no-padding>
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[2]">
+                        <h3>step3</h3>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+            <!-- <ion-button expand="block" (click)="first('false')" color="primary">Next</ion-button> -->
+        </ion-grid>
+
+        <ion-grid *ngIf="showImage2">
+            <ion-row>
+                <ion-col size="6" no-padding>
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[3]">
+                        <h3>anime 4</h3>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col size="6" no-padding>
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[4]">
+                        <h3>anime 5</h3>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+            <!-- <ion-button expand="block" (click)="second('false')" color="primary">Next</ion-button> -->
+        </ion-grid>
+
+        <ion-grid *ngIf="showImage3">
+            <ion-row>
+                <ion-col size="6" no-padding>
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[5]">
+                        <h3>anime 6</h3>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col size="6">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[6]">
+                        <h3>anime 7</h3>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid *ngIf="showImage4">
+            <ion-row>
+                <ion-col size="6" no-padding *ngIf="newArray[7]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[7]">
+                        <h3>anime 8</h3>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col size="6" *ngIf="newArray[8]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[8]">
+                        <h3>anime 9</h3>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col size="6" *ngIf="newArray[9]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[9]">
+                        <h3>anime 10</h3>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col size="6" *ngIf="newArray[10]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[10]">
+                        <h3>anime 11</h3>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid *ngIf="showImage5">
+            <ion-row>
+                <ion-col size="6" no-padding *ngIf="newArray[11]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[11]">
+                        <h3>anime 12</h3>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col size="6" *ngIf="newArray[12]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[12]">
+                        <h3>anime 13</h3>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col size="6" *ngIf="newArray[13]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[13]">
+                        <h3>anime 14</h3>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col size="6" *ngIf="newArray[14]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[14]">
+                        <h3>anime 15</h3>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid *ngIf="showImage6">
+            <ion-row>
+                <ion-col size="6" no-padding *ngIf="newArray[15]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[15]">
+                        <h3>anime 16</h3>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col size="6" *ngIf="newArray[16]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[16]">
+                        <h3>anime 17</h3>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col size="6" *ngIf="newArray[17]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[17]">
+                        <h3>anime 18</h3>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col size="6" *ngIf="newArray[18]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[18]">
+                        <h3>anime 19</h3>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid *ngIf="showImage7">
+            <ion-row>
+                <ion-col size="6" no-padding *ngIf="newArray[19]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[19]">
+                        <h3>anime 20</h3>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col size="6" *ngIf="newArray[20]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[20]">
+                        <h3>anime 21</h3>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col size="6" *ngIf="newArray[21]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[21]">
+                        <h3>anime 22</h3>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col size="6" *ngIf="newArray[22]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[22]">
+                        <h3>anime 23</h3>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid *ngIf="showImage8">
+            <ion-row>
+                <ion-col size="6" no-padding *ngIf="newArray[23]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[23]">
+                        <h3>anime 24</h3>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col size="6" *ngIf="newArray[24]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[24]">
+                        <h3>anime 25</h3>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid *ngIf="myButton">
+            <ion-row>
+                <ion-button expand="block" (click)="choose(newArray)" color="primary">Continue...</ion-button>
+            </ion-row>
+        </ion-grid>
+    </div>
 </ion-content>

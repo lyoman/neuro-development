@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: AnimalsPage
+  },
+  {
+    path: 'results',
+    loadChildren: () => import('./results/results.module').then( m => m.ResultsPageModule)
+  },
+  {
+    path: 'choose-correct',
+    loadChildren: () => import('./choose-correct/choose-correct.module').then( m => m.ChooseCorrectPageModule)
   }
 ];
 

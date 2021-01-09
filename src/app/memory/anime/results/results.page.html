@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <!-- <ion-back-button autoHide="false"></ion-back-button> -->
+            <ion-menu-button autoHide="false"></ion-menu-button>
+        </ion-buttons>
+        <ion-title class="title" style="margin-right: 50px;" class="ion-text-center">
+            Results
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <h2 *ngIf="footsteps.length > 0 && footsteps.length < 6">These are the Animes that you got correct</h2>
+    <ion-grid *ngIf="footsteps.length > 0 && footsteps.length < 6">
+        <ion-row>
+            <ion-col *ngFor="let footstep of footsteps; 
+        let i = index;" size="4" no-padding>
+                <ion-card>
+                    <br>
+                    <img [src]="footstep">
+                    <h3>step {{i + 1}}</h3>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+        <ion-button [routerLink]="['/sequential']" expand="block" color="warning">Try Again</ion-button>
+    </ion-grid>
+
+    <h2 *ngIf="footsteps.length == 0">You failed all of them, pliz try again</h2>
+    <ion-grid *ngIf="footsteps.length == 0">
+        <ion-button [routerLink]="['/sequential']" expand="block" color="danger">Try Again !!!</ion-button>
+    </ion-grid>
+
+    <h2 *ngIf="footsteps.length == 7">Way to go!</h2>
+    <ion-grid *ngIf="footsteps.length == 7">
+
+        <ion-button [routerLink]="['/sequential']" expand="block" color="success">Play again!</ion-button>
+    </ion-grid>
+</ion-content>
