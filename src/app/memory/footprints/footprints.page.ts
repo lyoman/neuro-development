@@ -16,6 +16,11 @@ export class FootprintsPage implements OnInit {
   firstDiv = "true";
   footsteps = [];
 
+  newArray = [];
+
+  choosenNum: number;
+  clickedNum = "false"
+
   showImage;
   showImage2;
   showImage3;
@@ -23,6 +28,7 @@ export class FootprintsPage implements OnInit {
   showImage5;
   showImage6;
   showImage7;
+  showImage8;
 
   myButton;
 
@@ -41,8 +47,8 @@ export class FootprintsPage implements OnInit {
     this.showImage5 = false;
     this.showImage6 = false;
     this.showImage7 = false;
+    this.showImage8 = false;
     this.myButton = false;
-    this.hidingDivs();
   }
 
   ngOnInit() {
@@ -50,6 +56,76 @@ export class FootprintsPage implements OnInit {
     // const footsteps = this.shuffle(this.graphicsService.footsteps);
     this.footsteps = this.shuffle1(this.graphicsService.footsteps);
     //  console.log('shuffle', this.footsteps);
+  }
+
+  myNumbers = [
+    {
+      "num": 7
+    },
+    {
+      "num": 8
+    },
+    {
+      "num": 9
+    },
+    {
+      "num": 10
+    },
+    {
+      "num": 11
+    },
+    {
+      "num": 12
+    },
+    {
+      "num": 13
+    },
+    {
+      "num": 14
+    },
+    {
+      "num": 15
+    },
+    {
+      "num": 16
+    },
+    {
+      "num": 17
+    },
+    {
+      "num": 18
+    },
+    {
+      "num": 19
+    },
+    {
+      "num": 20
+    },
+    {
+      "num": 21
+    },
+    {
+      "num": 22
+    },
+    {
+      "num": 23
+    },
+    {
+      "num": 24
+    },
+    {
+      "num": 25
+    }
+  ]
+
+  numberofSteps(){
+    console.log('num', this.choosenNum);
+    this.clickedNum = "true";
+    for(let i=0; i<this.choosenNum; i++) {
+      this.newArray.push(this.footsteps[i]);
+    }
+    console.log('new array', this.newArray);
+    this.hidingDivs();
   }
 
   hidingDivs() {
@@ -63,8 +139,28 @@ export class FootprintsPage implements OnInit {
     }, 6000);
     setTimeout(() => {
       this.showImage3 = false;
-      this.myButton = true;
+      this.showImage4 = true;
     }, 9000);
+    setTimeout(() => {
+      this.showImage4 = false;
+      this.showImage5 = true;
+    }, 12000);
+    setTimeout(() => {
+      this.showImage5 = false;
+      this.showImage6 = true;
+    }, 15000);
+    setTimeout(() => {
+      this.showImage6 = false;
+      this.showImage7 = true;
+    }, 18000);
+    setTimeout(() => {
+      this.showImage7 = false;
+      this.showImage8 = true;
+    }, 21000);
+    setTimeout(() => {
+      this.showImage8 = false;
+      this.myButton = true;
+    }, 24000);
   }
 
 

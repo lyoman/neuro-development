@@ -10,243 +10,256 @@
 </ion-header>
 
 <ion-content>
-    <ion-grid *ngIf="showImage">
-        <ion-row>
-            <ion-col size="4" no-padding>
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[0]">
-                    <h3>step 1</h3>
-                </ion-card>
-            </ion-col>
+    <div id="numberofsteps" *ngIf="clickedNum == 'false'">
+        <h2>Choose the number of steps</h2>
 
-            <ion-col size="4" no-padding>
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[1]">
-                    <h3>step 2</h3>
-                </ion-card>
-            </ion-col>
+        <ion-select placeholder="Select One" [(ngModel)]="choosenNum">
+            <ion-select-option *ngFor="let footstep of myNumbers; 
+            let i = index;">{{ footstep.num }}</ion-select-option>
+        </ion-select>
 
-            <ion-col size="4" no-padding>
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[2]">
-                    <h3>step3</h3>
-                </ion-card>
-            </ion-col>
-        </ion-row>
-        <!-- <ion-button expand="block" (click)="first('false')" color="primary">Next</ion-button> -->
-    </ion-grid>
+        <ion-button tappable (click)="numberofSteps()" color="primary" expand="block">Submit</ion-button>
+    </div>
 
-    <ion-grid *ngIf="showImage2">
-        <ion-row>
-            <ion-col size="6" no-padding>
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[3]">
-                    <h3>step 4</h3>
-                </ion-card>
-            </ion-col>
+    <div *ngIf="clickedNum == 'true'">
+        <ion-grid *ngIf="showImage">
+            <ion-row>
+                <ion-col size="4" no-padding>
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[0]">
+                        <h3>step 1</h3>
+                    </ion-card>
+                </ion-col>
 
-            <ion-col size="6" no-padding>
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[4]">
-                    <h3>step 5</h3>
-                </ion-card>
-            </ion-col>
-        </ion-row>
-        <!-- <ion-button expand="block" (click)="second('false')" color="primary">Next</ion-button> -->
-    </ion-grid>
+                <ion-col size="4" no-padding>
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[1]">
+                        <h3>step 2</h3>
+                    </ion-card>
+                </ion-col>
 
-    <ion-grid *ngIf="showImage3">
-        <ion-row>
-            <ion-col size="6" no-padding>
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[5]">
-                    <h3>step 6</h3>
-                </ion-card>
-            </ion-col>
+                <ion-col size="4" no-padding>
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[2]">
+                        <h3>step3</h3>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+            <!-- <ion-button expand="block" (click)="first('false')" color="primary">Next</ion-button> -->
+        </ion-grid>
 
-            <ion-col size="6">
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[6]">
-                    <h3>step 7</h3>
-                </ion-card>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
+        <ion-grid *ngIf="showImage2">
+            <ion-row>
+                <ion-col size="6" no-padding>
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[3]">
+                        <h3>step 4</h3>
+                    </ion-card>
+                </ion-col>
 
-    <ion-grid *ngIf="showImage3">
-        <ion-row>
-            <ion-col size="6" no-padding *ngIf="footsteps[7]">
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[7]">
-                    <h3>step 8</h3>
-                </ion-card>
-            </ion-col>
+                <ion-col size="6" no-padding>
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[4]">
+                        <h3>step 5</h3>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+            <!-- <ion-button expand="block" (click)="second('false')" color="primary">Next</ion-button> -->
+        </ion-grid>
 
-            <ion-col size="6" *ngIf="footsteps[8]">
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[8]">
-                    <h3>step 9</h3>
-                </ion-card>
-            </ion-col>
+        <ion-grid *ngIf="showImage3">
+            <ion-row>
+                <ion-col size="6" no-padding>
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[5]">
+                        <h3>step 6</h3>
+                    </ion-card>
+                </ion-col>
 
-            <ion-col size="6" *ngIf="footsteps[9]">
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[9]">
-                    <h3>step 10</h3>
-                </ion-card>
-            </ion-col>
+                <ion-col size="6">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[6]">
+                        <h3>step 7</h3>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
 
-            <ion-col size="6" *ngIf="footsteps[10]">
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[10]">
-                    <h3>step 11</h3>
-                </ion-card>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
+        <ion-grid *ngIf="showImage4">
+            <ion-row>
+                <ion-col size="6" no-padding *ngIf="newArray[7]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[7]">
+                        <h3>step 8</h3>
+                    </ion-card>
+                </ion-col>
 
-    <ion-grid *ngIf="showImage3">
-        <ion-row>
-            <ion-col size="6" no-padding *ngIf="footsteps[11]">
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[11]">
-                    <h3>step 12</h3>
-                </ion-card>
-            </ion-col>
+                <ion-col size="6" *ngIf="newArray[8]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[8]">
+                        <h3>step 9</h3>
+                    </ion-card>
+                </ion-col>
 
-            <ion-col size="6" *ngIf="footsteps[12]">
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[12]">
-                    <h3>step 13</h3>
-                </ion-card>
-            </ion-col>
+                <ion-col size="6" *ngIf="newArray[9]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[9]">
+                        <h3>step 10</h3>
+                    </ion-card>
+                </ion-col>
 
-            <ion-col size="6" *ngIf="footsteps[13]">
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[13]">
-                    <h3>step 14</h3>
-                </ion-card>
-            </ion-col>
+                <ion-col size="6" *ngIf="newArray[10]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[10]">
+                        <h3>step 11</h3>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
 
-            <ion-col size="6" *ngIf="footsteps[14]">
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[14]">
-                    <h3>step 15</h3>
-                </ion-card>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
+        <ion-grid *ngIf="showImage5">
+            <ion-row>
+                <ion-col size="6" no-padding *ngIf="newArray[11]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[11]">
+                        <h3>step 12</h3>
+                    </ion-card>
+                </ion-col>
 
-    <ion-grid *ngIf="showImage3">
-        <ion-row>
-            <ion-col size="6" no-padding *ngIf="footsteps[15]">
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[15]">
-                    <h3>step 16</h3>
-                </ion-card>
-            </ion-col>
+                <ion-col size="6" *ngIf="newArray[12]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[12]">
+                        <h3>step 13</h3>
+                    </ion-card>
+                </ion-col>
 
-            <ion-col size="6" *ngIf="footsteps[16]">
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[16]">
-                    <h3>step 17</h3>
-                </ion-card>
-            </ion-col>
+                <ion-col size="6" *ngIf="newArray[13]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[13]">
+                        <h3>step 14</h3>
+                    </ion-card>
+                </ion-col>
 
-            <ion-col size="6" *ngIf="footsteps[17]">
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[17]">
-                    <h3>step 18</h3>
-                </ion-card>
-            </ion-col>
+                <ion-col size="6" *ngIf="newArray[14]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[14]">
+                        <h3>step 15</h3>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
 
-            <ion-col size="6" *ngIf="footsteps[18]">
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[18]">
-                    <h3>step 19</h3>
-                </ion-card>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
+        <ion-grid *ngIf="showImage6">
+            <ion-row>
+                <ion-col size="6" no-padding *ngIf="newArray[15]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[15]">
+                        <h3>step 16</h3>
+                    </ion-card>
+                </ion-col>
 
-    <ion-grid *ngIf="showImage3">
-        <ion-row>
-            <ion-col size="6" no-padding *ngIf="footsteps[19]">
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[19]">
-                    <h3>step 20</h3>
-                </ion-card>
-            </ion-col>
+                <ion-col size="6" *ngIf="newArray[16]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[16]">
+                        <h3>step 17</h3>
+                    </ion-card>
+                </ion-col>
 
-            <ion-col size="6" *ngIf="footsteps[20]">
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[20]">
-                    <h3>step 21</h3>
-                </ion-card>
-            </ion-col>
+                <ion-col size="6" *ngIf="newArray[17]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[17]">
+                        <h3>step 18</h3>
+                    </ion-card>
+                </ion-col>
 
-            <ion-col size="6" *ngIf="footsteps[21]">
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[21]">
-                    <h3>step 22</h3>
-                </ion-card>
-            </ion-col>
+                <ion-col size="6" *ngIf="newArray[18]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[18]">
+                        <h3>step 19</h3>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
 
-            <ion-col size="6" *ngIf="footsteps[22]">
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[22]">
-                    <h3>step 23</h3>
-                </ion-card>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
+        <ion-grid *ngIf="showImage7">
+            <ion-row>
+                <ion-col size="6" no-padding *ngIf="newArray[19]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[19]">
+                        <h3>step 20</h3>
+                    </ion-card>
+                </ion-col>
 
-    <ion-grid *ngIf="showImage3">
-        <ion-row>
-            <ion-col size="6" no-padding *ngIf="footsteps[23]">
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[23]">
-                    <h3>step 24</h3>
-                </ion-card>
-            </ion-col>
+                <ion-col size="6" *ngIf="newArray[20]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[20]">
+                        <h3>step 21</h3>
+                    </ion-card>
+                </ion-col>
 
-            <ion-col size="6" *ngIf="footsteps[24]">
-                <ion-card>
-                    <br>
-                    <img [src]="footsteps[24]">
-                    <h3>step 25</h3>
-                </ion-card>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
+                <ion-col size="6" *ngIf="newArray[21]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[21]">
+                        <h3>step 22</h3>
+                    </ion-card>
+                </ion-col>
 
-    <ion-grid *ngIf="myButton">
-        <ion-row>
-            <ion-button expand="block" (click)="choose(footsteps)" color="primary">Continue...</ion-button>
-        </ion-row>
-    </ion-grid>
+                <ion-col size="6" *ngIf="newArray[22]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[22]">
+                        <h3>step 23</h3>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid *ngIf="showImage8">
+            <ion-row>
+                <ion-col size="6" no-padding *ngIf="newArray[23]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[23]">
+                        <h3>step 24</h3>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col size="6" *ngIf="newArray[24]">
+                    <ion-card>
+                        <br>
+                        <img [src]="newArray[24]">
+                        <h3>step 25</h3>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid *ngIf="myButton">
+            <ion-row>
+                <ion-button expand="block" (click)="choose(newArray)" color="primary">Continue...</ion-button>
+            </ion-row>
+        </ion-grid>
+    </div>
 </ion-content>

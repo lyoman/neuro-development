@@ -27,6 +27,9 @@ h1 {
 
 h2 {
     font-size: 17px;
+    text-align: center;
+    color: #2A1770;
+    font-weight: bold;
 }
 
 h3 {
@@ -67,4 +70,8 @@ ion-footer {
 ion-button {
     width: 100%;
     margin-top: 10%;
+}
+
+ion-select-option {
+    text-align: center;
 }
