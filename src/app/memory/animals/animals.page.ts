@@ -213,7 +213,7 @@ export class AnimalsPage implements OnInit {
     // console.log('me', footprints);
     this.nextPage = footprints;
     localStorage.setItem('animaluserList', JSON.stringify(this.nextPage));
-    localStorage.setItem('annimaluserNum', JSON.stringify(this.choosenNum));
+    localStorage.setItem('animaluserNum', JSON.stringify(this.choosenNum));
     // this.router.navigateByUrl('choose-correct');
     this.navCtrl.navigateRoot('/sequential/animals/choose-correct');
   }
