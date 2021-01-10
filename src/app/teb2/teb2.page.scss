@@ -1,17 +1,8 @@
-ion-avatar {
-    height: auto;
-    width: 60px;
-}
-
 ion-grid {
     --ion-grid-column-padding: 2px;
 }
 
-// ion-icon {
-//     color: #2A1770;
-// }
 h3 {
-    // text-align: center;
     font-size: 19px;
     color: black;
 }
@@ -25,9 +16,9 @@ h2 {
 }
 
 ion-card img {
-    display: block;
-    width: 60%;
-    margin-left: 22%;
+    display: block !important;
+    width: 60% !important;
+    margin-left: 22% !important;
 }
 
 ion-card h3 {
@@ -52,16 +43,8 @@ ion-card {
     margin-top: 0.8em;
 }
 
-ion-content {
-    --background: none;
-    background-image: url('../../assets/imgs/bg.jpg');
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 ion-img {
-    width: 80%;
+    width: 80% !important;
     margin: auto;
 }
 
