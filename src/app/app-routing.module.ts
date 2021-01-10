@@ -64,6 +64,11 @@ const routes: Routes = [
     path: 'sequential/anime',
     loadChildren: () => import('./memory/anime/anime.module').then( m => m.AnimePageModule)
   },
+  {
+    path: 'sequential/math',
+    loadChildren: () => import('./memory/math/math.module').then( m => m.MathPageModule)
+  },
+
 ];
 
 @NgModule({

@@ -1,21 +1,9 @@
 ion-label {
-    display: block;
-}
-
-ion-content {
-    --background: none;
-    background-image: url('../../assets/imgs/bg.jpg');
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-h2 {
-    color: #3F547F;
+    display: block !important;
 }
 
 ion-img {
-    width: 60%;
+    width: 60% !important;
     margin: auto;
 }
 
@@ -24,5 +12,5 @@ a {
 }
 
 ion-icon {
-    margin-right: 3%;
+    margin-right: 3% !important;
 }

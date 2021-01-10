@@ -1,8 +1,3 @@
-ion-avatar {
-    height: auto;
-    width: 60px;
-}
-
 hr.new4 {
     border-top: 1px solid rgb(211, 211, 211);
 }
@@ -22,24 +17,8 @@ hr.new4 {
     justify-content: flex-end;
 }
 
-// .news {
-//     --background: none;
-//     // background-image: url('../../assets/imgs/banner2.jpg');
-//     background-position: center top;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-// }
-ion-img {
-    max-width: 100%;
-    height: auto;
-}
-
 ion-icon {
     color: #E78923;
-}
-
-ion-col {
-    padding: 0%;
 }
 
 ion-icon {
@@ -56,36 +35,14 @@ h2 {
 }
 
 h3 {
-    // text-align: center;
+    text-align: center;
     font-size: 15px;
     color: #2A1770;
     font-weight: bold;
 }
 
 ion-card img {
-    display: block;
-    width: 60%;
-    margin-left: 22%;
-}
-
-ion-card {
-    text-align: center;
-    align-content: center;
-    align-self: center;
-}
-
-ion-content {
-    --background: none;
-    background-image: url('../../assets/imgs/bg.jpg');
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-ion-footer {
-    --background: none;
-    background-image: url('../../assets/imgs/bg.jpg');
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
+    display: block !important;
+    width: 60% !important;
+    margin-left: 22% !important;
 }
