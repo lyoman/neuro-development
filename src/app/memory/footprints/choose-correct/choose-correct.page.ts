@@ -1,4 +1,4 @@
-import { NavController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { GraphicsService } from './../../../services/graphics.service';
 import { LoadingService } from './../../../services/loading.service';
@@ -19,6 +19,8 @@ export class ChooseCorrectPage implements OnInit {
   viewSteps = [];
 
   pushedToResults = [];
+
+  failedResults = [];
 
   getUserNum: any;
 
@@ -61,6 +63,7 @@ export class ChooseCorrectPage implements OnInit {
     private graphicsService: GraphicsService,
     private router: Router,
     private navCtrl: NavController,
+    public alertController: AlertController,
     ) { }
 
   ngOnInit() {
@@ -70,6 +73,14 @@ export class ChooseCorrectPage implements OnInit {
     // console.log('original footsteps', this.originalFootSteps);
 
     this.rebuildOriginal();
+  }
+
+  presentAlert3() {
+    const alert = this.alertController.create({
+    header: "Success !!!!",
+    subHeader: 'Your Ambulance request was sucessfully sent',
+    cssClass: 'custom-alertDanger',
+    buttons: ['Dismiss']}).then(alert=> alert.present());
   }
 
   rebuildOriginal() {
@@ -100,14 +111,17 @@ export class ChooseCorrectPage implements OnInit {
     // console.log('User selected footsteps', footsteps);
     // console.log('Shuffledfootsteps', JSON.parse(localStorage.getItem('userList')));
     this.Shuffledfootsteps = JSON.parse(localStorage.getItem('userList'));
-    for (let i = 0; i <= 6; i++) {
+    for (let i = 0; i < footsteps.length; i++) {
       if(footsteps[i] == this.Shuffledfootsteps[i])
       {
         // console.log('matched index ' + i);
         this.pushedToResults.push(footsteps[i]);
+      } else {
+        this.failedResults.push(footsteps[i]);
       }
     }
     this.navData.setParamData3(this.pushedToResults);
+    this.navData.setParamData2(this.failedResults);
     this.navCtrl.navigateRoot('/sequential/footprints/results');
     // this.router.navigateByUrl('/sequential/footprints/results');
   }

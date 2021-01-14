@@ -9,7 +9,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { CustomFormsModule } from 'ng2-validation';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +18,6 @@ import { CustomFormsModule } from 'ng2-validation';
     IonicModule.forRoot(),
     AppRoutingModule,
     FormsModule,
-    CustomFormsModule
   ],
   providers: [
     StatusBar,

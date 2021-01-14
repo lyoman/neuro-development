@@ -3,3 +3,23 @@ ion-card img {
     width: 60% !important;
     margin-left: 22% !important;
 }
+
+.alertCancel {
+    --background: red;
+    button.alertButton {
+        color: white;
+    }
+}
+
+ion-alert {
+    --background: red !important;
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        --ion-background-color: rgb(240, 248, 240);
+    }
+    ion-alert {
+        --ion-background-color: #11e222;
+    }
+}
