@@ -24,6 +24,7 @@ export class ChooseCorrectPage implements OnInit {
 
   getUserNum: any;
 
+
   Ogfootsteps = [];
 
   Ogfootsteps1 = [

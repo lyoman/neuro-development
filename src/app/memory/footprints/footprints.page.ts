@@ -19,7 +19,10 @@ export class FootprintsPage implements OnInit {
   newArray = [];
 
   choosenNum: number;
-  clickedNum = "false"
+  chooseColor: number;
+  clickedNum = "false";
+
+  numberOfColors = "false";
 
   showImage;
   showImage2;
@@ -57,6 +60,24 @@ export class FootprintsPage implements OnInit {
     this.footsteps = this.shuffle1(this.graphicsService.footsteps);
     //  console.log('shuffle', this.footsteps);
   }
+
+  myColors = [
+    {
+      "color": 3
+    },
+    {
+      "color": 4
+    },
+    {
+      "color": 5
+    },
+    {
+      "color": 6
+    },
+    {
+      "color": 7
+    }
+  ]
 
   myNumbers = [
     {
@@ -121,8 +142,20 @@ export class FootprintsPage implements OnInit {
   numberofSteps(){
     console.log('num', this.choosenNum);
     this.clickedNum = "true";
+    this.numberOfColors = "true";
     var realNum = (1000 * this.choosenNum)
     for(let i=0; i<this.choosenNum; i++) {
+      this.newArray.push(this.footsteps[i]);
+    }
+    console.log('new array', this.newArray);
+    this.hidingDivs(realNum + 3000);
+  }
+
+  numberofColors(){
+    console.log('num', this.chooseColor);
+    this.numberOfColors = "false";
+    var realNum = (1000 * this.chooseColor)
+    for(let i=0; i<this.chooseColor; i++) {
       this.newArray.push(this.footsteps[i]);
     }
     console.log('new array', this.newArray);

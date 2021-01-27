@@ -340,3 +340,16 @@
     --ion-toolbar-background: #1f1f1f;
     --ion-tab-bar-background: #1f1f1f;
 }
+
+.alertCancel {
+    --background: rgb(105, 1, 153);
+    --color: white;
+    button.alertButton {
+        color: white;
+    }
+}
+
+ion-alert {
+    --background: rgb(37, 167, 11) !important;
+    --color: rgb(37, 167, 11);
+}
