@@ -178,6 +178,7 @@ export class FootprintsPage implements OnInit {
       this.solutionFinalFinal.push(this.solutionFinal[i]);
     }
     console.log('logic', this.solutionFinalFinal);
+    localStorage.setItem("logic", JSON.stringify(this.solutionFinalFinal));
     this.cloneArray(this.choosenNum, this.solutionFinalFinal, this.newColorArray, this.Kim);
   }
 

@@ -58,6 +58,8 @@ export class ChooseCorrectPage implements OnInit {
     './../../../assets/imgs/graphics/4.png',
   ];
 
+  kimAgain = [];
+
   constructor(
     private navData: NavigateDataService,
     private loadingService: LoadingService,
@@ -72,6 +74,9 @@ export class ChooseCorrectPage implements OnInit {
     // console.log('the shuffled array', JSON.parse(localStorage.getItem('userList')));
     this.originalFootSteps = this.graphicsService.footsteps;//original order of footprints
     // console.log('original footsteps', this.originalFootSteps);
+
+    console.log(localStorage.getItem("logic"));
+    this.kimAgain = JSON.parse(localStorage.getItem("logic"));
 
     this.rebuildOriginal();
   }
