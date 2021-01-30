@@ -17,6 +17,8 @@ export class FootprintsPage implements OnInit {
   footsteps = [];
 
   newArray = [];
+  Kim = [];
+  hideTop = "false";
 
   choosenNum: number;
   chooseColor: number;
@@ -36,6 +38,20 @@ export class FootprintsPage implements OnInit {
   myButton;
 
   nextPage = [];
+
+  solution = [
+    './../../../assets/imgs/graphics/1.png',
+    './../../../assets/imgs/graphics/2.png',
+    './../../../assets/imgs/graphics/3.png',
+    './../../../assets/imgs/graphics/4.png',
+    './../../../assets/imgs/graphics/5.png',
+    './../../../assets/imgs/graphics/6.png',
+    './../../../assets/imgs/graphics/7.png',
+  ]
+  solutionFinal = [];
+  solutionFinalFinal = [];
+
+  newColorArray = [];
 
   constructor(
     private navData: NavigateDataService,
@@ -60,6 +76,8 @@ export class FootprintsPage implements OnInit {
     this.footsteps = this.shuffle1(this.graphicsService.footsteps);
     //  console.log('shuffle', this.footsteps);
   }
+
+
 
   myColors = [
     {
@@ -139,28 +157,50 @@ export class FootprintsPage implements OnInit {
     }
   ]
 
-  numberofSteps(){
+  numberofSteps() {
     console.log('num', this.choosenNum);
-    this.clickedNum = "true";
+    this.hideTop = "true";
     this.numberOfColors = "true";
     var realNum = (1000 * this.choosenNum)
-    for(let i=0; i<this.choosenNum; i++) {
+    for (let i = 0; i < this.choosenNum; i++) {
       this.newArray.push(this.footsteps[i]);
     }
     console.log('new array', this.newArray);
+    // this.hidingDivs(realNum + 3000);
+  }
+
+  solutionFun() {
+    this.clickedNum = "true";
+    this.numberOfColors = "false";
+    console.log("number of colors", this.chooseColor);
+    this.solutionFinal = this.shuffle1(this.solution);
+    for (let i=0; i<this.chooseColor; i++){
+      this.solutionFinalFinal.push(this.solutionFinal[i]);
+    }
+    console.log('logic', this.solutionFinalFinal);
+    this.cloneArray(this.choosenNum, this.solutionFinalFinal, this.newColorArray, this.Kim);
+  }
+
+  cloneArray(arrayLenth, imwe, newArray, Kim) {
+    var pushArray = [];
+    console.log("arrayLenth", arrayLenth);
+    console.log("CLONE Array", newArray);
+    while(newArray.length < arrayLenth) {
+      pushArray = this.shuffle1(imwe);
+      newArray.push(pushArray[0]); 
+      newArray.push(pushArray[2]);
+      newArray.push(pushArray[1]);
+    }
+
+    for(let i = 0; i<arrayLenth; i++){
+      Kim.push(newArray[i]);
+    }
+    console.log("Final Final", Kim);
+    localStorage.setItem("finalArray", Kim);
+    var realNum = (1000 * this.choosenNum);
     this.hidingDivs(realNum + 3000);
   }
 
-  numberofColors(){
-    console.log('num', this.chooseColor);
-    this.numberOfColors = "false";
-    var realNum = (1000 * this.chooseColor)
-    for(let i=0; i<this.chooseColor; i++) {
-      this.newArray.push(this.footsteps[i]);
-    }
-    console.log('new array', this.newArray);
-    this.hidingDivs(realNum + 3000);
-  }
 
   hidingDivs(numSeconds) {
     setTimeout(() => {
