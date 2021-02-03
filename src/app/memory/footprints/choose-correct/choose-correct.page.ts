@@ -59,7 +59,7 @@ export class ChooseCorrectPage implements OnInit {
   ];
 
   kimAgain = [];
-
+  kim;
   constructor(
     private navData: NavigateDataService,
     private loadingService: LoadingService,
@@ -77,7 +77,7 @@ export class ChooseCorrectPage implements OnInit {
 
     console.log(localStorage.getItem("logic"));
     this.kimAgain = JSON.parse(localStorage.getItem("logic"));
-
+    this.kim = JSON.parse(localStorage.getItem('userNum'));
     this.rebuildOriginal();
   }
 
@@ -87,6 +87,14 @@ export class ChooseCorrectPage implements OnInit {
     subHeader: 'Your Ambulance request was sucessfully sent',
     cssClass: 'custom-alertDanger',
     buttons: ['Dismiss']}).then(alert=> alert.present());
+  }
+
+  presentAlertResults() {
+    const alert = this.alertController.create({
+    header: "Done Choosing !!!!",
+    subHeader: 'You have reached the number of steps, press finish to proceed',
+    // cssClass: 'custom-alertDanger',
+    buttons: ['OK']}).then(alert=> alert.present());
   }
 
   rebuildOriginal() {
@@ -100,13 +108,17 @@ export class ChooseCorrectPage implements OnInit {
 
   finish(stepIndex,step) {
     this.viewSteps.push(step);
-    this.Ogfootsteps.splice(stepIndex, 1);
+
+    if (this.viewSteps.length == JSON.parse(localStorage.getItem('userNum'))) {
+      this.presentAlertResults();
+    }
+    // this.Ogfootsteps.splice(stepIndex, 1);
     // console.log('new array', this.viewSteps);
     // console.log('original arrary', this.Ogfootsteps);
   }
 
   Removefinish(stepIndex,step) {
-    this.Ogfootsteps.push(step);
+    // this.Ogfootsteps.push(step);
     this.viewSteps.splice(stepIndex, 1);
     // console.log('new array', this.viewSteps);
     // console.log('original arrary', this.Ogfootsteps);

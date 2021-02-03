@@ -28,8 +28,8 @@
         </ion-grid>
         <hr>
         <ion-grid *ngIf="viewSteps.length != 0">
-            <h2 *ngIf="Ogfootsteps.length != 0">Selected Foot prints</h2>
-            <ion-button *ngIf="Ogfootsteps.length == 0" (click)="results(viewSteps)" expand="block" color="success">Finish</ion-button>
+            <h2 *ngIf="viewSteps.length != 0">Selected Foot prints</h2>
+            <ion-button *ngIf="viewSteps.length == kim" (click)="results(viewSteps)" expand="block" color="success">Finish</ion-button>
             <ion-row>
                 <ion-col *ngFor="let footstep1 of viewSteps; 
                 let i = index;" size="4" no-padding (click)="Removefinish(i, footstep1)">
