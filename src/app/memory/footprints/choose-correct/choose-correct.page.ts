@@ -107,10 +107,11 @@ export class ChooseCorrectPage implements OnInit {
   }
 
   finish(stepIndex,step) {
-    this.viewSteps.push(step);
 
     if (this.viewSteps.length == JSON.parse(localStorage.getItem('userNum'))) {
       this.presentAlertResults();
+    } else {
+      this.viewSteps.push(step);
     }
     // this.Ogfootsteps.splice(stepIndex, 1);
     // console.log('new array', this.viewSteps);
