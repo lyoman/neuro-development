@@ -14,6 +14,7 @@ export class ResultsPage implements OnInit {
 
   footsteps = [];
   wrongSteps = [];
+  kim;
 
   constructor(
     private navData: NavigateDataService,
@@ -29,13 +30,26 @@ export class ResultsPage implements OnInit {
     this.wrongSteps = this.navData.getParamData2();
     console.log('Correct footsteps', this.footsteps);
     console.log('Correct wrongSteps', this.wrongSteps);
-    this.presentAlert3();
+    this.kim = JSON.parse(localStorage.getItem('userNum'));
+    if (this.footsteps.length == this.kim) {
+      this.presentAlert3();
+    } else {
+      this.presentAlert4();
+    }
   }
 
   presentAlert3() {
     const alert = this.alertController.create({
-    header: "Success !!!!",
-    subHeader: 'Your Ambulance request was sucessfully sent',
+    header: "Way to go !!!!",
+    subHeader: 'You got all of them correct, choose more steps and play again',
+    cssClass: 'custom-alertDanger',
+    buttons: ['Dismiss']}).then(alert=> alert.present());
+  }
+
+  presentAlert4() {
+    const alert = this.alertController.create({
+    header: "Completed !!!!",
+    subHeader: 'Well played here are your results, feel free to play again',
     cssClass: 'custom-alertDanger',
     buttons: ['Dismiss']}).then(alert=> alert.present());
   }
