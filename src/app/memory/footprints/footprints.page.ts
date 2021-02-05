@@ -208,7 +208,7 @@ export class FootprintsPage implements OnInit {
     }
     console.log("Final Final", Kim);
     localStorage.setItem("finalArray", Kim);
-    var realNum = (1000 * this.zvikoNum);
+    var realNum = (1000 * JSON.parse(localStorage.getItem('initialNum')));
     this.hidingDivs(realNum + 3000);
   }
 
