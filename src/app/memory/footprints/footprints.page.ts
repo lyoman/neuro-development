@@ -53,6 +53,8 @@ export class FootprintsPage implements OnInit {
 
   newColorArray = [];
 
+  zvikoNum;
+
   constructor(
     private navData: NavigateDataService,
     private router: Router,
@@ -71,10 +73,18 @@ export class FootprintsPage implements OnInit {
   }
 
   ngOnInit() {
-    // this.footsteps = this.graphicsService.footsteps;
+    // this.footsteps = this.graphicsService.footsteps;F
     // const footsteps = this.shuffle(this.graphicsService.footsteps);
     this.footsteps = this.shuffle1(this.graphicsService.footsteps);
     //  console.log('shuffle', this.footsteps);
+
+    if(JSON.parse(localStorage.getItem('initialNum')) == null){
+      localStorage.setItem('initialNum', JSON.stringify(3));
+      // this.zvikoNum = JSON.parse(localStorage.getItem('initialNum'));
+      console.log(JSON.parse(localStorage.getItem('initialNum')))
+    }
+    console.log("zvikoNum",  JSON.parse(localStorage.getItem('initialNum')));
+    // console.log(JSON.parse(localStorage.getItem('initialNum')))
   }
 
 
@@ -158,11 +168,11 @@ export class FootprintsPage implements OnInit {
   ]
 
   numberofSteps() {
-    console.log('num', this.choosenNum);
+    console.log('num', JSON.parse(localStorage.getItem('initialNum')));
     this.hideTop = "true";
     this.numberOfColors = "true";
-    var realNum = (1000 * this.choosenNum)
-    for (let i = 0; i < this.choosenNum; i++) {
+    var realNum = (1000 * JSON.parse(localStorage.getItem('initialNum')))
+    for (let i = 0; i < JSON.parse(localStorage.getItem('initialNum')); i++) {
       this.newArray.push(this.footsteps[i]);
     }
     console.log('new array', this.newArray);
@@ -174,31 +184,31 @@ export class FootprintsPage implements OnInit {
     this.numberOfColors = "false";
     console.log("number of colors", this.chooseColor);
     this.solutionFinal = this.shuffle1(this.solution);
-    for (let i=0; i<this.chooseColor; i++){
+    for (let i = 0; i < this.chooseColor; i++) {
       this.solutionFinalFinal.push(this.solutionFinal[i]);
     }
     console.log('logic', this.solutionFinalFinal);
     localStorage.setItem("logic", JSON.stringify(this.solutionFinalFinal));
-    this.cloneArray(this.choosenNum, this.solutionFinalFinal, this.newColorArray, this.Kim);
+    this.cloneArray(JSON.parse(localStorage.getItem('initialNum')), this.solutionFinalFinal, this.newColorArray, this.Kim);
   }
 
   cloneArray(arrayLenth, imwe, newArray, Kim) {
     var pushArray = [];
     console.log("arrayLenth", arrayLenth);
     console.log("CLONE Array", newArray);
-    while(newArray.length < arrayLenth) {
+    while (newArray.length < arrayLenth) {
       pushArray = this.shuffle1(imwe);
-      newArray.push(pushArray[0]); 
+      newArray.push(pushArray[0]);
       newArray.push(pushArray[2]);
       newArray.push(pushArray[1]);
     }
 
-    for(let i = 0; i<arrayLenth; i++){
+    for (let i = 0; i < arrayLenth; i++) {
       Kim.push(newArray[i]);
     }
     console.log("Final Final", Kim);
     localStorage.setItem("finalArray", Kim);
-    var realNum = (1000 * this.choosenNum);
+    var realNum = (1000 * this.zvikoNum);
     this.hidingDivs(realNum + 3000);
   }
 

@@ -16,6 +16,9 @@ export class ResultsPage implements OnInit {
   wrongSteps = [];
   kim;
 
+  completed = false;
+  initialNum = 3;
+
   constructor(
     private navData: NavigateDataService,
     private loadingService: LoadingService,
@@ -36,12 +39,31 @@ export class ResultsPage implements OnInit {
     } else {
       this.presentAlert4();
     }
+
+    if (JSON.parse(localStorage.getItem('initialNum')) == this.navData.getParamData3().length) {
+      this.initialNum += 2;
+      localStorage.setItem('initialNum', JSON.stringify(this.initialNum));
+      this.presentAlert5();
+    } 
+
+    if(this.footsteps.length == 25) {
+      this.completed = true;
+      localStorage.setItem('complete', JSON.stringify(this.completed));
+    }
+  }
+
+  presentAlert5() {
+    const alert = this.alertController.create({
+    header: "Way to go !!!!",
+    subHeader: 'Level completed, choose more steps and play again!!!',
+    cssClass: 'custom-alertDanger',
+    buttons: ['Dismiss']}).then(alert=> alert.present());
   }
 
   presentAlert3() {
     const alert = this.alertController.create({
     header: "Way to go !!!!",
-    subHeader: 'You got all of them correct, choose more steps and play again',
+    subHeader: 'Level completed, you are a genius, choose a different icon and play again!!!',
     cssClass: 'custom-alertDanger',
     buttons: ['Dismiss']}).then(alert=> alert.present());
   }

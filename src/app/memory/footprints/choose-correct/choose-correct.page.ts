@@ -77,7 +77,7 @@ export class ChooseCorrectPage implements OnInit {
 
     console.log(localStorage.getItem("logic"));
     this.kimAgain = JSON.parse(localStorage.getItem("logic"));
-    this.kim = JSON.parse(localStorage.getItem('userNum'));
+    this.kim = JSON.parse(localStorage.getItem('initialNum'));
     this.rebuildOriginal();
   }
 
@@ -98,7 +98,7 @@ export class ChooseCorrectPage implements OnInit {
   }
 
   rebuildOriginal() {
-    this.getUserNum = JSON.parse(localStorage.getItem('userNum'));
+    this.getUserNum = JSON.parse(localStorage.getItem('initialNum'));
     console.log('number', this.getUserNum)
     for (let i=0; i<this.getUserNum; i++) {
       this.Ogfootsteps.push(this.Ogfootsteps1[i]);
@@ -108,7 +108,7 @@ export class ChooseCorrectPage implements OnInit {
 
   finish(stepIndex,step) {
 
-    if (this.viewSteps.length == JSON.parse(localStorage.getItem('userNum'))) {
+    if (this.viewSteps.length == JSON.parse(localStorage.getItem('initialNum'))) {
       this.presentAlertResults();
     } else {
       this.viewSteps.push(step);
