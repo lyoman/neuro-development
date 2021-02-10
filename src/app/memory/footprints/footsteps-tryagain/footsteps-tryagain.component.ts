@@ -6,11 +6,11 @@ import { NavigateDataService } from './../../../services/navigate-data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-results',
-  templateUrl: './results.page.html',
-  styleUrls: ['./results.page.scss'],
+  selector: 'app-footsteps-tryagain',
+  templateUrl: './footsteps-tryagain.component.html',
+  styleUrls: ['./footsteps-tryagain.component.scss'],
 })
-export class ResultsPage implements OnInit {
+export class FootstepsTryagainComponent implements OnInit {
 
   footsteps = [];
   wrongSteps = [];
@@ -93,5 +93,6 @@ export class ResultsPage implements OnInit {
     cssClass: 'custom-alertDanger',
     buttons: ['Dismiss']}).then(alert=> alert.present());
   }
+
 
 }
