@@ -5,58 +5,57 @@
             <ion-menu-button autoHide="false"></ion-menu-button>
         </ion-buttons>
         <ion-title class="title" style="margin-right: 50px;" class="ion-text-center">
-            Results
+            Try Again
         </ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <h2 style="background-color: lightblue;" *ngIf="footsteps.length > 0 && wrongSteps.length > 0">These are the foot steps that you got correct</h2>
-    <ion-grid *ngIf="footsteps.length > 0 && wrongSteps.length >0">
+    <h1>Try Again, look at the correct sequence below</h1>
+    <h2 *ngIf="kimAgain.length != 0">Tick the icons in the order they appeared before</h2>
+    <form>
+        <ion-grid *ngIf="kimAgain.length != 0">
+            <ion-row>
+                <ion-col *ngFor="let footstep of kimAgain; 
+              let i = index;" size="4" no-padding (click)="finish(i, footstep)">
+                    <ion-card>
+                        <br>
+                        <img [src]="footstep">
+                        <h3>step {{i + 1}}</h3>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+            <!-- <ion-button (click)="finish()" expand="block" color="primary">Finish</ion-button> -->
+        </ion-grid>
+        <hr>
+        <ion-grid *ngIf="viewSteps.length != 0">
+            <h2 *ngIf="viewSteps.length != 0">Selected Foot prints</h2>
+            <ion-button *ngIf="viewSteps.length == kim" (click)="results(viewSteps)" expand="block" color="success">Finish</ion-button>
+            <ion-row>
+                <ion-col *ngFor="let footstep1 of viewSteps; 
+              let i = index;" size="4" no-padding (click)="Removefinish(i, footstep1)">
+                    <ion-card>
+                        <br>
+                        <img [src]="footstep1">
+                        <h3>step {{i + 1}}</h3>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </form>
+    <hr>
+    <ion-grid>
+        <h2>The Correct Sequence</h2>
+        <!-- <ion-button *ngIf="viewSteps.length == kim" (click)="results(viewSteps)" expand="block" color="success">Finish</ion-button> -->
         <ion-row>
-            <ion-col *ngFor="let footstep of footsteps; 
-          let i = index;" size="4" no-padding>
+            <ion-col *ngFor="let footstep1 of originalSteps; 
+        let i = index;" size="4" no-padding>
                 <ion-card>
                     <br>
-                    <img [src]="footstep">
+                    <img [src]="footstep1">
                     <h3>step {{i + 1}}</h3>
                 </ion-card>
             </ion-col>
         </ion-row>
-        <ion-button [routerLink]="['/sequential/footprints']" expand="block" color="primary">Try Again !!!</ion-button>
-    </ion-grid>
-    <hr *ngIf="footsteps.length > 0 && wrongSteps.length >0">
-
-    <h2 *ngIf="footsteps.length == 0" style="background-color: red;">You failed all of them, pliz try again</h2>
-    <ion-grid *ngIf="footsteps.length == 0">
-        <ion-button [routerLink]="['/sequential/footprints']" expand="block" color="danger">Try Again !!!</ion-button>
-    </ion-grid>
-    <hr *ngIf="footsteps.length == 0">
-
-    <h2 *ngIf="footsteps.length == kim" style="background-color: green;">Way to go!</h2>
-    <ion-grid *ngIf="footsteps.length == kim">
-        <ion-button [routerLink]="['/sequential']" expand="block" color="success">Play again!</ion-button>
-    </ion-grid>
-
-    <h2 style="background-color: green;" *ngIf="footsteps.length == zviko && footsteps.length != kim">Way to go!</h2>
-    <ion-grid *ngIf="footsteps.length == zviko && footsteps.length != kim">
-        <ion-button [routerLink]="['/sequential/footprints']" expand="block" color="success">Procceed to next Level !!!
-        </ion-button>
-    </ion-grid>
-
-    <h2 style="background-color: red;color: white;" *ngIf="wrongSteps.length > 0">These are the foot steps that you got Wrong
-    </h2>
-    <ion-grid *ngIf="wrongSteps.length > 0">
-        <ion-row>
-            <ion-col *ngFor="let footstep of wrongSteps; 
-          let i = index;" size="4" no-padding>
-                <ion-card>
-                    <br>
-                    <img [src]="footstep">
-                    <h3>step {{i + 1}}</h3>
-                </ion-card>
-            </ion-col>
-        </ion-row>
-        <!-- <ion-button [routerLink]="['/sequential/footprints']" expand="block" color="warning">Try Again</ion-button> -->
     </ion-grid>
 </ion-content>
