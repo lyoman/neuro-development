@@ -15,7 +15,11 @@ const routes: Routes = [
   {
     path: 'results',
     loadChildren: () => import('./results/results.module').then( m => m.ResultsPageModule)
+  },  {
+    path: 'footsteps-tryagain',
+    loadChildren: () => import('./footsteps-tryagain/footsteps-tryagain.module').then( m => m.FootstepsTryagainPageModule)
   }
+
 ];
 
 @NgModule({

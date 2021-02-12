@@ -23,13 +23,13 @@
                 </ion-card>
             </ion-col>
         </ion-row>
-        <ion-button [routerLink]="['/sequential/footprints']" expand="block" color="primary">Try Again !!!</ion-button>
+        <ion-button [routerLink]="['/sequential/footprints/footsteps-tryagain']" expand="block" color="primary">Try Again !!!</ion-button>
     </ion-grid>
     <hr *ngIf="footsteps.length > 0 && wrongSteps.length >0">
 
     <h2 *ngIf="footsteps.length == 0" style="background-color: red;">You failed all of them, pliz try again</h2>
     <ion-grid *ngIf="footsteps.length == 0">
-        <ion-button [routerLink]="['/sequential/footprints']" expand="block" color="danger">Try Again !!!</ion-button>
+        <ion-button [routerLink]="['/sequential/footprints/footsteps-tryagain']" expand="block" color="danger">Try Again !!!</ion-button>
     </ion-grid>
     <hr *ngIf="footsteps.length == 0">
 
@@ -57,6 +57,6 @@
                 </ion-card>
             </ion-col>
         </ion-row>
-        <!-- <ion-button [routerLink]="['/sequential/footprints']" expand="block" color="warning">Try Again</ion-button> -->
+        <ion-button [routerLink]="['/sequential/footprints/footsteps-tryagain']" expand="block" color="warning">Try Again</ion-button>
     </ion-grid>
 </ion-content>

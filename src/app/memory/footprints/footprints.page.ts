@@ -298,6 +298,7 @@ export class FootprintsPage implements OnInit {
     this.nextPage = footprints;
     localStorage.setItem('userList', JSON.stringify(this.nextPage));
     localStorage.setItem('userNum', JSON.stringify(this.choosenNum));
+    console.log("userNum", this.choosenNum);
     // this.router.navigateByUrl('choose-correct');
     this.navCtrl.navigateRoot('/sequential/footprints/choose-correct');
   }

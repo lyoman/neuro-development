@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { FootstepsTryagainComponent } from './footsteps-tryagain.component';
+import { FootstepsTryagainPage } from './footsteps-tryagain.page';
 
-describe('FootstepsTryagainComponent', () => {
-  let component: FootstepsTryagainComponent;
-  let fixture: ComponentFixture<FootstepsTryagainComponent>;
+describe('FootstepsTryagainPage', () => {
+  let component: FootstepsTryagainPage;
+  let fixture: ComponentFixture<FootstepsTryagainPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FootstepsTryagainComponent ],
+      declarations: [ FootstepsTryagainPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(FootstepsTryagainComponent);
+    fixture = TestBed.createComponent(FootstepsTryagainPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

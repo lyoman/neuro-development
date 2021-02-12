@@ -14,7 +14,7 @@
         <div id="numberofsteps" *ngIf="clickedNum == 'false'">
             <h2>Choose the number of steps</h2>
 
-            <ion-select placeholder="Select the number of steps you want" [(ngModel)]="choosenNum">
+            <ion-select placeholder="Select the number of steps you want" name="choosenNum" [(ngModel)]="choosenNum">
                 <ion-select-option *ngFor="let footstep of myNumbers; 
                 let i = index;">{{ footstep.num }}</ion-select-option>
             </ion-select>

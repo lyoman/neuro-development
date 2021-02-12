@@ -51,6 +51,9 @@ export class ResultsPage implements OnInit {
 
     if (JSON.parse(localStorage.getItem('initialNum')) == this.navData.getParamData3().length) {
       this.initialNum += 2;
+      console.log("this.navData.getParamData3().length", this.navData.getParamData3().length);
+      console.log("JSON.parse(localStorage.getItem('initialNum'))", JSON.parse(localStorage.getItem('initialNum')));
+      
       localStorage.setItem('initialNum', JSON.stringify(this.initialNum));
       this.presentAlert9();
     } 
