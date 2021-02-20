@@ -14,20 +14,7 @@
     <h1>Try Again, look at the correct sequence below</h1>
     <h2 *ngIf="kimAgain.length != 0">Tick the icons in the order they appeared before</h2>
     <form>
-        <ion-grid *ngIf="kimAgain.length != 0">
-            <ion-row>
-                <ion-col *ngFor="let footstep of kimAgain; 
-            let i = index;" size="4" no-padding (click)="finish(i, footstep)">
-                    <ion-card>
-                        <br>
-                        <img [src]="footstep">
-                        <h3>step {{i + 1}}</h3>
-                    </ion-card>
-                </ion-col>
-            </ion-row>
-            <!-- <ion-button (click)="finish()" expand="block" color="primary">Finish</ion-button> -->
-        </ion-grid>
-        <hr>
+
         <ion-grid *ngIf="viewSteps.length != 0">
             <h2 *ngIf="viewSteps.length != 0">Selected Foot prints</h2>
             <ion-button *ngIf="viewSteps.length == zviko" (click)="results(viewSteps)" expand="block" color="success">Finish</ion-button>
@@ -44,6 +31,21 @@
         </ion-grid>
     </form>
     <hr>
+
+    <ion-grid *ngIf="kimAgain.length != 0">
+        <ion-row>
+            <ion-col *ngFor="let footstep of kimAgain; 
+        let i = index;" size="4" no-padding (click)="finish(i, footstep)">
+                <ion-card>
+                    <br>
+                    <img [src]="footstep">
+                    <h3>step {{i + 1}}</h3>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+        <!-- <ion-button (click)="finish()" expand="block" color="primary">Finish</ion-button> -->
+    </ion-grid>
+    <hr *ngIf="kimAgain.length != 0">
     <ion-grid>
         <h2>The Correct Sequence</h2>
         <!-- <ion-button *ngIf="viewSteps.length == kim" (click)="results(viewSteps)" expand="block" color="success">Finish</ion-button> -->
