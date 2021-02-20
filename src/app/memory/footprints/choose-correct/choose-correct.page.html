@@ -13,6 +13,10 @@
 <ion-content>
     <form>
 
+        <ion-grid *ngIf="viewSteps.length == 0" style="margin-top: 50%;">
+
+        </ion-grid>
+
 
         <ion-grid *ngIf="viewSteps.length != 0">
             <h2 *ngIf="viewSteps.length != 0">Selected Foot prints</h2>
