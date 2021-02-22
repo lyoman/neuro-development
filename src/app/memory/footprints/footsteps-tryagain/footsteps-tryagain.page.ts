@@ -76,37 +76,38 @@ export class FootstepsTryagainPage implements OnInit {
     this.viewSteps.splice(stepIndex, 1);
   }
 
-  finish(stepIndex,step) {
+  finish(step) {
 
     if (this.viewSteps.length == JSON.parse(localStorage.getItem('initialNum'))) {
       this.presentAlertResults();
     } else {
       this.viewSteps.push(step);
     }
-    // this.Ogfootsteps.splice(stepIndex, 1);
-    // console.log('new array', this.viewSteps);
-    // console.log('original arrary', this.Ogfootsteps);
   }
 
 
   results (footsteps) {
     this.navData.setParamData1(footsteps);// the foot prints that were chosen by the user
-    // console.log('User selected footsteps', footsteps);
-    // console.log('Shuffledfootsteps', JSON.parse(localStorage.getItem('userList')));
+    console.log('User selected footsteps', footsteps);
+    console.log('Shuffledfootsteps', JSON.parse(localStorage.getItem('userList')));
     this.Shuffledfootsteps = JSON.parse(localStorage.getItem('userList'));
+
     for (let i = 0; i < footsteps.length; i++) {
       if(footsteps[i] == this.Shuffledfootsteps[i])
       {
         // console.log('matched index ' + i);
         this.pushedToResults.push(footsteps[i]);
+        console.log("1");
       } else {
         this.failedResults.push(footsteps[i]);
       }
     }
     this.navData.setParamData3(this.pushedToResults);
     this.navData.setParamData2(this.failedResults);
-    this.navCtrl.navigateRoot('/sequential/footprints/results');
-    // this.router.navigateByUrl('/sequential/footprints/results');
+    localStorage.setItem('pushedToResults', JSON.stringify(this.pushedToResults));
+    localStorage.setItem('failedResults', JSON.stringify(this.failedResults));
+    // this.navCtrl.navigateRoot('/sequential/footprints/results');
+    this.router.navigateByUrl('/sequential/footprints/tryagain-results');
   }
 
 }

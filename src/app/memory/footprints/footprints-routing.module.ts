@@ -18,6 +18,10 @@ const routes: Routes = [
   },  {
     path: 'footsteps-tryagain',
     loadChildren: () => import('./footsteps-tryagain/footsteps-tryagain.module').then( m => m.FootstepsTryagainPageModule)
+  },
+  {
+    path: 'tryagain-results',
+    loadChildren: () => import('./tryagain-results/tryagain-results.module').then( m => m.TryagainResultsPageModule)
   }
 
 ];

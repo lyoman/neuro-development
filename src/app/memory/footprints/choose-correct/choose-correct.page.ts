@@ -141,6 +141,8 @@ export class ChooseCorrectPage implements OnInit {
     }
     this.navData.setParamData3(this.pushedToResults);
     this.navData.setParamData2(this.failedResults);
+    localStorage.setItem('pushedToResults', JSON.stringify(this.pushedToResults));
+    localStorage.setItem('failedResults', JSON.stringify(this.failedResults));
     this.navCtrl.navigateRoot('/sequential/footprints/results');
     // this.router.navigateByUrl('/sequential/footprints/results');
   }
