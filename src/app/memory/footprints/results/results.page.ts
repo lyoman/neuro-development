@@ -22,6 +22,8 @@ export class ResultsPage implements OnInit {
 
   originalSteps = [];
 
+  marian :any;
+
   constructor(
     private navData: NavigateDataService,
     private loadingService: LoadingService,
@@ -49,12 +51,14 @@ export class ResultsPage implements OnInit {
       this.presentAlert4();
     }
 
-    if (JSON.parse(localStorage.getItem('initialNum')) == this.navData.getParamData3().length) {
-      this.initialNum += 2;
-      console.log("this.navData.getParamData3().length", this.navData.getParamData3().length);
+    if (JSON.parse(localStorage.getItem('initialNum')) == this.footsteps.length) {
+      // this.initialNum += 2;
+      var initialNum = (this.zviko + 2);
+      console.log("this.navData.getParamData3().length", this.footsteps.length);
       console.log("JSON.parse(localStorage.getItem('initialNum'))", JSON.parse(localStorage.getItem('initialNum')));
+      console.log("initialNum", initialNum);
       
-      localStorage.setItem('initialNum', JSON.stringify(this.initialNum));
+      localStorage.setItem('initialNum', JSON.stringify(initialNum));
       this.presentAlert9();
     } 
 
