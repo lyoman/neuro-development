@@ -2,7 +2,7 @@ import { GraphicsService } from './../../services/graphics.service';
 import { Router } from '@angular/router';
 import { NavigateDataService } from './../../services/navigate-data.service';
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-footprints',
@@ -60,6 +60,7 @@ export class FootprintsPage implements OnInit {
     private router: Router,
     private navCtrl: NavController,
     private graphicsService: GraphicsService,
+    public alertController: AlertController,
   ) {
     this.showImage = true;
     this.showImage2 = false;
@@ -302,5 +303,42 @@ export class FootprintsPage implements OnInit {
     // this.router.navigateByUrl('choose-correct');
     this.navCtrl.navigateRoot('/sequential/footprints/choose-correct');
   }
+
+  presentAlert4() {
+    const alert = this.alertController.create({
+    header: "Reset Game !!!!",
+    subHeader: 'Are you sure you want to reset the game???',
+    cssClass: 'custom-alertDanger',
+    buttons: ['Dismiss']}).then(alert=> alert.present());
+  }
+
+  presentAlertConfirm() {
+    const alert = this.alertController.create({
+      header: "Reset Game !!!!",
+      subHeader: 'Are you sure you want to reset the game???',
+      cssClass: 'custom-alertDanger',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Okay',
+          handler: () => {
+            localStorage.clear();
+            location.reload();
+          }
+        }
+      ]
+    }).then(alert=> alert.present());
+  }
+
+  // resetGame() {
+  //   localStorage.clear();
+  //   location.reload();
+  // }
 
 }

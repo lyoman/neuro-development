@@ -10,6 +10,11 @@
 </ion-header>
 
 <ion-content>
+
+    <div>
+        <ion-button tappable color="warning" expand="block" (click)="presentAlertConfirm()">Reset Game</ion-button>
+    </div>
+
     <div *ngIf="hideTop == 'false'">
         <div id="numberofsteps" *ngIf="clickedNum == 'false'">
             <h2>Choose the number of steps</h2>
