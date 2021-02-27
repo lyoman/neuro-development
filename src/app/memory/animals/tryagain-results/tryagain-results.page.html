@@ -1,9 +1,62 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>tryagain-results</ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <!-- <ion-back-button autoHide="false"></ion-back-button> -->
+            <ion-menu-button autoHide="false"></ion-menu-button>
+        </ion-buttons>
+        <ion-title class="title" style="margin-right: 50px;" class="ion-text-center">
+            Results
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <h2 style="background-color: lightblue;" *ngIf="footsteps.length > 0 && wrongSteps.length > 0">These are the foot steps that you got correct</h2>
+    <ion-grid *ngIf="footsteps.length > 0 && wrongSteps.length >0">
+        <ion-row>
+            <ion-col *ngFor="let footstep of footsteps; 
+          let i = index;" size="4" no-padding>
+                <ion-card>
+                    <br>
+                    <img [src]="footstep">
+                    <h3>step {{i + 1}}</h3>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+        <ion-button [routerLink]="['/sequential/animals/footsteps-tryagain']" expand="block" color="primary">Try Again !!!</ion-button>
+    </ion-grid>
+    <hr *ngIf="footsteps.length > 0 && wrongSteps.length >0">
 
+    <h2 *ngIf="footsteps.length == 0" style="background-color: red;">You failed all of them, pliz try again</h2>
+    <ion-grid *ngIf="footsteps.length == 0">
+        <ion-button [routerLink]="['/sequential/animals/footsteps-tryagain']" expand="block" color="danger">Try Again !!!</ion-button>
+    </ion-grid>
+    <hr *ngIf="footsteps.length == 0">
+
+    <h2 *ngIf="footsteps.length == kim" style="background-color: green;">Way to go!</h2>
+    <ion-grid *ngIf="footsteps.length == kim">
+        <ion-button [routerLink]="['/sequential']" expand="block" color="success">Play again!</ion-button>
+    </ion-grid>
+
+    <h2 style="background-color: green;" *ngIf="footsteps.length == zviko && footsteps.length != kim">Way to go!</h2>
+    <ion-grid *ngIf="footsteps.length == zviko && footsteps.length != kim">
+        <ion-button [routerLink]="['/sequential/animals']" expand="block" color="success">Procceed to next Level !!!
+        </ion-button>
+    </ion-grid>
+
+    <h2 style="background-color: red;color: white;" *ngIf="wrongSteps.length > 0">These are the foot steps that you got Wrong
+    </h2>
+    <ion-grid *ngIf="wrongSteps.length > 0">
+        <ion-row>
+            <ion-col *ngFor="let footstep of wrongSteps; 
+          let i = index;" size="4" no-padding>
+                <ion-card>
+                    <br>
+                    <img [src]="footstep">
+                    <h3>Animal {{i + 1}}</h3>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+        <!-- <ion-button [routerLink]="['/sequential/animals/footsteps-tryagain']" expand="block" color="warning">Try Again</ion-button> -->
+    </ion-grid>
 </ion-content>

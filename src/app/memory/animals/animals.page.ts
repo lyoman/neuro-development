@@ -2,7 +2,7 @@ import { GraphicsService } from './../../services/graphics.service';
 import { Router } from '@angular/router';
 import { NavigateDataService } from './../../services/navigate-data.service';
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-animals',
@@ -11,15 +11,21 @@ import { NavController } from '@ionic/angular';
 })
 export class AnimalsPage implements OnInit {
 
+  
   secondDiv = "false";
   thirdDiv = "false";
   firstDiv = "true";
   footsteps = [];
 
   newArray = [];
+  Kim = [];
+  hideTop = "false";
 
   choosenNum: number;
-  clickedNum = "false"
+  chooseColor: number;
+  clickedNum = "false";
+
+  numberOfColors = "false";
 
   showImage;
   showImage2;
@@ -34,11 +40,28 @@ export class AnimalsPage implements OnInit {
 
   nextPage = [];
 
+  solution = [
+    './../../../assets/imgs/graphics/1.png',
+    './../../../assets/imgs/graphics/2.png',
+    './../../../assets/imgs/graphics/3.png',
+    './../../../assets/imgs/graphics/4.png',
+    './../../../assets/imgs/graphics/5.png',
+    './../../../assets/imgs/graphics/6.png',
+    './../../../assets/imgs/graphics/7.png',
+  ]
+  solutionFinal = [];
+  solutionFinalFinal = [];
+
+  newColorArray = [];
+
+  zvikoNum;
+
   constructor(
     private navData: NavigateDataService,
     private router: Router,
     private navCtrl: NavController,
     private graphicsService: GraphicsService,
+    public alertController: AlertController,
   ) {
     this.showImage = true;
     this.showImage2 = false;
@@ -52,11 +75,39 @@ export class AnimalsPage implements OnInit {
   }
 
   ngOnInit() {
-    // this.footsteps = this.graphicsService.footsteps;
+    // this.footsteps = this.graphicsService.footsteps;F
     // const footsteps = this.shuffle(this.graphicsService.footsteps);
-    this.footsteps = this.shuffle1(this.graphicsService.animals);
+    this.footsteps = this.shuffle1(this.graphicsService.footsteps);
     //  console.log('shuffle', this.footsteps);
+
+    if(JSON.parse(localStorage.getItem('initialNum')) == null){
+      localStorage.setItem('initialNum', JSON.stringify(3));
+      // this.zvikoNum = JSON.parse(localStorage.getItem('initialNum'));
+      console.log(JSON.parse(localStorage.getItem('initialNum')))
+    }
+    console.log("zvikoNum",  JSON.parse(localStorage.getItem('initialNum')));
+    // console.log(JSON.parse(localStorage.getItem('initialNum')))
   }
+
+
+
+  myColors = [
+    {
+      "color": 3
+    },
+    {
+      "color": 4
+    },
+    {
+      "color": 5
+    },
+    {
+      "color": 6
+    },
+    {
+      "color": 7
+    }
+  ]
 
   myNumbers = [
     {
@@ -118,49 +169,84 @@ export class AnimalsPage implements OnInit {
     }
   ]
 
-  numberofSteps(){
-    console.log('num', this.choosenNum);
-    this.clickedNum = "true";
-    var realNum = (1000 * this.choosenNum)
-    for(let i=0; i<this.choosenNum; i++) {
+  numberofSteps() {
+    console.log('num', JSON.parse(localStorage.getItem('initialNum')));
+    this.hideTop = "true";
+    this.numberOfColors = "true";
+    var realNum = (1000 * JSON.parse(localStorage.getItem('initialNum')))
+    for (let i = 0; i < JSON.parse(localStorage.getItem('initialNum')); i++) {
       this.newArray.push(this.footsteps[i]);
     }
     console.log('new array', this.newArray);
+    // this.hidingDivs(realNum + 3000);
+  }
+
+  solutionFun() {
+    this.clickedNum = "true";
+    this.numberOfColors = "false";
+    console.log("number of colors", this.chooseColor);
+    this.solutionFinal = this.shuffle1(this.solution);
+    for (let i = 0; i < this.chooseColor; i++) {
+      this.solutionFinalFinal.push(this.solutionFinal[i]);
+    }
+    console.log('logic', this.solutionFinalFinal);
+    localStorage.setItem("logic", JSON.stringify(this.solutionFinalFinal));
+    this.cloneArray(JSON.parse(localStorage.getItem('initialNum')), this.solutionFinalFinal, this.newColorArray, this.Kim);
+  }
+
+  cloneArray(arrayLenth, imwe, newArray, Kim) {
+    var pushArray = [];
+    console.log("arrayLenth", arrayLenth);
+    console.log("CLONE Array", newArray);
+    while (newArray.length < arrayLenth) {
+      pushArray = this.shuffle1(imwe);
+      newArray.push(pushArray[0]);
+      newArray.push(pushArray[2]);
+      newArray.push(pushArray[1]);
+    }
+
+    for (let i = 0; i < arrayLenth; i++) {
+      Kim.push(newArray[i]);
+    }
+    console.log("Final Final", Kim);
+    localStorage.setItem("finalArray", Kim);
+    var realNum = (1000 * JSON.parse(localStorage.getItem('initialNum')));
     this.hidingDivs(realNum + 3000);
   }
+
 
   hidingDivs(numSeconds) {
     setTimeout(() => {
       this.showImage = false;
       this.showImage2 = true;
-    }, 3000);
+    }, 4000);
     setTimeout(() => {
       this.showImage2 = false;
       this.showImage3 = true;
-    }, 6000);
+    }, 7000);
     setTimeout(() => {
       this.showImage3 = false;
       this.showImage4 = true;
-    }, 9000);
+    }, 10000);
     setTimeout(() => {
       this.showImage4 = false;
       this.showImage5 = true;
-    }, 12000);
+    }, 13000);
     setTimeout(() => {
       this.showImage5 = false;
       this.showImage6 = true;
-    }, 15000);
+    }, 16000);
     setTimeout(() => {
       this.showImage6 = false;
       this.showImage7 = true;
-    }, 18000);
+    }, 19000);
     setTimeout(() => {
       this.showImage7 = false;
       this.showImage8 = true;
-    }, 21000);
+    }, 22000);
     setTimeout(() => {
       this.showImage8 = false;
-    }, 24000);
+    }, 25000);
     setTimeout(() => {
       this.myButton = true;
     }, numSeconds);
@@ -212,10 +298,43 @@ export class AnimalsPage implements OnInit {
     this.navData.setParamData;
     // console.log('me', footprints);
     this.nextPage = footprints;
-    localStorage.setItem('animaluserList', JSON.stringify(this.nextPage));
-    localStorage.setItem('animaluserNum', JSON.stringify(this.choosenNum));
+    localStorage.setItem('userList', JSON.stringify(this.nextPage));
+    localStorage.setItem('userNum', JSON.stringify(this.choosenNum));
+    console.log("userNum", this.choosenNum);
     // this.router.navigateByUrl('choose-correct');
-    this.navCtrl.navigateRoot('/sequential/animals/choose-correct');
+    this.navCtrl.navigateRoot('/sequential/footprints/choose-correct');
+  }
+
+  presentAlert4() {
+    const alert = this.alertController.create({
+    header: "Reset Game !!!!",
+    subHeader: 'Are you sure you want to reset the game???',
+    cssClass: 'custom-alertDanger',
+    buttons: ['Dismiss']}).then(alert=> alert.present());
+  }
+
+  presentAlertConfirm() {
+    const alert = this.alertController.create({
+      header: "Reset Game !!!!",
+      subHeader: 'Are you sure you want to reset the game???',
+      cssClass: 'custom-alertDanger',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Okay',
+          handler: () => {
+            localStorage.clear();
+            location.reload();
+          }
+        }
+      ]
+    }).then(alert=> alert.present());
   }
 
 }
