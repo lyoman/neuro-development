@@ -73,7 +73,7 @@ export class ChooseCorrectPage implements OnInit {
   }
 
   rebuildOriginal() {
-    this.getUserNum = JSON.parse(localStorage.getItem('animaluserNum'));
+    this.getUserNum = JSON.parse(localStorage.getItem('animalsuserNum'));
     console.log('number', this.getUserNum)
     for (let i=0; i<this.getUserNum; i++) {
       this.Ogfootsteps.push(this.Ogfootsteps1[i]);
@@ -99,7 +99,7 @@ export class ChooseCorrectPage implements OnInit {
     this.navData.setParamData1(footsteps);// the foot prints that were chosen by the user
     // console.log('User selected footsteps', footsteps);
     // console.log('Shuffledfootsteps', JSON.parse(localStorage.getItem('userList')));
-    this.Shuffledfootsteps = JSON.parse(localStorage.getItem('animaluserList'));
+    this.Shuffledfootsteps = JSON.parse(localStorage.getItem('animalsuserList'));
     for (let i = 0; i <= 6; i++) {
       if(footsteps[i] == this.Shuffledfootsteps[i])
       {

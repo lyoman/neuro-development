@@ -17,7 +17,7 @@ export class ResultsPage implements OnInit {
   zviko;
 
   completed = false;
-  initialNumAnimals = 3;
+  animalsinitialNum = 3;
 
   originalSteps = [];
 
@@ -33,16 +33,16 @@ export class ResultsPage implements OnInit {
 
   ngOnInit() {
     this.loadingService.presentLoading();
-    this.footsteps = JSON.parse(localStorage.getItem('pushedToResults'));
-    this.wrongSteps = JSON.parse(localStorage.getItem('failedResults'));
-    this.originalSteps = JSON.parse(localStorage.getItem('userList'));
+    this.footsteps = JSON.parse(localStorage.getItem('animalspushedToResults'));
+    this.wrongSteps = JSON.parse(localStorage.getItem('animalsfailedResults'));
+    this.originalSteps = JSON.parse(localStorage.getItem('animalsuserList'));
 
     console.log("original footsteps", this.originalSteps);
     console.log('Correct footsteps', this.footsteps);
     console.log('Correct wrongSteps', this.wrongSteps);
 
-    this.kim = JSON.parse(localStorage.getItem('userNum'));
-    this.zviko = JSON.parse(localStorage.getItem('initialNumAnimals'));
+    this.kim = JSON.parse(localStorage.getItem('animalsuserNum'));
+    this.zviko = JSON.parse(localStorage.getItem('animalsinitialNum'));
     
     if (this.footsteps.length == this.kim) {
       this.presentAlert5();
@@ -50,14 +50,14 @@ export class ResultsPage implements OnInit {
       this.presentAlert4();
     }
 
-    if (JSON.parse(localStorage.getItem('initialNumAnimals')) == this.footsteps.length) {
-      // this.initialNumAnimals += 2;
-      var initialNumAnimals = (this.zviko + 2);
+    if (JSON.parse(localStorage.getItem('animalsinitialNum')) == this.footsteps.length) {
+      // this.animalsinitialNum += 2;
+      var animalsinitialNum = (this.zviko + 2);
       console.log("this.navData.getParamData3().length", this.footsteps.length);
-      console.log("JSON.parse(localStorage.getItem('initialNumAnimals'))", JSON.parse(localStorage.getItem('initialNumAnimals')));
-      console.log("initialNumAnimals", initialNumAnimals);
+      console.log("JSON.parse(localStorage.getItem('animalsinitialNum'))", JSON.parse(localStorage.getItem('animalsinitialNum')));
+      console.log("animalsinitialNum", animalsinitialNum);
       
-      localStorage.setItem('initialNumAnimals', JSON.stringify(initialNumAnimals));
+      localStorage.setItem('animalsinitialNum', JSON.stringify(animalsinitialNum));
       this.presentAlert9();
     } 
 

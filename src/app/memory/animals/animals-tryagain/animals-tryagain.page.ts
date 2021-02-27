@@ -33,7 +33,7 @@ export class AnimalsTryagainPage implements OnInit {
   // Shuffledfootsteps = [];
 
   completed = false;
-  initialNum = 3;
+  animalsinitialNum = 3;
 
   originalSteps = [];
 
@@ -50,17 +50,17 @@ export class AnimalsTryagainPage implements OnInit {
     this.loadingService.presentLoading();
     this.footsteps = this.navData.getParamData3();
     this.wrongSteps = this.navData.getParamData2();
-    this.originalSteps = JSON.parse(localStorage.getItem('userList'));
+    this.originalSteps = JSON.parse(localStorage.getItem('animalsuserList'));
 
     this.kimAgain = JSON.parse(localStorage.getItem("logic"));
-    this.kim = JSON.parse(localStorage.getItem('initialNum'));
+    this.kim = JSON.parse(localStorage.getItem('animalsinitialNum'));
 
     console.log("original footsteps", this.originalSteps);
     console.log('Correct footsteps', this.footsteps);
     console.log('Correct wrongSteps', this.wrongSteps);
 
-    this.kim = JSON.parse(localStorage.getItem('userNum'));
-    this.zviko = JSON.parse(localStorage.getItem('initialNum'));
+    this.kim = JSON.parse(localStorage.getItem('animalsuserNum'));
+    this.zviko = JSON.parse(localStorage.getItem('animalsinitialNum'));
 
   }
 
@@ -77,7 +77,7 @@ export class AnimalsTryagainPage implements OnInit {
 
   finish(step) {
 
-    if (this.viewSteps.length == JSON.parse(localStorage.getItem('initialNum'))) {
+    if (this.viewSteps.length == JSON.parse(localStorage.getItem('animalsinitialNum'))) {
       this.presentAlertResults();
     } else {
       this.viewSteps.push(step);
@@ -88,8 +88,8 @@ export class AnimalsTryagainPage implements OnInit {
   results (footsteps) {
     this.navData.setParamData1(footsteps);// the foot prints that were chosen by the user
     console.log('User selected footsteps', footsteps);
-    console.log('Shuffledfootsteps', JSON.parse(localStorage.getItem('userList')));
-    this.Shuffledfootsteps = JSON.parse(localStorage.getItem('userList'));
+    console.log('Shuffledfootsteps', JSON.parse(localStorage.getItem('animalsuserList')));
+    this.Shuffledfootsteps = JSON.parse(localStorage.getItem('animalsuserList'));
 
     for (let i = 0; i < footsteps.length; i++) {
       if(footsteps[i] == this.Shuffledfootsteps[i])
@@ -103,8 +103,8 @@ export class AnimalsTryagainPage implements OnInit {
     }
     this.navData.setParamData3(this.pushedToResults);
     this.navData.setParamData2(this.failedResults);
-    localStorage.setItem('pushedToResults', JSON.stringify(this.pushedToResults));
-    localStorage.setItem('failedResults', JSON.stringify(this.failedResults));
+    localStorage.setItem('animalspushedToResults', JSON.stringify(this.pushedToResults));
+    localStorage.setItem('animalsfailedResults', JSON.stringify(this.failedResults));
     // this.navCtrl.navigateRoot('/sequential/animals/results');
     this.router.navigateByUrl('/sequential/animals/tryagain-results');
   }

@@ -32,16 +32,16 @@ export class TryagainResultsPage implements OnInit {
 
   ngOnInit() {
     this.loadingService.presentLoading();
-    this.footsteps = JSON.parse(localStorage.getItem('pushedToResults'));
-    this.wrongSteps = JSON.parse(localStorage.getItem('failedResults'));
-    this.originalSteps = JSON.parse(localStorage.getItem('userList'));
+    this.footsteps = JSON.parse(localStorage.getItem('animalspushedToResults'));
+    this.wrongSteps = JSON.parse(localStorage.getItem('animalsfailedResults'));
+    this.originalSteps = JSON.parse(localStorage.getItem('animalsuserList'));
 
     console.log("original footsteps", this.originalSteps);
     console.log('Correct footsteps', this.footsteps);
     console.log('Correct wrongSteps', this.wrongSteps);
 
-    this.kim = JSON.parse(localStorage.getItem('userNum'));
-    this.zviko = JSON.parse(localStorage.getItem('initialNum'));
+    this.kim = JSON.parse(localStorage.getItem('animalsuserNum'));
+    this.zviko = JSON.parse(localStorage.getItem('animalsinitialNum'));
     
     if (this.footsteps.length == this.kim) {
       this.presentAlert5();
@@ -49,14 +49,14 @@ export class TryagainResultsPage implements OnInit {
       this.presentAlert4();
     }
 
-    if (JSON.parse(localStorage.getItem('initialNum')) == this.footsteps.length) {
+    if (JSON.parse(localStorage.getItem('animalsinitialNum')) == this.footsteps.length) {
       var initialNum = (this.zviko + 2);
       console.log("this.navData.getParamData3().length", this.footsteps.length);
-      console.log("JSON.parse(localStorage.getItem('initialNum'))", JSON.parse(localStorage.getItem('initialNum')));
+      console.log("JSON.parse(localStorage.getItem('initialNum'))", JSON.parse(localStorage.getItem('animalsinitialNum')));
 
       console.log("var initialNum", initialNum);
       
-      localStorage.setItem('initialNum', JSON.stringify(initialNum));
+      localStorage.setItem('animalsinitialNum', JSON.stringify(initialNum));
       this.presentAlert9();
     } 
 

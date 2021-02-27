@@ -80,13 +80,13 @@ export class AnimalsPage implements OnInit {
     this.animals = this.shuffle1(this.graphicsService.animals);
     //  console.log('shuffle', this.animals);
 
-    if(JSON.parse(localStorage.getItem('initialNumAnimals')) == null){
-      localStorage.setItem('initialNumAnimals', JSON.stringify(3));
-      // this.zvikoNum = JSON.parse(localStorage.getItem('initialNumAnimals'));
-      console.log(JSON.parse(localStorage.getItem('initialNumAnimals')))
+    if(JSON.parse(localStorage.getItem('animalsinitialNum')) == null){
+      localStorage.setItem('animalsinitialNum', JSON.stringify(3));
+      // this.zvikoNum = JSON.parse(localStorage.getItem('animalsinitialNum'));
+      console.log(JSON.parse(localStorage.getItem('animalsinitialNum')))
     }
-    console.log("zvikoNum",  JSON.parse(localStorage.getItem('initialNumAnimals')));
-    // console.log(JSON.parse(localStorage.getItem('initialNumAnimals')))
+    console.log("zvikoNum",  JSON.parse(localStorage.getItem('animalsinitialNum')));
+    // console.log(JSON.parse(localStorage.getItem('animalsinitialNum')))
   }
 
 
@@ -170,11 +170,11 @@ export class AnimalsPage implements OnInit {
   ]
 
   numberofSteps() {
-    console.log('num', JSON.parse(localStorage.getItem('initialNumAnimals')));
+    console.log('num', JSON.parse(localStorage.getItem('animalsinitialNum')));
     this.hideTop = "true";
     this.numberOfColors = "true";
-    var realNum = (1000 * JSON.parse(localStorage.getItem('initialNumAnimals')))
-    for (let i = 0; i < JSON.parse(localStorage.getItem('initialNumAnimals')); i++) {
+    var realNum = (1000 * JSON.parse(localStorage.getItem('animalsinitialNum')))
+    for (let i = 0; i < JSON.parse(localStorage.getItem('animalsinitialNum')); i++) {
       this.newArray.push(this.animals[i]);
     }
     console.log('new array', this.newArray);
@@ -191,7 +191,7 @@ export class AnimalsPage implements OnInit {
     }
     console.log('logic', this.solutionFinalFinal);
     localStorage.setItem("logic", JSON.stringify(this.solutionFinalFinal));
-    this.cloneArray(JSON.parse(localStorage.getItem('initialNumAnimals')), this.solutionFinalFinal, this.newColorArray, this.Kim);
+    this.cloneArray(JSON.parse(localStorage.getItem('animalsinitialNum')), this.solutionFinalFinal, this.newColorArray, this.Kim);
   }
 
   cloneArray(arrayLenth, imwe, newArray, Kim) {
@@ -210,7 +210,7 @@ export class AnimalsPage implements OnInit {
     }
     console.log("Final Final", Kim);
     localStorage.setItem("finalArray", Kim);
-    var realNum = (1000 * JSON.parse(localStorage.getItem('initialNumAnimals')));
+    var realNum = (1000 * JSON.parse(localStorage.getItem('animalsinitialNum')));
     this.hidingDivs(realNum + 3000);
   }
 
@@ -298,11 +298,11 @@ export class AnimalsPage implements OnInit {
     this.navData.setParamData;
     // console.log('me', footprints);
     this.nextPage = footprints;
-    localStorage.setItem('userList', JSON.stringify(this.nextPage));
-    localStorage.setItem('userNum', JSON.stringify(this.choosenNum));
-    console.log("userNum", this.choosenNum);
+    localStorage.setItem('animalsuserList', JSON.stringify(this.nextPage));
+    localStorage.setItem('animalsuserNum', JSON.stringify(this.choosenNum));
+    console.log("animalsuserNum", this.choosenNum);
     // this.router.navigateByUrl('choose-correct');
-    this.navCtrl.navigateRoot('/sequential/footprints/choose-correct');
+    this.navCtrl.navigateRoot('/sequential/animals/choose-correct');
   }
 
   presentAlert4() {
