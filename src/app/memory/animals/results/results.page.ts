@@ -17,7 +17,7 @@ export class ResultsPage implements OnInit {
   zviko;
 
   completed = false;
-  initialNum = 3;
+  initialNumAnimals = 3;
 
   originalSteps = [];
 
@@ -42,7 +42,7 @@ export class ResultsPage implements OnInit {
     console.log('Correct wrongSteps', this.wrongSteps);
 
     this.kim = JSON.parse(localStorage.getItem('userNum'));
-    this.zviko = JSON.parse(localStorage.getItem('initialNum'));
+    this.zviko = JSON.parse(localStorage.getItem('initialNumAnimals'));
     
     if (this.footsteps.length == this.kim) {
       this.presentAlert5();
@@ -50,14 +50,14 @@ export class ResultsPage implements OnInit {
       this.presentAlert4();
     }
 
-    if (JSON.parse(localStorage.getItem('initialNum')) == this.footsteps.length) {
-      // this.initialNum += 2;
-      var initialNum = (this.zviko + 2);
+    if (JSON.parse(localStorage.getItem('initialNumAnimals')) == this.footsteps.length) {
+      // this.initialNumAnimals += 2;
+      var initialNumAnimals = (this.zviko + 2);
       console.log("this.navData.getParamData3().length", this.footsteps.length);
-      console.log("JSON.parse(localStorage.getItem('initialNum'))", JSON.parse(localStorage.getItem('initialNum')));
-      console.log("initialNum", initialNum);
+      console.log("JSON.parse(localStorage.getItem('initialNumAnimals'))", JSON.parse(localStorage.getItem('initialNumAnimals')));
+      console.log("initialNumAnimals", initialNumAnimals);
       
-      localStorage.setItem('initialNum', JSON.stringify(initialNum));
+      localStorage.setItem('initialNumAnimals', JSON.stringify(initialNumAnimals));
       this.presentAlert9();
     } 
 

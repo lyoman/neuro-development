@@ -15,7 +15,7 @@ export class AnimalsPage implements OnInit {
   secondDiv = "false";
   thirdDiv = "false";
   firstDiv = "true";
-  footsteps = [];
+  animals = [];
 
   newArray = [];
   Kim = [];
@@ -41,13 +41,13 @@ export class AnimalsPage implements OnInit {
   nextPage = [];
 
   solution = [
-    './../../../assets/imgs/graphics/1.png',
-    './../../../assets/imgs/graphics/2.png',
-    './../../../assets/imgs/graphics/3.png',
-    './../../../assets/imgs/graphics/4.png',
-    './../../../assets/imgs/graphics/5.png',
-    './../../../assets/imgs/graphics/6.png',
-    './../../../assets/imgs/graphics/7.png',
+    './../../../assets/imgs/animals/1.png',
+    './../../../assets/imgs/animals/2.png',
+    './../../../assets/imgs/animals/3.png',
+    './../../../assets/imgs/animals/4.png',
+    './../../../assets/imgs/animals/5.png',
+    './../../../assets/imgs/animals/6.png',
+    './../../../assets/imgs/animals/7.png',
   ]
   solutionFinal = [];
   solutionFinalFinal = [];
@@ -75,18 +75,18 @@ export class AnimalsPage implements OnInit {
   }
 
   ngOnInit() {
-    // this.footsteps = this.graphicsService.footsteps;F
-    // const footsteps = this.shuffle(this.graphicsService.footsteps);
-    this.footsteps = this.shuffle1(this.graphicsService.footsteps);
-    //  console.log('shuffle', this.footsteps);
+    // this.animals = this.graphicsService.animals;F
+    // const animals = this.shuffle(this.graphicsService.animals);
+    this.animals = this.shuffle1(this.graphicsService.animals);
+    //  console.log('shuffle', this.animals);
 
-    if(JSON.parse(localStorage.getItem('initialNum')) == null){
-      localStorage.setItem('initialNum', JSON.stringify(3));
-      // this.zvikoNum = JSON.parse(localStorage.getItem('initialNum'));
-      console.log(JSON.parse(localStorage.getItem('initialNum')))
+    if(JSON.parse(localStorage.getItem('initialNumAnimals')) == null){
+      localStorage.setItem('initialNumAnimals', JSON.stringify(3));
+      // this.zvikoNum = JSON.parse(localStorage.getItem('initialNumAnimals'));
+      console.log(JSON.parse(localStorage.getItem('initialNumAnimals')))
     }
-    console.log("zvikoNum",  JSON.parse(localStorage.getItem('initialNum')));
-    // console.log(JSON.parse(localStorage.getItem('initialNum')))
+    console.log("zvikoNum",  JSON.parse(localStorage.getItem('initialNumAnimals')));
+    // console.log(JSON.parse(localStorage.getItem('initialNumAnimals')))
   }
 
 
@@ -170,12 +170,12 @@ export class AnimalsPage implements OnInit {
   ]
 
   numberofSteps() {
-    console.log('num', JSON.parse(localStorage.getItem('initialNum')));
+    console.log('num', JSON.parse(localStorage.getItem('initialNumAnimals')));
     this.hideTop = "true";
     this.numberOfColors = "true";
-    var realNum = (1000 * JSON.parse(localStorage.getItem('initialNum')))
-    for (let i = 0; i < JSON.parse(localStorage.getItem('initialNum')); i++) {
-      this.newArray.push(this.footsteps[i]);
+    var realNum = (1000 * JSON.parse(localStorage.getItem('initialNumAnimals')))
+    for (let i = 0; i < JSON.parse(localStorage.getItem('initialNumAnimals')); i++) {
+      this.newArray.push(this.animals[i]);
     }
     console.log('new array', this.newArray);
     // this.hidingDivs(realNum + 3000);
@@ -191,7 +191,7 @@ export class AnimalsPage implements OnInit {
     }
     console.log('logic', this.solutionFinalFinal);
     localStorage.setItem("logic", JSON.stringify(this.solutionFinalFinal));
-    this.cloneArray(JSON.parse(localStorage.getItem('initialNum')), this.solutionFinalFinal, this.newColorArray, this.Kim);
+    this.cloneArray(JSON.parse(localStorage.getItem('initialNumAnimals')), this.solutionFinalFinal, this.newColorArray, this.Kim);
   }
 
   cloneArray(arrayLenth, imwe, newArray, Kim) {
@@ -210,7 +210,7 @@ export class AnimalsPage implements OnInit {
     }
     console.log("Final Final", Kim);
     localStorage.setItem("finalArray", Kim);
-    var realNum = (1000 * JSON.parse(localStorage.getItem('initialNum')));
+    var realNum = (1000 * JSON.parse(localStorage.getItem('initialNumAnimals')));
     this.hidingDivs(realNum + 3000);
   }
 
