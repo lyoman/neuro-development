@@ -15,7 +15,15 @@ const routes: Routes = [
   {
     path: 'choose-correct',
     loadChildren: () => import('./choose-correct/choose-correct.module').then( m => m.ChooseCorrectPageModule)
+  },  {
+    path: 'math-tryagain',
+    loadChildren: () => import('./math-tryagain/math-tryagain.module').then( m => m.MathTryagainPageModule)
+  },
+  {
+    path: 'tryagain-results',
+    loadChildren: () => import('./tryagain-results/tryagain-results.module').then( m => m.TryagainResultsPageModule)
   }
+
 ];
 
 @NgModule({
