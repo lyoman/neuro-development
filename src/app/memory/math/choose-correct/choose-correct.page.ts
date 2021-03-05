@@ -53,35 +53,6 @@ export class ChooseCorrectPage implements OnInit {
     './../../../assets/imgs/math/2.png',
     './../../../assets/imgs/math/3.png',
     './../../../assets/imgs/math/4.png',
-
-    // './../../../assets/imgs/math/a.png',
-    // './../../../assets/imgs/math/b.png',
-    // './../../../assets/imgs/math/c.png',
-    // './../../../assets/imgs/math/d.png',
-    // './../../../assets/imgs/math/e.png',
-    // './../../../assets/imgs/math/f.png',
-    // './../../../assets/imgs/math/g.png',
-
-    // './../../../assets/imgs/math/a.png',
-    // './../../../assets/imgs/math/b.png',
-    // './../../../assets/imgs/math/c.png',
-    // './../../../assets/imgs/math/d.png',
-    // './../../../assets/imgs/math/e.png',
-    // './../../../assets/imgs/math/f.png',
-    // './../../../assets/imgs/math/g.png',
-
-    // './../../../assets/imgs/math/a.png',
-    // './../../../assets/imgs/math/b.png',
-    // './../../../assets/imgs/math/c.png',
-    // './../../../assets/imgs/math/d.png',
-    // './../../../assets/imgs/math/e.png',
-    // './../../../assets/imgs/math/f.png',
-    // './../../../assets/imgs/math/g.png',
-
-    // './../../../assets/imgs/math/a.png',
-    // './../../../assets/imgs/math/b.png',
-    // './../../../assets/imgs/math/c.png',
-    // './../../../assets/imgs/math/d.png',
   ];
 
   constructor(
@@ -90,13 +61,13 @@ export class ChooseCorrectPage implements OnInit {
     private graphicsService: GraphicsService,
     private router: Router,
     private navCtrl: NavController,
-  ) { }
+    ) { }
 
   ngOnInit() {
     this.loadingService.presentLoading();
     // console.log('the shuffled array', JSON.parse(localStorage.getItem('userList')));
     this.originalFootSteps = this.graphicsService.math;//original order of footprints
-    // console.log('original math', this.originalFootSteps);
+    // console.log('original footsteps', this.originalFootSteps);
 
     this.rebuildOriginal();
   }
@@ -104,40 +75,41 @@ export class ChooseCorrectPage implements OnInit {
   rebuildOriginal() {
     this.getUserNum = JSON.parse(localStorage.getItem('mathuserNum'));
     console.log('number', this.getUserNum)
-    for (let i = 0; i < this.getUserNum; i++) {
+    for (let i=0; i<this.getUserNum; i++) {
       this.Ogfootsteps.push(this.Ogfootsteps1[i]);
     }
     console.log("orgSteps", this.Ogfootsteps);
   }
 
-  finish(stepIndex, step) {
+  finish(stepIndex,step) {
     this.viewSteps.push(step);
     this.Ogfootsteps.splice(stepIndex, 1);
     // console.log('new array', this.viewSteps);
     // console.log('original arrary', this.Ogfootsteps);
   }
 
-  Removefinish(stepIndex, step) {
+  Removefinish(stepIndex,step) {
     this.Ogfootsteps.push(step);
     this.viewSteps.splice(stepIndex, 1);
     // console.log('new array', this.viewSteps);
     // console.log('original arrary', this.Ogfootsteps);
   }
 
-  results(footsteps) {
+  results (footsteps) {
     this.navData.setParamData1(footsteps);// the foot prints that were chosen by the user
     // console.log('User selected footsteps', footsteps);
     // console.log('Shuffledfootsteps', JSON.parse(localStorage.getItem('userList')));
     this.Shuffledfootsteps = JSON.parse(localStorage.getItem('mathuserList'));
     for (let i = 0; i <= 6; i++) {
-      if (footsteps[i] == this.Shuffledfootsteps[i]) {
+      if(footsteps[i] == this.Shuffledfootsteps[i])
+      {
         // console.log('matched index ' + i);
         this.pushedToResults.push(footsteps[i]);
       }
     }
     this.navData.setParamData3(this.pushedToResults);
     this.navCtrl.navigateRoot('/sequential/math/results');
-    // this.router.navigateByUrl('/sequential/math/results');
+    // this.router.navigateByUrl('/sequential/footprints/results');
   }
 
 }
