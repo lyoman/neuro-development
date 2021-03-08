@@ -11,7 +11,7 @@
 </ion-header>
 
 <ion-content>
-    <h2 style="background-color: lightblue;" *ngIf="math.length > 0 && wrongSteps.length > 0">These are the foot steps that you got correct</h2>
+    <h2 style="background-color: lightblue;" *ngIf="math.length > 0 && wrongSteps.length > 0">These are the Math that you got correct</h2>
     <ion-grid *ngIf="math.length > 0 && wrongSteps.length >0">
         <ion-row>
             <ion-col *ngFor="let footstep of math; 
@@ -44,7 +44,7 @@
         </ion-button>
     </ion-grid>
 
-    <h2 style="background-color: red;color: white;" *ngIf="wrongSteps.length > 0">These are the foot steps that you got Wrong
+    <h2 style="background-color: red;color: white;" *ngIf="wrongSteps.length > 0">These are the Math that you got Wrong
     </h2>
     <ion-grid *ngIf="wrongSteps.length > 0">
         <ion-row>
@@ -53,7 +53,7 @@
                 <ion-card>
                     <br>
                     <img [src]="footstep">
-                    <h3>step {{i + 1}}</h3>
+                    <h3>math {{i + 1}}</h3>
                 </ion-card>
             </ion-col>
         </ion-row>

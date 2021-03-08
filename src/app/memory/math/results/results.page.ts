@@ -64,7 +64,7 @@ export class ResultsPage implements OnInit {
 
     if(this.math.length == 25) {
       this.completed = true;
-      localStorage.setItem('complete', JSON.stringify(this.completed));
+      localStorage.setItem('mathcomplete', JSON.stringify(this.completed));
       this.presentAlert3();
     }
   }
