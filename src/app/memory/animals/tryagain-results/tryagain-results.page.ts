@@ -12,17 +12,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TryagainResultsPage implements OnInit {
 
-  footsteps = [];
+  animals = [];
   wrongSteps = [];
   kim;
   zviko;
 
   completed = false;
-  initialNum = 3;
+  animalsinitialNum = 3;
 
   originalSteps = [];
 
-  constructor( 
+  constructor(
     private navData: NavigateDataService,
     private loadingService: LoadingService,
     private graphicsService: GraphicsService,
@@ -32,37 +32,37 @@ export class TryagainResultsPage implements OnInit {
 
   ngOnInit() {
     this.loadingService.presentLoading();
-    this.footsteps = JSON.parse(localStorage.getItem('animalspushedToResults'));
+    this.animals = JSON.parse(localStorage.getItem('animalspushedToResults'));
     this.wrongSteps = JSON.parse(localStorage.getItem('animalsfailedResults'));
     this.originalSteps = JSON.parse(localStorage.getItem('animalsuserList'));
 
-    console.log("original footsteps", this.originalSteps);
-    console.log('Correct footsteps', this.footsteps);
+    console.log("original animals", this.originalSteps);
+    console.log('Correct animals', this.animals);
     console.log('Correct wrongSteps', this.wrongSteps);
 
     this.kim = JSON.parse(localStorage.getItem('animalsuserNum'));
     this.zviko = JSON.parse(localStorage.getItem('animalsinitialNum'));
     
-    if (this.footsteps.length == this.kim) {
+    if (this.animals.length == this.kim) {
       this.presentAlert5();
     } else {
       this.presentAlert4();
     }
 
-    if (JSON.parse(localStorage.getItem('animalsinitialNum')) == this.footsteps.length) {
-      var initialNum = (this.zviko + 2);
-      console.log("this.navData.getParamData3().length", this.footsteps.length);
-      console.log("JSON.parse(localStorage.getItem('initialNum'))", JSON.parse(localStorage.getItem('animalsinitialNum')));
+    if (JSON.parse(localStorage.getItem('animalsinitialNum')) == this.animals.length) {
+      var animalsinitialNum = (this.zviko + 2);
+      console.log("this.navData.getParamData3().length", this.animals.length);
+      console.log("JSON.parse(localStorage.getItem('animalsinitialNum'))", JSON.parse(localStorage.getItem('animalsinitialNum')));
 
-      console.log("var initialNum", initialNum);
+      console.log("var animalsinitialNum", animalsinitialNum);
       
-      localStorage.setItem('animalsinitialNum', JSON.stringify(initialNum));
+      localStorage.setItem('animalsinitialNum', JSON.stringify(animalsinitialNum));
       this.presentAlert9();
     } 
 
-    if(this.footsteps.length == 25) {
+    if(this.animals.length == 25) {
       this.completed = true;
-      localStorage.setItem('complete', JSON.stringify(this.completed));
+      localStorage.setItem('animalscomplete', JSON.stringify(this.completed));
       this.presentAlert3();
     }
   }
