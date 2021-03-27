@@ -92,6 +92,7 @@ export class FootprintsPage implements OnInit {
 
     if(JSON.parse(localStorage.getItem('nextLevel')) > 4) {
       this.numberofSteps();
+      this.choosenNum = JSON.parse(localStorage.getItem('cNum'));
       this.chooseColor = JSON.parse(localStorage.getItem('zColors'));
       this.solutionFun();
     }
@@ -186,6 +187,7 @@ export class FootprintsPage implements OnInit {
       this.newArray.push(this.footsteps[i]);
     }
     console.log('new array', this.newArray);
+    localStorage.setItem("cNum", JSON.stringify(this.choosenNum));
     // this.hidingDivs(realNum + 3000);
   }
 
