@@ -90,7 +90,7 @@ export class FootprintsPage implements OnInit {
     console.log("zvikoNum",  JSON.parse(localStorage.getItem('initialNum')));
     // console.log(JSON.parse(localStorage.getItem('initialNum')))
 
-    if(this.nextLevel == "nextLevel") {
+    if(JSON.parse(localStorage.getItem('nextLevel')) > 4) {
       this.numberofSteps();
       this.chooseColor = JSON.parse(localStorage.getItem('zColors'));
       this.solutionFun();

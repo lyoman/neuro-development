@@ -11,12 +11,12 @@
 
 <ion-content>
 
-    <h1 *ngIf="nextLevel" style="text-align: center;">Now on Level {{ nextLevel }}</h1><br>
+    <h1 *ngIf="nextLevel" style="text-align: center;">Now on Level {{ nextLevel }}</h1>
 
     <div>
         <ion-button tappable color="warning" expand="block" style="color: white;" (click)="presentAlertConfirm()">Reset Game
         </ion-button>
-    </div>
+    </div><br>
 
     <!-- <div *ngIf="newLevel != 'yes'"> -->
     <div *ngIf="hideTop == 'false'">
