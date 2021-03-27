@@ -89,6 +89,12 @@ export class FootprintsPage implements OnInit {
     }
     console.log("zvikoNum",  JSON.parse(localStorage.getItem('initialNum')));
     // console.log(JSON.parse(localStorage.getItem('initialNum')))
+
+    if(this.nextLevel == "nextLevel") {
+      this.numberofSteps();
+      this.chooseColor = JSON.parse(localStorage.getItem('zColors'));
+      this.solutionFun();
+    }
   }
 
 
@@ -191,6 +197,7 @@ export class FootprintsPage implements OnInit {
     for (let i = 0; i < this.chooseColor; i++) {
       this.solutionFinalFinal.push(this.solutionFinal[i]);
     }
+    localStorage.setItem('zColors', JSON.stringify(this.chooseColor));
     console.log('logic', this.solutionFinalFinal);
     localStorage.setItem("logic", JSON.stringify(this.solutionFinalFinal));
     this.cloneArray(JSON.parse(localStorage.getItem('initialNum')), this.solutionFinalFinal, this.newColorArray, this.Kim);
