@@ -16,6 +16,9 @@ export class FootprintsPage implements OnInit {
   firstDiv = "true";
   footsteps = [];
 
+  newLevel = JSON.parse(localStorage.getItem('newLevel'));
+  nextLevel = JSON.parse(localStorage.getItem('nextLevel'));
+
   newArray = [];
   Kim = [];
   hideTop = "false";

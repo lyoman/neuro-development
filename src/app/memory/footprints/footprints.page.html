@@ -11,35 +11,41 @@
 
 <ion-content>
 
+    <h1 *ngIf="nextLevel" style="text-align: center;">Now on Level {{ nextLevel }}</h1><br>
+
     <div>
-        <ion-button tappable color="warning" expand="block" style="color: white;" (click)="presentAlertConfirm()">Reset Game</ion-button>
+        <ion-button tappable color="warning" expand="block" style="color: white;" (click)="presentAlertConfirm()">Reset Game
+        </ion-button>
     </div>
 
-    <div *ngIf="hideTop == 'false'">
-        <div id="numberofsteps" *ngIf="clickedNum == 'false'">
-            <h2>Choose the number of steps</h2>
+    <div *ngIf="newLevel != 'yes'">
+        <div *ngIf="hideTop == 'false'">
+            <div id="numberofsteps" *ngIf="clickedNum == 'false'">
+                <h2>Choose the number of steps</h2>
 
-            <ion-select placeholder="Select the number of steps you want" name="choosenNum" [(ngModel)]="choosenNum">
-                <ion-select-option *ngFor="let footstep of myNumbers; 
+                <ion-select placeholder="Select the number of steps you want" name="choosenNum" [(ngModel)]="choosenNum">
+                    <ion-select-option *ngFor="let footstep of myNumbers; 
                 let i = index;">{{ footstep.num }}</ion-select-option>
+                </ion-select>
+
+                <ion-button tappable (click)="numberofSteps()" color="primary" expand="block">Submit</ion-button>
+            </div>
+        </div>
+
+        <div id="numberofsteps" *ngIf="numberOfColors == 'true'">
+            <h2>Choose the number of Colors</h2>
+
+            <ion-select placeholder="Select Number of Colors you want" [(ngModel)]="chooseColor">
+                <ion-select-option *ngFor="let footstep of myColors; 
+            let i = index;">{{ footstep.color }}</ion-select-option>
             </ion-select>
 
-            <ion-button tappable (click)="numberofSteps()" color="primary" expand="block">Submit</ion-button>
+            <ion-button tappable (click)="solutionFun()" color="primary" expand="block">Submit</ion-button>
         </div>
+
     </div>
 
-    <div id="numberofsteps" *ngIf="numberOfColors == 'true'">
-        <h2>Choose the number of Colors</h2>
-
-        <ion-select placeholder="Select Number of Colors you want" [(ngModel)]="chooseColor">
-            <ion-select-option *ngFor="let footstep of myColors; 
-            let i = index;">{{ footstep.color }}</ion-select-option>
-        </ion-select>
-
-        <ion-button tappable (click)="solutionFun()" color="primary" expand="block">Submit</ion-button>
-    </div>
-
-    <div *ngIf="clickedNum == 'true'">
+    <div *ngIf="clickedNum == 'true' || nextLevel == 'nextLevel'">
         <ion-grid *ngIf="showImage">
             <ion-row>
                 <ion-col size="4" no-padding *ngIf="Kim[0]">
