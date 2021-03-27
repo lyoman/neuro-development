@@ -12,17 +12,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TryagainResultsPage implements OnInit {
 
-  footsteps = [];
+  math = [];
   wrongSteps = [];
   kim;
   zviko;
 
   completed = false;
-  initialNum = 3;
+  mathinitialNum = 3;
 
   originalSteps = [];
 
-  constructor( 
+  constructor(
     private navData: NavigateDataService,
     private loadingService: LoadingService,
     private graphicsService: GraphicsService,
@@ -32,37 +32,37 @@ export class TryagainResultsPage implements OnInit {
 
   ngOnInit() {
     this.loadingService.presentLoading();
-    this.footsteps = JSON.parse(localStorage.getItem('mathpushedToResults'));
+    this.math = JSON.parse(localStorage.getItem('mathpushedToResults'));
     this.wrongSteps = JSON.parse(localStorage.getItem('mathfailedResults'));
     this.originalSteps = JSON.parse(localStorage.getItem('mathuserList'));
 
-    console.log("original footsteps", this.originalSteps);
-    console.log('Correct footsteps', this.footsteps);
+    console.log("original math", this.originalSteps);
+    console.log('Correct math', this.math);
     console.log('Correct wrongSteps', this.wrongSteps);
 
     this.kim = JSON.parse(localStorage.getItem('mathuserNum'));
     this.zviko = JSON.parse(localStorage.getItem('mathinitialNum'));
     
-    if (this.footsteps.length == this.kim) {
+    if (this.math.length == this.kim) {
       this.presentAlert5();
     } else {
       this.presentAlert4();
     }
 
-    if (JSON.parse(localStorage.getItem('mathinitialNum')) == this.footsteps.length) {
-      var initialNum = (this.zviko + 2);
-      console.log("this.navData.getParamData3().length", this.footsteps.length);
-      console.log("JSON.parse(localStorage.getItem('initialNum'))", JSON.parse(localStorage.getItem('mathinitialNum')));
+    if (JSON.parse(localStorage.getItem('mathinitialNum')) == this.math.length) {
+      var mathinitialNum = (this.zviko + 2);
+      console.log("this.navData.getParamData3().length", this.math.length);
+      console.log("JSON.parse(localStorage.getItem('mathinitialNum'))", JSON.parse(localStorage.getItem('mathinitialNum')));
 
-      console.log("var initialNum", initialNum);
+      console.log("var mathinitialNum", mathinitialNum);
       
-      localStorage.setItem('mathinitialNum', JSON.stringify(initialNum));
+      localStorage.setItem('mathinitialNum', JSON.stringify(mathinitialNum));
       this.presentAlert9();
     } 
 
-    if(this.footsteps.length == 25) {
+    if(this.math.length == 25) {
       this.completed = true;
-      localStorage.setItem('complete', JSON.stringify(this.completed));
+      localStorage.setItem('mathcomplete', JSON.stringify(this.completed));
       this.presentAlert3();
     }
   }

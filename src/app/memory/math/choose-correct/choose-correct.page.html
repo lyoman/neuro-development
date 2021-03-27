@@ -19,7 +19,7 @@
 
 
         <ion-grid *ngIf="viewSteps.length != 0">
-            <h2 *ngIf="viewSteps.length != 0">Selected Animals</h2>
+            <h2 *ngIf="viewSteps.length != 0">Selected Math</h2>
             <ion-button *ngIf="viewSteps.length == kim" (click)="results(viewSteps)" expand="block" color="success">Finish</ion-button>
             <ion-row>
                 <ion-col *ngFor="let footstep1 of viewSteps; 
@@ -27,7 +27,7 @@
                     <ion-card>
                         <br>
                         <img [src]="footstep1">
-                        <h3>animal {{i + 1}}</h3>
+                        <h3>math {{i + 1}}</h3>
                     </ion-card>
                 </ion-col>
             </ion-row>
@@ -41,7 +41,7 @@
                     <ion-card>
                         <br>
                         <img [src]="footstep">
-                        <!-- <h3>animal {{i + 1}}</h3> -->
+                        <!-- <h3>math {{i + 1}}</h3> -->
                     </ion-card>
                 </ion-col>
             </ion-row>

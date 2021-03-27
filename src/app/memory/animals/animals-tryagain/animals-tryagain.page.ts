@@ -52,7 +52,7 @@ export class AnimalsTryagainPage implements OnInit {
     this.wrongSteps = this.navData.getParamData2();
     this.originalSteps = JSON.parse(localStorage.getItem('animalsuserList'));
 
-    this.kimAgain = JSON.parse(localStorage.getItem("logic"));
+    this.kimAgain = JSON.parse(localStorage.getItem("animalslogic"));
     this.kim = JSON.parse(localStorage.getItem('animalsinitialNum'));
 
     console.log("original footsteps", this.originalSteps);

@@ -52,7 +52,7 @@ export class MathTryagainPage implements OnInit {
     this.wrongSteps = this.navData.getParamData2();
     this.originalSteps = JSON.parse(localStorage.getItem('mathuserList'));
 
-    this.kimAgain = JSON.parse(localStorage.getItem("logic"));
+    this.kimAgain = JSON.parse(localStorage.getItem("mathlogic"));
     this.kim = JSON.parse(localStorage.getItem('mathinitialNum'));
 
     console.log("original footsteps", this.originalSteps);

@@ -1,9 +1,9 @@
+import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { GraphicsService } from './../../../services/graphics.service';
 import { LoadingService } from './../../../services/loading.service';
 import { NavigateDataService } from './../../../services/navigate-data.service';
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-results',
@@ -11,7 +11,8 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./results.page.scss'],
 })
 export class ResultsPage implements OnInit {
-  footsteps = [];
+
+  animals = [];
   wrongSteps = [];
   kim;
   zviko;
@@ -33,27 +34,27 @@ export class ResultsPage implements OnInit {
 
   ngOnInit() {
     this.loadingService.presentLoading();
-    this.footsteps = JSON.parse(localStorage.getItem('animalspushedToResults'));
+    this.animals = JSON.parse(localStorage.getItem('animalspushedToResults'));
     this.wrongSteps = JSON.parse(localStorage.getItem('animalsfailedResults'));
     this.originalSteps = JSON.parse(localStorage.getItem('animalsuserList'));
 
-    console.log("original footsteps", this.originalSteps);
-    console.log('Correct footsteps', this.footsteps);
+    console.log("original animals", this.originalSteps);
+    console.log('Correct animals', this.animals);
     console.log('Correct wrongSteps', this.wrongSteps);
 
     this.kim = JSON.parse(localStorage.getItem('animalsuserNum'));
     this.zviko = JSON.parse(localStorage.getItem('animalsinitialNum'));
     
-    if (this.footsteps.length == this.kim) {
+    if (this.animals.length == this.kim) {
       this.presentAlert5();
     } else {
       this.presentAlert4();
     }
 
-    if (JSON.parse(localStorage.getItem('animalsinitialNum')) == this.footsteps.length) {
+    if (JSON.parse(localStorage.getItem('animalsinitialNum')) == this.animals.length) {
       // this.animalsinitialNum += 2;
       var animalsinitialNum = (this.zviko + 2);
-      console.log("this.navData.getParamData3().length", this.footsteps.length);
+      console.log("this.navData.getParamData3().length", this.animals.length);
       console.log("JSON.parse(localStorage.getItem('animalsinitialNum'))", JSON.parse(localStorage.getItem('animalsinitialNum')));
       console.log("animalsinitialNum", animalsinitialNum);
       
@@ -61,9 +62,9 @@ export class ResultsPage implements OnInit {
       this.presentAlert9();
     } 
 
-    if(this.footsteps.length == 25) {
+    if(this.animals.length == 25) {
       this.completed = true;
-      localStorage.setItem('complete', JSON.stringify(this.completed));
+      localStorage.setItem('animalscomplete', JSON.stringify(this.completed));
       this.presentAlert3();
     }
   }
