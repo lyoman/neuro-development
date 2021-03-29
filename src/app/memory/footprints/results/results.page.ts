@@ -85,6 +85,8 @@ export class ResultsPage implements OnInit {
     subHeader: 'Level completed, you are a genius, choose a different icon and play again!!!',
     cssClass: 'custom-alertDanger',
     buttons: ['Dismiss']}).then(alert=> alert.present());
+    localStorage.removeItem("cNum");
+    localStorage.removeItem("zColors");
   }
 
   presentAlert9() {
@@ -101,6 +103,10 @@ export class ResultsPage implements OnInit {
     subHeader: 'Well played here are your results, feel free to play again',
     cssClass: 'custom-alertDanger',
     buttons: ['Dismiss']}).then(alert=> alert.present());
+  }
+
+  clearMemory() {
+    localStorage.clear();
   }
 
 }

@@ -80,7 +80,7 @@ export class FootprintsPage implements OnInit {
     // this.footsteps = this.graphicsService.footsteps;F
     // const footsteps = this.shuffle(this.graphicsService.footsteps);
     this.footsteps = this.shuffle1(this.graphicsService.footsteps);
-    console.log("JSON.pars", JSON.parse(localStorage.getItem("cNum")));
+    // console.log("JSON.pars", JSON.parse(localStorage.getItem("cNum")));
     //  console.log('shuffle', this.footsteps);
 
     if(JSON.parse(localStorage.getItem('initialNum')) == null){
