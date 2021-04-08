@@ -211,9 +211,23 @@ export class FootprintsPage implements OnInit {
     console.log("CLONE Array", newArray);
     while (newArray.length < arrayLenth) {
       pushArray = this.shuffle1(imwe);
-      newArray.push(pushArray[0]);
-      newArray.push(pushArray[2]);
-      newArray.push(pushArray[1]);
+      if(arrayLenth == 3){
+        newArray.push(pushArray[0]);
+        newArray.push(pushArray[0]);
+        newArray.push(pushArray[0]);
+      }
+      if(arrayLenth == 5){
+        newArray.push(pushArray[0]);
+        newArray.push(pushArray[0]);
+        newArray.push(pushArray[0]);
+        newArray.push(pushArray[2]);
+        newArray.push(pushArray[1]);
+      }
+      if(arrayLenth > 6)    {
+        newArray.push(pushArray[0]);
+        newArray.push(pushArray[2]);
+        newArray.push(pushArray[1]);
+      }
     }
 
     for (let i = 0; i < arrayLenth; i++) {
