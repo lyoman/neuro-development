@@ -102,4 +102,9 @@ export class TryagainResultsPage implements OnInit {
   }
 
 
+  clearMemory() {
+    localStorage.clear();
+  }
+
+
 }

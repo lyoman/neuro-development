@@ -35,7 +35,7 @@
 
     <h2 *ngIf="footsteps.length == kim" style="background-color: green;">Way to go!</h2>
     <ion-grid *ngIf="footsteps.length == kim">
-        <ion-button [routerLink]="['/sequential']" expand="block" color="success">Play again!</ion-button>
+        <ion-button [routerLink]="['/sequential']" expand="block" color="success" (click)="clearMemory()">Play again!</ion-button>
     </ion-grid>
 
     <h2 style="background-color: green;" *ngIf="footsteps.length == zviko && footsteps.length != kim">Way to go!</h2>

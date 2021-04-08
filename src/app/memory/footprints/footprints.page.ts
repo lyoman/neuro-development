@@ -80,6 +80,7 @@ export class FootprintsPage implements OnInit {
     // this.footsteps = this.graphicsService.footsteps;F
     // const footsteps = this.shuffle(this.graphicsService.footsteps);
     this.footsteps = this.shuffle1(this.graphicsService.footsteps);
+    // console.log("JSON.pars", JSON.parse(localStorage.getItem("cNum")));
     //  console.log('shuffle', this.footsteps);
 
     if(JSON.parse(localStorage.getItem('initialNum')) == null){
@@ -92,8 +93,6 @@ export class FootprintsPage implements OnInit {
 
     if(JSON.parse(localStorage.getItem('nextLevel')) > 4) {
       this.numberofSteps();
-      this.choosenNum = JSON.parse(localStorage.getItem('cNum'));
-      this.chooseColor = JSON.parse(localStorage.getItem('zColors'));
       this.solutionFun();
     }
   }
@@ -182,24 +181,35 @@ export class FootprintsPage implements OnInit {
     console.log('num', JSON.parse(localStorage.getItem('initialNum')));
     this.hideTop = "true";
     this.numberOfColors = "true";
+    if (JSON.parse(localStorage.getItem('nextLevel')) > 4){
+      this.choosenNum = JSON.parse(localStorage.getItem("cNum"));
+    }
     var realNum = (1000 * JSON.parse(localStorage.getItem('initialNum')))
     for (let i = 0; i < JSON.parse(localStorage.getItem('initialNum')); i++) {
       this.newArray.push(this.footsteps[i]);
     }
+    if (JSON.parse(localStorage.getItem('nextLevel')) < 4){
+      localStorage.setItem('cNum', JSON.stringify(this.choosenNum));
+    }
     console.log('new array', this.newArray);
-    localStorage.setItem("cNum", JSON.stringify(this.choosenNum));
+    // localStorage.setItem("cNum", JSON.stringify(this.choosenNum));
     // this.hidingDivs(realNum + 3000);
   }
 
   solutionFun() {
     this.clickedNum = "true";
     this.numberOfColors = "false";
+    if(JSON.parse(localStorage.getItem('nextLevel')) > 4){
+      this.chooseColor = JSON.parse(localStorage.getItem('zColors'));
+    }
     console.log("number of colors", this.chooseColor);
     this.solutionFinal = this.shuffle1(this.solution);
     for (let i = 0; i < this.chooseColor; i++) {
       this.solutionFinalFinal.push(this.solutionFinal[i]);
     }
-    localStorage.setItem('zColors', JSON.stringify(this.chooseColor));
+    if (JSON.parse(localStorage.getItem('nextLevel')) < 4){
+      localStorage.setItem('zColors', JSON.stringify(this.chooseColor));
+    }
     console.log('logic', this.solutionFinalFinal);
     localStorage.setItem("logic", JSON.stringify(this.solutionFinalFinal));
     this.cloneArray(JSON.parse(localStorage.getItem('initialNum')), this.solutionFinalFinal, this.newColorArray, this.Kim);
