@@ -56,6 +56,8 @@ export class FootprintsPage implements OnInit {
 
   newColorArray = [];
 
+  stepNum5 = [];
+
   zvikoNum;
 
   constructor(
@@ -233,7 +235,14 @@ export class FootprintsPage implements OnInit {
         newArray.push(pushArray[2]);
         newArray.push(pushArray[1]);
       }
-      if(arrayLenth > 6)    {
+      if(arrayLenth == 7)    {
+        this.stepNum5 = JSON.parse(localStorage.getItem('stepNum5'));
+        newArray.push(pushArray[0]);
+        newArray.push(pushArray[2]);
+        newArray.concat(this.stepNum5);
+      }
+
+      if(arrayLenth > 8)    {
         newArray.push(pushArray[0]);
         newArray.push(pushArray[2]);
         newArray.push(pushArray[1]);
@@ -242,6 +251,10 @@ export class FootprintsPage implements OnInit {
 
     for (let i = 0; i < arrayLenth; i++) {
       Kim.push(newArray[i]);
+    }
+
+    if (arrayLenth == 5){
+      localStorage.setItem("stepNum5", JSON.stringify(Kim));
     }
     console.log("Final Final", Kim);
     localStorage.setItem("finalArray", Kim);
