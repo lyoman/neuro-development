@@ -61,7 +61,7 @@ export class ResultsPage implements OnInit {
       
       localStorage.setItem('nextLevel', JSON.parse(initialNum));
       localStorage.setItem('initialNum', JSON.stringify(initialNum));
-      this.presentAlert9();
+      // this.presentAlert9();
     } 
 
     if(this.footsteps.length == 25) {

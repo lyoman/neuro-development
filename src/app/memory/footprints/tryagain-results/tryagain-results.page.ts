@@ -59,7 +59,7 @@ export class TryagainResultsPage implements OnInit {
       
       localStorage.setItem('initialNum', JSON.stringify(initialNum));
       localStorage.setItem('nextLevel', JSON.parse(initialNum));
-      this.presentAlert9();
+      // this.presentAlert9();
     } 
 
     if(this.footsteps.length == 25) {
