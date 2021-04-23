@@ -79,19 +79,13 @@ export class FootprintsPage implements OnInit {
   }
 
   ngOnInit() {
-    // this.footsteps = this.graphicsService.footsteps;F
-    // const footsteps = this.shuffle(this.graphicsService.footsteps);
     this.footsteps = this.shuffle1(this.graphicsService.footsteps);
-    // console.log("JSON.pars", JSON.parse(localStorage.getItem("cNum")));
-    //  console.log('shuffle', this.footsteps);
 
     if(JSON.parse(localStorage.getItem('initialNum')) == null){
       localStorage.setItem('initialNum', JSON.stringify(3));
-      // this.zvikoNum = JSON.parse(localStorage.getItem('initialNum'));
-      console.log(JSON.parse(localStorage.getItem('initialNum')))
+      console.log(JSON.parse(localStorage.getItem('initialNum')));
     }
     console.log("zvikoNum",  JSON.parse(localStorage.getItem('initialNum')));
-    // console.log(JSON.parse(localStorage.getItem('initialNum')))
 
     if(JSON.parse(localStorage.getItem('nextLevel')) > 4) {
       this.numberofSteps();
@@ -194,8 +188,6 @@ export class FootprintsPage implements OnInit {
       localStorage.setItem('cNum', JSON.stringify(this.choosenNum));
     }
     console.log('new array', this.newArray);
-    // localStorage.setItem("cNum", JSON.stringify(this.choosenNum));
-    // this.hidingDivs(realNum + 3000);
   }
 
   solutionFun() {
@@ -224,16 +216,28 @@ export class FootprintsPage implements OnInit {
     while (newArray.length < arrayLenth) {
       pushArray = this.shuffle1(imwe);
       if(arrayLenth == 3){
+        var leon = [];
         newArray.push(pushArray[0]);
         newArray.push(pushArray[0]);
         newArray.push(pushArray[0]);
+        leon = newArray;
+        console.log("three elements", leon);
+        localStorage.setItem("array3", JSON.stringify(leon));
+        console.log("leo", JSON.parse(localStorage.getItem("array3")));
       }
       if(arrayLenth == 5){
-        newArray.push(pushArray[0]);
-        newArray.push(pushArray[0]);
-        newArray.push(pushArray[0]);
-        newArray.push(pushArray[2]);
-        newArray.push(pushArray[1]);
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("array3")));
+        leon = JSON.parse(localStorage.getItem("array3"));
+        // newArray.push(pushArray[0]);
+        // newArray.push(pushArray[0]);
+        // newArray.push(pushArray[0]);
+        // newArray.push(pushArray[2]);
+        // newArray.push(pushArray[1]);
+        leon.push(pushArray[2]);
+        leon.push(pushArray[1]);
+        // leon.concat(leon);
+        console.log("no problem", leon);
       }
       if(arrayLenth == 7)    {
         this.stepNum5 = JSON.parse(localStorage.getItem('stepNum5'));
@@ -253,9 +257,9 @@ export class FootprintsPage implements OnInit {
       Kim.push(newArray[i]);
     }
 
-    if (arrayLenth == 5){
-      localStorage.setItem("stepNum5", JSON.stringify(Kim));
-    }
+    // if (arrayLenth == 5){
+    //   localStorage.setItem("stepNum5", JSON.stringify(Kim));
+    // }
     console.log("Final Final", Kim);
     localStorage.setItem("finalArray", Kim);
     var realNum = (1000 * JSON.parse(localStorage.getItem('initialNum')));
