@@ -57,6 +57,7 @@ export class FootprintsPage implements OnInit {
   newColorArray = [];
 
   stepNum5 = [];
+  idontknow = [];
 
   zvikoNum;
 
@@ -221,23 +222,25 @@ export class FootprintsPage implements OnInit {
         newArray.push(pushArray[0]);
         newArray.push(pushArray[0]);
         leon = newArray;
+        this.idontknow = newArray;
         console.log("three elements", leon);
         localStorage.setItem("array3", JSON.stringify(leon));
         console.log("leo", JSON.parse(localStorage.getItem("array3")));
       }
       if(arrayLenth == 5){
-        var leon = [];
+        // var leon = [];
         console.log("leo", JSON.parse(localStorage.getItem("array3")));
-        leon = JSON.parse(localStorage.getItem("array3"));
+        // leon = JSON.parse(localStorage.getItem("array3"));
         // newArray.push(pushArray[0]);
         // newArray.push(pushArray[0]);
         // newArray.push(pushArray[0]);
         // newArray.push(pushArray[2]);
         // newArray.push(pushArray[1]);
-        leon.push(pushArray[2]);
-        leon.push(pushArray[1]);
+        // leon.push(pushArray[2]);
+        // leon.push(pushArray[1]);
         // leon.concat(leon);
-        console.log("no problem", leon);
+        // console.log("no problem", leon);
+        // this.idontknow = leon;
       }
       if(arrayLenth == 7)    {
         this.stepNum5 = JSON.parse(localStorage.getItem('stepNum5'));
@@ -254,7 +257,7 @@ export class FootprintsPage implements OnInit {
     }
 
     for (let i = 0; i < arrayLenth; i++) {
-      Kim.push(newArray[i]);
+      Kim.push(this.idontknow[i]);
     }
 
     // if (arrayLenth == 5){
