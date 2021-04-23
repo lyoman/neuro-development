@@ -216,30 +216,36 @@ export class FootprintsPage implements OnInit {
     console.log("CLONE Array", newArray);
     while (newArray.length < arrayLenth) {
       pushArray = this.shuffle1(imwe);
+
       if(arrayLenth == 3){
         var leon = [];
+        // newArray = [];
         newArray.push(pushArray[0]);
         newArray.push(pushArray[0]);
         newArray.push(pushArray[0]);
         leon = newArray;
         this.idontknow = newArray;
-        console.log("three elements", leon);
+        // console.log("three elements", leon);
         localStorage.setItem("array3", JSON.stringify(leon));
         console.log("leo", JSON.parse(localStorage.getItem("array3")));
       }
       if(arrayLenth == 5){
-        // var leon = [];
+        var leon = [];
+        // this.idontknow = [];
         console.log("leo", JSON.parse(localStorage.getItem("array3")));
-        // leon = JSON.parse(localStorage.getItem("array3"));
+        leon = JSON.parse(localStorage.getItem("array3"));
+        for (let i=0; i<leon.length; i++) {
+          this.newArray.push(leon[i]);
+        }
         // newArray.push(pushArray[0]);
         // newArray.push(pushArray[0]);
         // newArray.push(pushArray[0]);
-        // newArray.push(pushArray[2]);
-        // newArray.push(pushArray[1]);
+        newArray.push(pushArray[2]);
+        newArray.push(pushArray[1]);
         // leon.push(pushArray[2]);
         // leon.push(pushArray[1]);
         // leon.concat(leon);
-        // console.log("no problem", leon);
+        console.log("no problem", newArray);
         // this.idontknow = leon;
       }
       if(arrayLenth == 7)    {
@@ -257,7 +263,7 @@ export class FootprintsPage implements OnInit {
     }
 
     for (let i = 0; i < arrayLenth; i++) {
-      Kim.push(this.idontknow[i]);
+      Kim.push(this.newArray[i]);
     }
 
     // if (arrayLenth == 5){
