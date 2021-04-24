@@ -267,10 +267,139 @@ export class FootprintsPage implements OnInit {
         console.log("array 7", JSON.parse(localStorage.getItem("array7")));
       }
 
-      if(arrayLenth > 8)    {
+      if(arrayLenth == 9)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("array7")));
+        leon = JSON.parse(localStorage.getItem("array7"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[1]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("array9", JSON.stringify(newArray));
+        console.log("array 9", JSON.parse(localStorage.getItem("array9")));
+      }
+
+      if(arrayLenth == 11)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("array9")));
+        leon = JSON.parse(localStorage.getItem("array9"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[2]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("array11", JSON.stringify(newArray));
+        console.log("array 11", JSON.parse(localStorage.getItem("array11")));
+      }
+
+      if(arrayLenth == 13)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("array11")));
+        leon = JSON.parse(localStorage.getItem("array11"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[1]);
+        newArray.push(pushArray[2]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("array13", JSON.stringify(newArray));
+        console.log("array 13", JSON.parse(localStorage.getItem("array13")));
+      }
+
+      if(arrayLenth == 15)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("array13")));
+        leon = JSON.parse(localStorage.getItem("array13"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
         newArray.push(pushArray[0]);
         newArray.push(pushArray[2]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("array15", JSON.stringify(newArray));
+        console.log("array 15", JSON.parse(localStorage.getItem("array15")));
+      }
+
+      if(arrayLenth == 17)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("array15")));
+        leon = JSON.parse(localStorage.getItem("array15"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[2]);
         newArray.push(pushArray[1]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("array17", JSON.stringify(newArray));
+        console.log("array 17", JSON.parse(localStorage.getItem("array17")));
+      }
+
+      if(arrayLenth == 19)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("array17")));
+        leon = JSON.parse(localStorage.getItem("array17"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[0]);
+        newArray.push(pushArray[2]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("array19", JSON.stringify(newArray));
+        console.log("array 19", JSON.parse(localStorage.getItem("array19")));
+      }
+
+      if(arrayLenth == 21)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("array19")));
+        leon = JSON.parse(localStorage.getItem("array19"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[2]);
+        newArray.push(pushArray[1]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("array21", JSON.stringify(newArray));
+        console.log("array 21", JSON.parse(localStorage.getItem("array21")));
+      }
+
+      if(arrayLenth == 23)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("array21")));
+        leon = JSON.parse(localStorage.getItem("array21"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[2]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("array23", JSON.stringify(newArray));
+        console.log("array 23", JSON.parse(localStorage.getItem("array23")));
+      }
+
+      if(arrayLenth == 25)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("array23")));
+        leon = JSON.parse(localStorage.getItem("array23"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[2]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("array25", JSON.stringify(newArray));
+        console.log("array 25", JSON.parse(localStorage.getItem("array25")));
       }
     }
 
