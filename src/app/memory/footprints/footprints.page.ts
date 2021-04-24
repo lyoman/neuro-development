@@ -206,9 +206,9 @@ export class FootprintsPage implements OnInit {
       localStorage.setItem('zColors', JSON.stringify(this.chooseColor));
     }
     console.log('logic', this.solutionFinalFinal);
-    if (JSON.parse(localStorage.getItem('initialNum')) < JSON.parse(localStorage.getItem('nextLevel'))) {
+    // if (JSON.parse(localStorage.getItem('initialNum')) < JSON.parse(localStorage.getItem('nextLevel'))) {
       localStorage.setItem("logic", JSON.stringify(this.solutionFinalFinal));
-    }
+    // }
     this.cloneArray(JSON.parse(localStorage.getItem('initialNum')), this.solutionFinalFinal, this.newColorArray, this.Kim);
   }
 
