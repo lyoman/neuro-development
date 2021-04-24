@@ -231,21 +231,23 @@ export class FootprintsPage implements OnInit {
       }
       if(arrayLenth == 5){
         var leon = [];
-        // this.idontknow = [];
+        // this.idontknow = [];`
         console.log("leo", JSON.parse(localStorage.getItem("array3")));
         leon = JSON.parse(localStorage.getItem("array3"));
         for (let i=0; i<leon.length; i++) {
-          this.newArray.push(leon[i]);
+          newArray.push(leon[i]);
         }
         // newArray.push(pushArray[0]);
         // newArray.push(pushArray[0]);
         // newArray.push(pushArray[0]);
         newArray.push(pushArray[2]);
-        newArray.push(pushArray[1]);
+        newArray.push(pushArray[0]);
         // leon.push(pushArray[2]);
         // leon.push(pushArray[1]);
         // leon.concat(leon);
         console.log("no problem", newArray);
+        localStorage.setItem("array5", JSON.stringify(newArray));
+        console.log("array 5", JSON.parse(localStorage.getItem("array5")));
         // this.idontknow = leon;
       }
       if(arrayLenth == 7)    {
