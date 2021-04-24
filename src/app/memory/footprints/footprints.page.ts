@@ -224,7 +224,7 @@ export class FootprintsPage implements OnInit {
         newArray.push(pushArray[0]);
         newArray.push(pushArray[0]);
         leon = newArray;
-        this.idontknow = newArray;
+        // this.idontknow = newArray;
         // console.log("three elements", leon);
         localStorage.setItem("array3", JSON.stringify(leon));
         console.log("leo", JSON.parse(localStorage.getItem("array3")));
@@ -263,13 +263,16 @@ export class FootprintsPage implements OnInit {
     }
 
     for (let i = 0; i < arrayLenth; i++) {
-      Kim.push(this.newArray[i]);
+      Kim.push(newArray[i]);
+      // console.log("hameno", )
     }
+    // Kim = newArray;
 
     // if (arrayLenth == 5){
     //   localStorage.setItem("stepNum5", JSON.stringify(Kim));
     // }
     console.log("Final Final", Kim);
+    console.log("Final again", newArray);
     localStorage.setItem("finalArray", Kim);
     var realNum = (1000 * JSON.parse(localStorage.getItem('initialNum')));
     this.hidingDivs(realNum + 3000);
