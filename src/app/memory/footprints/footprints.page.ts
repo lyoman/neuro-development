@@ -206,7 +206,9 @@ export class FootprintsPage implements OnInit {
       localStorage.setItem('zColors', JSON.stringify(this.chooseColor));
     }
     console.log('logic', this.solutionFinalFinal);
-    localStorage.setItem("logic", JSON.stringify(this.solutionFinalFinal));
+    if (JSON.parse(localStorage.getItem('initialNum')) < JSON.parse(localStorage.getItem('nextLevel'))) {
+      localStorage.setItem("logic", JSON.stringify(this.solutionFinalFinal));
+    }
     this.cloneArray(JSON.parse(localStorage.getItem('initialNum')), this.solutionFinalFinal, this.newColorArray, this.Kim);
   }
 
@@ -251,10 +253,18 @@ export class FootprintsPage implements OnInit {
         // this.idontknow = leon;
       }
       if(arrayLenth == 7)    {
-        this.stepNum5 = JSON.parse(localStorage.getItem('stepNum5'));
-        newArray.push(pushArray[0]);
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("array5")));
+        leon = JSON.parse(localStorage.getItem("array5"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
         newArray.push(pushArray[2]);
-        newArray.concat(this.stepNum5);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("array7", JSON.stringify(newArray));
+        console.log("array 7", JSON.parse(localStorage.getItem("array7")));
       }
 
       if(arrayLenth > 8)    {
