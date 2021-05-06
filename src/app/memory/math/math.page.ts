@@ -244,6 +244,7 @@ export class MathPage implements OnInit {
         console.log("array 5", JSON.parse(localStorage.getItem("matharray5")));
         // this.idontknow = leon;
       }
+
       if(arrayLenth == 7)    {
         var leon = [];
         console.log("leo", JSON.parse(localStorage.getItem("matharray5")));
@@ -257,6 +258,21 @@ export class MathPage implements OnInit {
         console.log("no problem", newArray);
         localStorage.setItem("matharray7", JSON.stringify(newArray));
         console.log("array 7", JSON.parse(localStorage.getItem("matharray7")));
+      }
+
+      if(arrayLenth == 8)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("matharray7")));
+        leon = JSON.parse(localStorage.getItem("matharray7"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[1]);
+        // newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("matharray8", JSON.stringify(newArray));
+        console.log("array 8", JSON.parse(localStorage.getItem("matharray8")));
       }
 
       if(arrayLenth == 9)    {
@@ -274,6 +290,21 @@ export class MathPage implements OnInit {
         console.log("array 9", JSON.parse(localStorage.getItem("matharray9")));
       }
 
+      if(arrayLenth == 10)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("matharray9")));
+        leon = JSON.parse(localStorage.getItem("matharray9"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[1]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("matharray10", JSON.stringify(newArray));
+        console.log("array 10", JSON.parse(localStorage.getItem("matharray10")));
+      }
+
       if(arrayLenth == 11)    {
         var leon = [];
         console.log("leo", JSON.parse(localStorage.getItem("matharray9")));
@@ -287,6 +318,21 @@ export class MathPage implements OnInit {
         console.log("no problem", newArray);
         localStorage.setItem("matharray11", JSON.stringify(newArray));
         console.log("array 11", JSON.parse(localStorage.getItem("matharray11")));
+      }
+
+      if(arrayLenth == 12)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("matharray11")));
+        leon = JSON.parse(localStorage.getItem("matharray11"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        // newArray.push(pushArray[1]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("matharray12", JSON.stringify(newArray));
+        console.log("array 12", JSON.parse(localStorage.getItem("matharray12")));
       }
 
       if(arrayLenth == 13)    {
@@ -304,6 +350,21 @@ export class MathPage implements OnInit {
         console.log("array 13", JSON.parse(localStorage.getItem("matharray13")));
       }
 
+      if(arrayLenth == 14)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("matharray13")));
+        leon = JSON.parse(localStorage.getItem("matharray13"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[1]);
+        // newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("matharray14", JSON.stringify(newArray));
+        console.log("array 14", JSON.parse(localStorage.getItem("matharray14")));
+      }
+
       if(arrayLenth == 15)    {
         var leon = [];
         console.log("leo", JSON.parse(localStorage.getItem("matharray13")));
@@ -317,6 +378,21 @@ export class MathPage implements OnInit {
         console.log("no problem", newArray);
         localStorage.setItem("matharray15", JSON.stringify(newArray));
         console.log("array 15", JSON.parse(localStorage.getItem("matharray15")));
+      }
+
+      if(arrayLenth == 16)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("matharray15")));
+        leon = JSON.parse(localStorage.getItem("matharray15"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        // newArray.push(pushArray[1]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("matharray16", JSON.stringify(newArray));
+        console.log("array 16", JSON.parse(localStorage.getItem("matharray16")));
       }
 
       if(arrayLenth == 17)    {
@@ -334,6 +410,21 @@ export class MathPage implements OnInit {
         console.log("array 17", JSON.parse(localStorage.getItem("matharray17")));
       }
 
+      if(arrayLenth == 18)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("matharray17")));
+        leon = JSON.parse(localStorage.getItem("matharray17"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        // newArray.push(pushArray[1]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("matharray18", JSON.stringify(newArray));
+        console.log("array 18", JSON.parse(localStorage.getItem("matharray18")));
+      }
+
       if(arrayLenth == 19)    {
         var leon = [];
         console.log("leo", JSON.parse(localStorage.getItem("matharray17")));
@@ -347,6 +438,21 @@ export class MathPage implements OnInit {
         console.log("no problem", newArray);
         localStorage.setItem("matharray19", JSON.stringify(newArray));
         console.log("array 19", JSON.parse(localStorage.getItem("matharray19")));
+      }
+
+      if(arrayLenth == 20)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("matharray19")));
+        leon = JSON.parse(localStorage.getItem("matharray19"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[1]);
+        // newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("matharray20", JSON.stringify(newArray));
+        console.log("array 20", JSON.parse(localStorage.getItem("matharray20")));
       }
 
       if(arrayLenth == 21)    {
@@ -364,6 +470,21 @@ export class MathPage implements OnInit {
         console.log("array 21", JSON.parse(localStorage.getItem("matharray21")));
       }
 
+      if(arrayLenth == 22)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("matharray21")));
+        leon = JSON.parse(localStorage.getItem("matharray21"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        // newArray.push(pushArray[1]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("matharray22", JSON.stringify(newArray));
+        console.log("array 22", JSON.parse(localStorage.getItem("matharray22")));
+      }
+
       if(arrayLenth == 23)    {
         var leon = [];
         console.log("leo", JSON.parse(localStorage.getItem("matharray21")));
@@ -377,6 +498,21 @@ export class MathPage implements OnInit {
         console.log("no problem", newArray);
         localStorage.setItem("matharray23", JSON.stringify(newArray));
         console.log("array 23", JSON.parse(localStorage.getItem("matharray23")));
+      }
+
+      if(arrayLenth == 24)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("matharray23")));
+        leon = JSON.parse(localStorage.getItem("matharray23"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[1]);
+        // newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("matharray24", JSON.stringify(newArray));
+        console.log("array 24", JSON.parse(localStorage.getItem("matharray24")));
       }
 
       if(arrayLenth == 25)    {

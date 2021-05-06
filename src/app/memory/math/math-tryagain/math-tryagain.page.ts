@@ -48,20 +48,67 @@ export class MathTryagainPage implements OnInit {
 
   ngOnInit() {
     this.loadingService.presentLoading();
-    this.footsteps = this.navData.getParamData3();
-    this.wrongSteps = this.navData.getParamData2();
-    this.originalSteps = JSON.parse(localStorage.getItem('mathuserList'));
-
-    this.kimAgain = JSON.parse(localStorage.getItem("mathlogic"));
-    this.kim = JSON.parse(localStorage.getItem('mathinitialNum'));
+    this.footsteps = JSON.parse(localStorage.getItem('pushedToResults'));
+    this.wrongSteps = JSON.parse(localStorage.getItem('failedResults'));
+    this.originalSteps = JSON.parse(localStorage.getItem('userList'));
 
     console.log("original footsteps", this.originalSteps);
     console.log('Correct footsteps', this.footsteps);
     console.log('Correct wrongSteps', this.wrongSteps);
 
-    this.kim = JSON.parse(localStorage.getItem('mathuserNum'));
-    this.zviko = JSON.parse(localStorage.getItem('mathinitialNum'));
+    this.kim = JSON.parse(localStorage.getItem('userNum'));
+    this.zviko = JSON.parse(localStorage.getItem('initialNum'));
+    
+    if (this.footsteps.length == this.kim) {
+      this.presentAlert5();
+    } else {
+      this.presentAlert4();
+    }
 
+    if (JSON.parse(localStorage.getItem('initialNum')) == this.footsteps.length) {
+      localStorage.setItem('newLevel', JSON.stringify("yes"));
+      var initialNum = (this.zviko + 2);
+      console.log("this.navData.getParamData3().length", this.footsteps.length);
+      console.log("JSON.parse(localStorage.getItem('initialNum'))", JSON.parse(localStorage.getItem('initialNum')));
+
+      console.log("var initialNum", initialNum);
+      
+      localStorage.setItem('initialNum', JSON.stringify(initialNum));
+      localStorage.setItem('nextLevel', JSON.parse(initialNum));
+      // this.presentAlert9();
+    } 
+
+    if(this.footsteps.length == 25) {
+      this.completed = true;
+      localStorage.setItem('complete', JSON.stringify(this.completed));
+      this.presentAlert3();
+    }
+
+  }
+
+  presentAlert5() {
+    const alert = this.alertController.create({
+    header: "Way to go !!!!",
+    subHeader: 'Level completed, choose more steps and play again!!!',
+    cssClass: 'custom-alertDanger',
+    buttons: ['Dismiss']}).then(alert=> alert.present());
+  }
+
+  
+  presentAlert4() {
+    const alert = this.alertController.create({
+    header: "Completed !!!!",
+    subHeader: 'Well played here are your results, feel free to play again',
+    cssClass: 'custom-alertDanger',
+    buttons: ['Dismiss']}).then(alert=> alert.present());
+  }
+
+  presentAlert3() {
+    const alert = this.alertController.create({
+    header: "Way to go !!!!",
+    subHeader: 'Level completed, you are a genius, choose a different icon and play again!!!',
+    cssClass: 'custom-alertDanger',
+    buttons: ['Dismiss']}).then(alert=> alert.present());
   }
 
   presentAlertResults() {
@@ -107,6 +154,10 @@ export class MathTryagainPage implements OnInit {
     localStorage.setItem('mathfailedResults', JSON.stringify(this.failedResults));
     // this.navCtrl.navigateRoot('/sequential/math/results');
     this.router.navigateByUrl('/sequential/math/tryagain-results');
+  }
+
+  clearMemory() {
+    localStorage.clear();
   }
 
 

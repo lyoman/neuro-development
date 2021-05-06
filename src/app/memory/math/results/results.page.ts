@@ -53,11 +53,13 @@ export class ResultsPage implements OnInit {
 
     if (JSON.parse(localStorage.getItem('mathinitialNum')) == this.math.length) {
       // this.mathinitialNum += 2;
+      localStorage.setItem('mathnewLevel', JSON.stringify("yes"));
       var mathinitialNum = (this.zviko + 2);
       console.log("this.navData.getParamData3().length", this.math.length);
       console.log("JSON.parse(localStorage.getItem('mathinitialNum'))", JSON.parse(localStorage.getItem('mathinitialNum')));
       console.log("mathinitialNum", mathinitialNum);
       
+      localStorage.setItem('mathnextLevel', JSON.parse(mathinitialNum));
       localStorage.setItem('mathinitialNum', JSON.stringify(mathinitialNum));
       this.presentAlert9();
     } 
