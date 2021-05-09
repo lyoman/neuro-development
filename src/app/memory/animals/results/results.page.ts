@@ -53,13 +53,15 @@ export class ResultsPage implements OnInit {
 
     if (JSON.parse(localStorage.getItem('animalsinitialNum')) == this.animals.length) {
       // this.animalsinitialNum += 2;
+      localStorage.setItem('animalsnewLevel', JSON.stringify("yes"));
       var animalsinitialNum = (this.zviko + 2);
       console.log("this.navData.getParamData3().length", this.animals.length);
       console.log("JSON.parse(localStorage.getItem('animalsinitialNum'))", JSON.parse(localStorage.getItem('animalsinitialNum')));
       console.log("animalsinitialNum", animalsinitialNum);
       
+      localStorage.setItem('animalsnextLevel', JSON.parse(animalsinitialNum));
       localStorage.setItem('animalsinitialNum', JSON.stringify(animalsinitialNum));
-      this.presentAlert9();
+      // this.presentAlert9();
     } 
 
     if(this.animals.length == 25) {

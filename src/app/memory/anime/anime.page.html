@@ -10,6 +10,7 @@
 </ion-header>
 
 <ion-content>
+    <h1 *ngIf="nextLevel" style="text-align: center;">Now on Level {{ nextLevel }}</h1>
 
     <div>
         <ion-button tappable color="warning" expand="block" style="color: white;" (click)="presentAlertConfirm()">Reset Game</ion-button>

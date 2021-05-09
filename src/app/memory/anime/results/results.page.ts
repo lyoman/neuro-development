@@ -53,13 +53,15 @@ export class ResultsPage implements OnInit {
 
     if (JSON.parse(localStorage.getItem('animeinitialNum')) == this.anime.length) {
       // this.initialNum += 2;
+      localStorage.setItem('animenewLevel', JSON.stringify("yes"));
       var initialNum = (this.zviko + 2);
       console.log("this.navData.getParamData3().length", this.anime.length);
       console.log("JSON.parse(localStorage.getItem('animeinitialNum'))", JSON.parse(localStorage.getItem('animeinitialNum')));
       console.log("animeinitialNum", initialNum);
       
+      localStorage.setItem('animenextLevel', JSON.parse(initialNum));
       localStorage.setItem('animeinitialNum', JSON.stringify(initialNum));
-      this.presentAlert9();
+      // this.presentAlert9();
     } 
 
     if(this.anime.length == 25) {

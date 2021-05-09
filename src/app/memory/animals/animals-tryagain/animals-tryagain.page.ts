@@ -17,7 +17,7 @@ export class AnimalsTryagainPage implements OnInit {
   kim;
   zviko;
 
-  
+
   kimAgain = [];
 
   Shuffledfootsteps = [];
@@ -64,14 +64,45 @@ export class AnimalsTryagainPage implements OnInit {
 
   }
 
-  presentAlertResults() {
+
+
+  presentAlert5() {
     const alert = this.alertController.create({
-    header: "Done Choosing !!!!",
-    subHeader: 'You have reached the number of steps, press finish to proceed',
-    buttons: ['OK']}).then(alert=> alert.present());
+      header: "Way to go !!!!",
+      subHeader: 'Level completed, choose more steps and play again!!!',
+      cssClass: 'custom-alertDanger',
+      buttons: ['Dismiss']
+    }).then(alert => alert.present());
   }
 
-  Removefinish(stepIndex,step) {
+
+  presentAlert4() {
+    const alert = this.alertController.create({
+      header: "Completed !!!!",
+      subHeader: 'Well played here are your results, feel free to play again',
+      cssClass: 'custom-alertDanger',
+      buttons: ['Dismiss']
+    }).then(alert => alert.present());
+  }
+
+  presentAlert3() {
+    const alert = this.alertController.create({
+      header: "Way to go !!!!",
+      subHeader: 'Level completed, you are a genius, choose a different icon and play again!!!',
+      cssClass: 'custom-alertDanger',
+      buttons: ['Dismiss']
+    }).then(alert => alert.present());
+  }
+
+  presentAlertResults() {
+    const alert = this.alertController.create({
+      header: "Done Choosing !!!!",
+      subHeader: 'You have reached the number of steps, press finish to proceed',
+      buttons: ['OK']
+    }).then(alert => alert.present());
+  }
+
+  Removefinish(stepIndex, step) {
     this.viewSteps.splice(stepIndex, 1);
   }
 
@@ -85,15 +116,14 @@ export class AnimalsTryagainPage implements OnInit {
   }
 
 
-  results (footsteps) {
+  results(footsteps) {
     this.navData.setParamData1(footsteps);// the foot prints that were chosen by the user
     console.log('User selected footsteps', footsteps);
     console.log('Shuffledfootsteps', JSON.parse(localStorage.getItem('animalsuserList')));
     this.Shuffledfootsteps = JSON.parse(localStorage.getItem('animalsuserList'));
 
     for (let i = 0; i < footsteps.length; i++) {
-      if(footsteps[i] == this.Shuffledfootsteps[i])
-      {
+      if (footsteps[i] == this.Shuffledfootsteps[i]) {
         // console.log('matched index ' + i);
         this.pushedToResults.push(footsteps[i]);
         console.log("1");

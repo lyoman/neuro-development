@@ -11,11 +11,14 @@ import { AlertController, NavController } from '@ionic/angular';
 })
 export class AnimalsPage implements OnInit {
 
-  
+
   secondDiv = "false";
   thirdDiv = "false";
   firstDiv = "true";
   animals = [];
+
+  newLevel = JSON.parse(localStorage.getItem('animalsnewLevel'));
+  nextLevel = JSON.parse(localStorage.getItem('animalsnextLevel'));
 
   newArray = [];
   Kim = [];
@@ -75,18 +78,22 @@ export class AnimalsPage implements OnInit {
   }
 
   ngOnInit() {
-    // this.animals = this.graphicsService.animals;F
-    // const animals = this.shuffle(this.graphicsService.animals);
     this.animals = this.shuffle1(this.graphicsService.animals);
-    //  console.log('shuffle', this.animals);
 
-    if(JSON.parse(localStorage.getItem('animalsinitialNum')) == null){
+    if (JSON.parse(localStorage.getItem('animalsinitialNum')) == null) {
       localStorage.setItem('animalsinitialNum', JSON.stringify(3));
-      // this.zvikoNum = JSON.parse(localStorage.getItem('animalsinitialNum'));
       console.log(JSON.parse(localStorage.getItem('animalsinitialNum')))
     }
-    console.log("zvikoNum",  JSON.parse(localStorage.getItem('animalsinitialNum')));
-    // console.log(JSON.parse(localStorage.getItem('animalsinitialNum')))
+
+    if (JSON.parse(localStorage.getItem('animalsinitialNum')) == null) {
+      localStorage.setItem('animalsinitialNum', JSON.stringify(3));
+      console.log(JSON.parse(localStorage.getItem('animalsinitialNum')))
+    }
+    console.log("zvikoNum", JSON.parse(localStorage.getItem('animalsinitialNum')));
+    if (JSON.parse(localStorage.getItem('animalsnextLevel')) > 4) {
+      this.numberofSteps();
+      this.solutionFun();
+    }
   }
 
 
@@ -173,9 +180,15 @@ export class AnimalsPage implements OnInit {
     console.log('num', JSON.parse(localStorage.getItem('animalsinitialNum')));
     this.hideTop = "true";
     this.numberOfColors = "true";
+    if (JSON.parse(localStorage.getItem('animalsnextLevel')) > 4) {
+      this.choosenNum = JSON.parse(localStorage.getItem("animalscNum"));
+    }
     var realNum = (1000 * JSON.parse(localStorage.getItem('animalsinitialNum')))
     for (let i = 0; i < JSON.parse(localStorage.getItem('animalsinitialNum')); i++) {
       this.newArray.push(this.animals[i]);
+    }
+    if (JSON.parse(localStorage.getItem('animalsnextLevel')) < 4) {
+      localStorage.setItem('animalscNum', JSON.stringify(this.choosenNum));
     }
     console.log('new array', this.newArray);
     // this.hidingDivs(realNum + 3000);
@@ -185,9 +198,15 @@ export class AnimalsPage implements OnInit {
     this.clickedNum = "true";
     this.numberOfColors = "false";
     console.log("number of colors", this.chooseColor);
+    if (JSON.parse(localStorage.getItem('animalsnextLevel')) > 4) {
+      this.chooseColor = JSON.parse(localStorage.getItem('animalszColors'));
+    }
     this.solutionFinal = this.shuffle1(this.solution);
     for (let i = 0; i < this.chooseColor; i++) {
       this.solutionFinalFinal.push(this.solutionFinal[i]);
+    }
+    if (JSON.parse(localStorage.getItem('animalsnextLevel')) < 4) {
+      localStorage.setItem('animalszColors', JSON.stringify(this.chooseColor));
     }
     console.log('logic', this.solutionFinalFinal);
     localStorage.setItem("logic", JSON.stringify(this.solutionFinalFinal));
@@ -200,9 +219,319 @@ export class AnimalsPage implements OnInit {
     console.log("CLONE Array", newArray);
     while (newArray.length < arrayLenth) {
       pushArray = this.shuffle1(imwe);
-      newArray.push(pushArray[0]);
-      newArray.push(pushArray[2]);
-      newArray.push(pushArray[1]);
+      if (arrayLenth == 3) {
+        var leon = [];
+        // newArray = [];
+        newArray.push(pushArray[0]);
+        newArray.push(pushArray[0]);
+        newArray.push(pushArray[0]);
+        leon = newArray;
+        // this.idontknow = newArray;
+        // console.log("three elements", leon);
+        localStorage.setItem("animalsarray3", JSON.stringify(leon));
+        console.log("leo", JSON.parse(localStorage.getItem("animalsarray3")));
+      }
+
+      if (arrayLenth == 5) {
+        var leon = [];
+        // this.idontknow = [];`
+        console.log("leo", JSON.parse(localStorage.getItem("animalsarray3")));
+        leon = JSON.parse(localStorage.getItem("animalsarray3"));
+        for (let i = 0; i < leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[2]);
+        newArray.push(pushArray[0]);
+        console.log("no problem", newArray);
+        localStorage.setItem("animalsarray5", JSON.stringify(newArray));
+        console.log("array 5", JSON.parse(localStorage.getItem("animalsarray5")));
+        // this.idontknow = leon;
+      }
+
+      if (arrayLenth == 7) {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("animalsarray5")));
+        leon = JSON.parse(localStorage.getItem("animalsarray5"));
+        for (let i = 0; i < leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[2]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("animalsarray7", JSON.stringify(newArray));
+        console.log("array 7", JSON.parse(localStorage.getItem("animalsarray7")));
+      }
+
+      if (arrayLenth == 8) {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("animalsarray7")));
+        leon = JSON.parse(localStorage.getItem("animalsarray7"));
+        for (let i = 0; i < leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[1]);
+        // newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("animalsarray8", JSON.stringify(newArray));
+        console.log("array 8", JSON.parse(localStorage.getItem("animalsarray8")));
+      }
+
+      if (arrayLenth == 9) {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("animalsarray7")));
+        leon = JSON.parse(localStorage.getItem("animalsarray7"));
+        for (let i = 0; i < leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[1]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("animalsarray9", JSON.stringify(newArray));
+        console.log("array 9", JSON.parse(localStorage.getItem("animalsarray9")));
+      }
+
+      if (arrayLenth == 10) {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("animalsarray9")));
+        leon = JSON.parse(localStorage.getItem("animalsarray9"));
+        for (let i = 0; i < leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[1]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("animalsarray10", JSON.stringify(newArray));
+        console.log("array 10", JSON.parse(localStorage.getItem("animalsarray10")));
+      }
+
+      if (arrayLenth == 11) {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("animalsarray9")));
+        leon = JSON.parse(localStorage.getItem("animalsarray9"));
+        for (let i = 0; i < leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[2]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("animalsarray11", JSON.stringify(newArray));
+        console.log("array 11", JSON.parse(localStorage.getItem("animalsarray11")));
+      }
+
+      if (arrayLenth == 12) {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("animalsarray11")));
+        leon = JSON.parse(localStorage.getItem("animalsarray11"));
+        for (let i = 0; i < leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        // newArray.push(pushArray[1]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("animalsarray12", JSON.stringify(newArray));
+        console.log("array 12", JSON.parse(localStorage.getItem("animalsarray12")));
+      }
+
+      if (arrayLenth == 13) {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("animalsarray11")));
+        leon = JSON.parse(localStorage.getItem("animalsarray11"));
+        for (let i = 0; i < leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[1]);
+        newArray.push(pushArray[2]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("animalsarray13", JSON.stringify(newArray));
+        console.log("array 13", JSON.parse(localStorage.getItem("animalsarray13")));
+      }
+
+      if (arrayLenth == 14) {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("animalsarray13")));
+        leon = JSON.parse(localStorage.getItem("animalsarray13"));
+        for (let i = 0; i < leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[1]);
+        // newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("animalsarray14", JSON.stringify(newArray));
+        console.log("array 14", JSON.parse(localStorage.getItem("animalsarray14")));
+      }
+
+      if (arrayLenth == 15) {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("animalsarray13")));
+        leon = JSON.parse(localStorage.getItem("animalsarray13"));
+        for (let i = 0; i < leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[0]);
+        newArray.push(pushArray[2]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("animalsarray15", JSON.stringify(newArray));
+        console.log("array 15", JSON.parse(localStorage.getItem("animalsarray15")));
+      }
+
+      if (arrayLenth == 16) {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("animalsarray15")));
+        leon = JSON.parse(localStorage.getItem("animalsarray15"));
+        for (let i = 0; i < leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        // newArray.push(pushArray[1]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("animalsarray16", JSON.stringify(newArray));
+        console.log("array 16", JSON.parse(localStorage.getItem("animalsarray16")));
+      }
+
+      if (arrayLenth == 17) {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("animalsarray15")));
+        leon = JSON.parse(localStorage.getItem("animalsarray15"));
+        for (let i = 0; i < leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[2]);
+        newArray.push(pushArray[1]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("animalsarray17", JSON.stringify(newArray));
+        console.log("array 17", JSON.parse(localStorage.getItem("animalsarray17")));
+      }
+
+      if (arrayLenth == 18) {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("animalsarray17")));
+        leon = JSON.parse(localStorage.getItem("animalsarray17"));
+        for (let i = 0; i < leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        // newArray.push(pushArray[1]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("animalsarray18", JSON.stringify(newArray));
+        console.log("array 18", JSON.parse(localStorage.getItem("animalsarray18")));
+      }
+
+      if (arrayLenth == 19) {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("animalsarray17")));
+        leon = JSON.parse(localStorage.getItem("animalsarray17"));
+        for (let i = 0; i < leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[0]);
+        newArray.push(pushArray[2]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("animalsarray19", JSON.stringify(newArray));
+        console.log("array 19", JSON.parse(localStorage.getItem("animalsarray19")));
+      }
+
+      if (arrayLenth == 20) {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("animalsarray19")));
+        leon = JSON.parse(localStorage.getItem("animalsarray19"));
+        for (let i = 0; i < leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[1]);
+        // newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("animalsarray20", JSON.stringify(newArray));
+        console.log("array 20", JSON.parse(localStorage.getItem("animalsarray20")));
+      }
+
+      if (arrayLenth == 21) {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("animalsarray19")));
+        leon = JSON.parse(localStorage.getItem("animalsarray19"));
+        for (let i = 0; i < leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[2]);
+        newArray.push(pushArray[1]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("animalsarray21", JSON.stringify(newArray));
+        console.log("array 21", JSON.parse(localStorage.getItem("animalsarray21")));
+      }
+
+      if (arrayLenth == 22) {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("animalsarray21")));
+        leon = JSON.parse(localStorage.getItem("animalsarray21"));
+        for (let i = 0; i < leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        // newArray.push(pushArray[1]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("animalsarray22", JSON.stringify(newArray));
+        console.log("array 22", JSON.parse(localStorage.getItem("animalsarray22")));
+      }
+
+      if (arrayLenth == 23) {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("animalsarray21")));
+        leon = JSON.parse(localStorage.getItem("animalsarray21"));
+        for (let i = 0; i < leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[2]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("animalsarray23", JSON.stringify(newArray));
+        console.log("array 23", JSON.parse(localStorage.getItem("animalsarray23")));
+      }
+
+      if (arrayLenth == 24) {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("animalsarray23")));
+        leon = JSON.parse(localStorage.getItem("animalsarray23"));
+        for (let i = 0; i < leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[1]);
+        // newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("animalsarray24", JSON.stringify(newArray));
+        console.log("array 24", JSON.parse(localStorage.getItem("animalsarray24")));
+      }
+
+      if (arrayLenth == 25) {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("animalsarray23")));
+        leon = JSON.parse(localStorage.getItem("animalsarray23"));
+        for (let i = 0; i < leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[2]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("animalsarray25", JSON.stringify(newArray));
+        console.log("array 25", JSON.parse(localStorage.getItem("animalsarray25")));
+      }
     }
 
     for (let i = 0; i < arrayLenth; i++) {
@@ -307,10 +636,11 @@ export class AnimalsPage implements OnInit {
 
   presentAlert4() {
     const alert = this.alertController.create({
-    header: "Reset Game !!!!",
-    subHeader: 'Are you sure you want to reset the game???',
-    cssClass: 'custom-alertDanger',
-    buttons: ['Dismiss']}).then(alert=> alert.present());
+      header: "Reset Game !!!!",
+      subHeader: 'Are you sure you want to reset the game???',
+      cssClass: 'custom-alertDanger',
+      buttons: ['Dismiss']
+    }).then(alert => alert.present());
   }
 
   presentAlertConfirm() {
@@ -334,7 +664,7 @@ export class AnimalsPage implements OnInit {
           }
         }
       ]
-    }).then(alert=> alert.present());
+    }).then(alert => alert.present());
   }
 
 }

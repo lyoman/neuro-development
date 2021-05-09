@@ -61,7 +61,7 @@ export class ResultsPage implements OnInit {
       
       localStorage.setItem('mathnextLevel', JSON.parse(mathinitialNum));
       localStorage.setItem('mathinitialNum', JSON.stringify(mathinitialNum));
-      this.presentAlert9();
+      // this.presentAlert9();
     } 
 
     if(this.math.length == 25) {

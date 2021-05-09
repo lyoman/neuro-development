@@ -48,41 +48,19 @@ export class MathTryagainPage implements OnInit {
 
   ngOnInit() {
     this.loadingService.presentLoading();
-    this.footsteps = JSON.parse(localStorage.getItem('pushedToResults'));
-    this.wrongSteps = JSON.parse(localStorage.getItem('failedResults'));
-    this.originalSteps = JSON.parse(localStorage.getItem('userList'));
+    this.footsteps = this.navData.getParamData3();
+    this.wrongSteps = this.navData.getParamData2();
+    this.originalSteps = JSON.parse(localStorage.getItem('mathuserList'));
+
+    this.kimAgain = JSON.parse(localStorage.getItem("mathlogic"));
+    this.kim = JSON.parse(localStorage.getItem('mathinitialNum'));
 
     console.log("original footsteps", this.originalSteps);
     console.log('Correct footsteps', this.footsteps);
     console.log('Correct wrongSteps', this.wrongSteps);
 
-    this.kim = JSON.parse(localStorage.getItem('userNum'));
-    this.zviko = JSON.parse(localStorage.getItem('initialNum'));
-    
-    if (this.footsteps.length == this.kim) {
-      this.presentAlert5();
-    } else {
-      this.presentAlert4();
-    }
-
-    if (JSON.parse(localStorage.getItem('initialNum')) == this.footsteps.length) {
-      localStorage.setItem('newLevel', JSON.stringify("yes"));
-      var initialNum = (this.zviko + 2);
-      console.log("this.navData.getParamData3().length", this.footsteps.length);
-      console.log("JSON.parse(localStorage.getItem('initialNum'))", JSON.parse(localStorage.getItem('initialNum')));
-
-      console.log("var initialNum", initialNum);
-      
-      localStorage.setItem('initialNum', JSON.stringify(initialNum));
-      localStorage.setItem('nextLevel', JSON.parse(initialNum));
-      // this.presentAlert9();
-    } 
-
-    if(this.footsteps.length == 25) {
-      this.completed = true;
-      localStorage.setItem('complete', JSON.stringify(this.completed));
-      this.presentAlert3();
-    }
+    this.kim = JSON.parse(localStorage.getItem('mathuserNum'));
+    this.zviko = JSON.parse(localStorage.getItem('mathinitialNum'));
 
   }
 

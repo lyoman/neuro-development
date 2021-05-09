@@ -18,7 +18,7 @@ export class FootstepsTryagainPage implements OnInit {
   kim;
   zviko;
 
-  
+
   kimAgain = [];
 
   Shuffledfootsteps = [];
@@ -67,12 +67,13 @@ export class FootstepsTryagainPage implements OnInit {
 
   presentAlertResults() {
     const alert = this.alertController.create({
-    header: "Done Choosing !!!!",
-    subHeader: 'You have reached the number of steps, press finish to proceed',
-    buttons: ['OK']}).then(alert=> alert.present());
+      header: "Done Choosing !!!!",
+      subHeader: 'You have reached the number of steps, press finish to proceed',
+      buttons: ['OK']
+    }).then(alert => alert.present());
   }
 
-  Removefinish(stepIndex,step) {
+  Removefinish(stepIndex, step) {
     this.viewSteps.splice(stepIndex, 1);
   }
 
@@ -86,15 +87,14 @@ export class FootstepsTryagainPage implements OnInit {
   }
 
 
-  results (footsteps) {
+  results(footsteps) {
     this.navData.setParamData1(footsteps);// the foot prints that were chosen by the user
     console.log('User selected footsteps', footsteps);
     console.log('Shuffledfootsteps', JSON.parse(localStorage.getItem('userList')));
     this.Shuffledfootsteps = JSON.parse(localStorage.getItem('userList'));
 
     for (let i = 0; i < footsteps.length; i++) {
-      if(footsteps[i] == this.Shuffledfootsteps[i])
-      {
+      if (footsteps[i] == this.Shuffledfootsteps[i]) {
         // console.log('matched index ' + i);
         this.pushedToResults.push(footsteps[i]);
         console.log("1");

@@ -50,6 +50,7 @@ export class TryagainResultsPage implements OnInit {
     }
 
     if (JSON.parse(localStorage.getItem('animalsinitialNum')) == this.animals.length) {
+      localStorage.setItem('animalsnewLevel', JSON.stringify("yes"));
       var animalsinitialNum = (this.zviko + 2);
       console.log("this.navData.getParamData3().length", this.animals.length);
       console.log("JSON.parse(localStorage.getItem('animalsinitialNum'))", JSON.parse(localStorage.getItem('animalsinitialNum')));
@@ -57,7 +58,8 @@ export class TryagainResultsPage implements OnInit {
       console.log("var animalsinitialNum", animalsinitialNum);
       
       localStorage.setItem('animalsinitialNum', JSON.stringify(animalsinitialNum));
-      this.presentAlert9();
+      localStorage.setItem('animalsnextLevel', JSON.parse(animalsinitialNum));
+      // this.presentAlert9();
     } 
 
     if(this.animals.length == 25) {

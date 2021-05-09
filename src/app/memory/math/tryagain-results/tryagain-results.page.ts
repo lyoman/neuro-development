@@ -57,7 +57,8 @@ export class TryagainResultsPage implements OnInit {
       console.log("var mathinitialNum", mathinitialNum);
       
       localStorage.setItem('mathinitialNum', JSON.stringify(mathinitialNum));
-      this.presentAlert9();
+      localStorage.setItem('mathnextLevel', JSON.parse(mathinitialNum));
+      // this.presentAlert9();
     } 
 
     if(this.math.length == 25) {

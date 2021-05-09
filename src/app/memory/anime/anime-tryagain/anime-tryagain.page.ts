@@ -86,7 +86,7 @@ export class AnimeTryagainPage implements OnInit {
     }
   }
 
-
+  
   results(footsteps) {
     this.navData.setParamData1(footsteps);// the foot prints that were chosen by the user
     console.log('User selected footsteps', footsteps);

@@ -267,6 +267,21 @@ export class FootprintsPage implements OnInit {
         console.log("array 7", JSON.parse(localStorage.getItem("array7")));
       }
 
+      if(arrayLenth == 8)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("array7")));
+        leon = JSON.parse(localStorage.getItem("array7"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[1]);
+        // newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("array8", JSON.stringify(newArray));
+        console.log("array 8", JSON.parse(localStorage.getItem("array8")));
+      }
+
       if(arrayLenth == 9)    {
         var leon = [];
         console.log("leo", JSON.parse(localStorage.getItem("array7")));
@@ -280,6 +295,21 @@ export class FootprintsPage implements OnInit {
         console.log("no problem", newArray);
         localStorage.setItem("array9", JSON.stringify(newArray));
         console.log("array 9", JSON.parse(localStorage.getItem("array9")));
+      }
+
+      if(arrayLenth == 10)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("array9")));
+        leon = JSON.parse(localStorage.getItem("array9"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[1]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("array10", JSON.stringify(newArray));
+        console.log("array 10", JSON.parse(localStorage.getItem("array10")));
       }
 
       if(arrayLenth == 11)    {
@@ -297,6 +327,22 @@ export class FootprintsPage implements OnInit {
         console.log("array 11", JSON.parse(localStorage.getItem("array11")));
       }
 
+      
+      if(arrayLenth == 12)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("array11")));
+        leon = JSON.parse(localStorage.getItem("array11"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        // newArray.push(pushArray[1]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("array12", JSON.stringify(newArray));
+        console.log("array 12", JSON.parse(localStorage.getItem("array12")));
+      }
+
       if(arrayLenth == 13)    {
         var leon = [];
         console.log("leo", JSON.parse(localStorage.getItem("array11")));
@@ -310,6 +356,21 @@ export class FootprintsPage implements OnInit {
         console.log("no problem", newArray);
         localStorage.setItem("array13", JSON.stringify(newArray));
         console.log("array 13", JSON.parse(localStorage.getItem("array13")));
+      }
+
+      if(arrayLenth == 14)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("array13")));
+        leon = JSON.parse(localStorage.getItem("array13"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[1]);
+        // newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("array14", JSON.stringify(newArray));
+        console.log("array 14", JSON.parse(localStorage.getItem("array14")));
       }
 
       if(arrayLenth == 15)    {
@@ -327,6 +388,21 @@ export class FootprintsPage implements OnInit {
         console.log("array 15", JSON.parse(localStorage.getItem("array15")));
       }
 
+      if(arrayLenth == 16)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("array15")));
+        leon = JSON.parse(localStorage.getItem("array15"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        // newArray.push(pushArray[1]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("array16", JSON.stringify(newArray));
+        console.log("array 16", JSON.parse(localStorage.getItem("array16")));
+      }
+
       if(arrayLenth == 17)    {
         var leon = [];
         console.log("leo", JSON.parse(localStorage.getItem("array15")));
@@ -340,6 +416,21 @@ export class FootprintsPage implements OnInit {
         console.log("no problem", newArray);
         localStorage.setItem("array17", JSON.stringify(newArray));
         console.log("array 17", JSON.parse(localStorage.getItem("array17")));
+      }
+
+      if(arrayLenth == 18)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("array17")));
+        leon = JSON.parse(localStorage.getItem("array17"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        // newArray.push(pushArray[1]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("array18", JSON.stringify(newArray));
+        console.log("array 18", JSON.parse(localStorage.getItem("array18")));
       }
 
       if(arrayLenth == 19)    {
@@ -357,6 +448,21 @@ export class FootprintsPage implements OnInit {
         console.log("array 19", JSON.parse(localStorage.getItem("array19")));
       }
 
+      if(arrayLenth == 20)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("array19")));
+        leon = JSON.parse(localStorage.getItem("array19"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[1]);
+        // newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("array20", JSON.stringify(newArray));
+        console.log("array 20", JSON.parse(localStorage.getItem("array20")));
+      }
+
       if(arrayLenth == 21)    {
         var leon = [];
         console.log("leo", JSON.parse(localStorage.getItem("array19")));
@@ -372,6 +478,21 @@ export class FootprintsPage implements OnInit {
         console.log("array 21", JSON.parse(localStorage.getItem("array21")));
       }
 
+      if(arrayLenth == 22)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("array21")));
+        leon = JSON.parse(localStorage.getItem("array21"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        // newArray.push(pushArray[1]);
+        newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("array22", JSON.stringify(newArray));
+        console.log("array 22", JSON.parse(localStorage.getItem("array22")));
+      }
+
       if(arrayLenth == 23)    {
         var leon = [];
         console.log("leo", JSON.parse(localStorage.getItem("array21")));
@@ -385,6 +506,21 @@ export class FootprintsPage implements OnInit {
         console.log("no problem", newArray);
         localStorage.setItem("array23", JSON.stringify(newArray));
         console.log("array 23", JSON.parse(localStorage.getItem("array23")));
+      }
+
+      if(arrayLenth == 24)    {
+        var leon = [];
+        console.log("leo", JSON.parse(localStorage.getItem("array23")));
+        leon = JSON.parse(localStorage.getItem("array23"));
+        for (let i=0; i<leon.length; i++) {
+          newArray.push(leon[i]);
+        }
+        newArray.push(pushArray[1]);
+        // newArray.push(pushArray[0]);
+
+        console.log("no problem", newArray);
+        localStorage.setItem("array24", JSON.stringify(newArray));
+        console.log("array 24", JSON.parse(localStorage.getItem("array24")));
       }
 
       if(arrayLenth == 25)    {
