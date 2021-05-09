@@ -196,7 +196,8 @@ export class AnimePage implements OnInit {
       this.chooseColor = JSON.parse(localStorage.getItem('animezColors'));
     }
     console.log("number of colors", this.chooseColor);
-    this.solutionFinal = this.shuffle1(this.solution);
+    // this.solutionFinal = this.shuffle1(this.solution);
+    this.solutionFinal = this.solution;
     for (let i = 0; i < this.chooseColor; i++) {
       this.solutionFinalFinal.push(this.solutionFinal[i]);
     }

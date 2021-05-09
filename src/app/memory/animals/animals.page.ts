@@ -80,10 +80,10 @@ export class AnimalsPage implements OnInit {
   ngOnInit() {
     this.animals = this.shuffle1(this.graphicsService.animals);
 
-    if (JSON.parse(localStorage.getItem('animalsinitialNum')) == null) {
-      localStorage.setItem('animalsinitialNum', JSON.stringify(3));
-      console.log(JSON.parse(localStorage.getItem('animalsinitialNum')))
-    }
+    // if (JSON.parse(localStorage.getItem('animalsinitialNum')) == null) {
+    //   localStorage.setItem('animalsinitialNum', JSON.stringify(3));
+    //   console.log(JSON.parse(localStorage.getItem('animalsinitialNum')))
+    // }
 
     if (JSON.parse(localStorage.getItem('animalsinitialNum')) == null) {
       localStorage.setItem('animalsinitialNum', JSON.stringify(3));
@@ -201,15 +201,16 @@ export class AnimalsPage implements OnInit {
     if (JSON.parse(localStorage.getItem('animalsnextLevel')) > 4) {
       this.chooseColor = JSON.parse(localStorage.getItem('animalszColors'));
     }
-    this.solutionFinal = this.shuffle1(this.solution);
+    // this.solutionFinal = this.shuffle1(this.solution);
+    this.solutionFinal = this.solution;
     for (let i = 0; i < this.chooseColor; i++) {
       this.solutionFinalFinal.push(this.solutionFinal[i]);
     }
     if (JSON.parse(localStorage.getItem('animalsnextLevel')) < 4) {
       localStorage.setItem('animalszColors', JSON.stringify(this.chooseColor));
     }
-    console.log('logic', this.solutionFinalFinal);
-    localStorage.setItem("logic", JSON.stringify(this.solutionFinalFinal));
+    console.log('animalslogic', this.solutionFinalFinal);
+    localStorage.setItem("animalslogic", JSON.stringify(this.solutionFinalFinal));
     this.cloneArray(JSON.parse(localStorage.getItem('animalsinitialNum')), this.solutionFinalFinal, this.newColorArray, this.Kim);
   }
 
