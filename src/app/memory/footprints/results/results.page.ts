@@ -4,6 +4,7 @@ import { GraphicsService } from './../../../services/graphics.service';
 import { LoadingService } from './../../../services/loading.service';
 import { NavigateDataService } from './../../../services/navigate-data.service';
 import { Component, OnInit } from '@angular/core';
+import { NativeRingtones } from '@ionic-native/native-ringtones/ngx';
 
 @Component({
   selector: 'app-results',
@@ -29,8 +30,15 @@ export class ResultsPage implements OnInit {
     private loadingService: LoadingService,
     private graphicsService: GraphicsService,
     private router: Router,
+    private ringtones: NativeRingtones,
     public alertController: AlertController,
-  ) { }
+  ) {
+    this.ringtones.getRingtone().then((ringtones) => { console.log(ringtones); });
+
+    this.ringtones.playRingtone('assets/ringtones/b.caf');
+
+    // this.ringtones.stopRingtone('assets/ringtones/a.mp3');
+   }
 
   ngOnInit() {
     this.loadingService.presentLoading();
@@ -71,6 +79,8 @@ export class ResultsPage implements OnInit {
     }
   }
 
+  
+
   presentAlert5() {
     const alert = this.alertController.create({
     header: "Way to go !!!!",
@@ -108,5 +118,6 @@ export class ResultsPage implements OnInit {
   clearMemory() {
     localStorage.clear();
   }
+  
 
 }
