@@ -19,7 +19,7 @@
                 <ion-card>
                     <br>
                     <img [src]="footstep">
-                    <h3>step {{i + 1}}</h3>
+                    <h3>math {{i + 1}}</h3>
                 </ion-card>
             </ion-col>
         </ion-row>
@@ -44,7 +44,7 @@
         </ion-button>
     </ion-grid>
 
-    <h2 style="background-color: red;color: white;" *ngIf="wrongSteps.length > 0">These are the foot steps that you got Wrong
+    <h2 style="background-color: red;color: white;" *ngIf="wrongSteps.length > 0">These are the Math Symbols that you got Wrong
     </h2>
     <ion-grid *ngIf="wrongSteps.length > 0">
         <ion-row>

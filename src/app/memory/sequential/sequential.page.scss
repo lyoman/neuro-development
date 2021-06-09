@@ -82,3 +82,17 @@ ion-footer {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+@media (orientation: landscape) {
+    // body {
+    //     background-color: red !important;
+    // }
+    // img {
+    //     width: 10% !important;
+    // }
+    ion-card img {
+        display: block;
+        width: 7% !important;
+        margin-left: 46% !important;
+    }
+}

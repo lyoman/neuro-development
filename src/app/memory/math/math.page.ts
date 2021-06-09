@@ -43,13 +43,13 @@ export class MathPage implements OnInit {
   nextPage = [];
 
   solution = [
-    './../../../assets/imgs/graphics/1.png',
-    './../../../assets/imgs/graphics/2.png',
-    './../../../assets/imgs/graphics/3.png',
-    './../../../assets/imgs/graphics/4.png',
-    './../../../assets/imgs/graphics/5.png',
-    './../../../assets/imgs/graphics/6.png',
-    './../../../assets/imgs/graphics/7.png',
+    './../../../assets/imgs/math/1.png',
+    './../../../assets/imgs/math/2.png',
+    './../../../assets/imgs/math/3.png',
+    './../../../assets/imgs/math/4.png',
+    './../../../assets/imgs/math/5.png',
+    './../../../assets/imgs/math/6.png',
+    './../../../assets/imgs/math/7.png',
   ]
   solutionFinal = [];
   solutionFinalFinal = [];
