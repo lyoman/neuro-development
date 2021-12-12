@@ -38,6 +38,16 @@
                         </ion-label>
                         <ion-toggle [(ngModel)]="dark"></ion-toggle>
                     </ion-item>
+
+                    <ion-menu-toggle auto-hide="false">
+                        <ion-item tappable [routerLink]="['/login']" (click)="logout()">
+                            <ion-icon slot="start" name="log-out" color="primary"></ion-icon>
+                            <ion-label>
+                                Log Out
+                            </ion-label>
+                            <ion-icon name="arrow-forward" style="color: #4d4dff;" item-right></ion-icon>
+                        </ion-item>
+                    </ion-menu-toggle>
                 </ion-list>
             </ion-content>
         </ion-menu>

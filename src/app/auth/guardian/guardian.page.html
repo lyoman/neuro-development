@@ -1,0 +1,62 @@
+<!-- <ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            Home Page
+        </ion-title>
+    </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="ion-padding animated fadeIn login auth-page">
+    <div class="login-content">
+
+        <div padding-horizontal class="ion-text-center" class="animated fadeInDown" style="padding-top: 15%;">
+            <div class="ion-text-center">
+                <img src="../../../assets/imgs/logo.png" style="height: auto;width: 300px;">
+            </div>
+
+            <h3 style="text-align: center;color: #4d4dff;">Guardian Login</h3>
+        </div>
+
+
+
+        <form class="list-form">
+
+            <ion-item>
+                <ion-label position="floating" style="color: #4d4dff;">
+                    <ion-icon name="person" item-start class="text-warning"></ion-icon>
+                    Username
+                </ion-label>
+                <ion-input type="text" [(ngModel)]="user.username" name="username"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label position="floating" style="color:#4d4dff;">
+                    <ion-icon name="lock" item-start class="text-warning"></ion-icon>
+                    Password
+                </ion-label>
+                <ion-input type="password" [(ngModel)]="user.password" name="password"></ion-input>
+            </ion-item>
+
+        </form>
+        <p text-right>
+            <ion-text text-right color="primary" tappable end>
+                <strong>Forgot Password?</strong>
+            </ion-text>
+        </p>
+
+        <div margin-top>
+            <ion-button class="shary" shape="round" icon-start expand="block" color="warning" tappable [routerLink]="['/tabs']">
+                <ion-icon name="log-in"></ion-icon>
+                Log in
+            </ion-button>
+
+
+        </div><br>
+        <div text-center margin-top>
+            <span tappable [routerLink]="['/guardian']">
+                <ion-text color="primary">User account? <strong style="color: #990099">Login here</strong></ion-text>
+            </span>
+        </div>
+
+    </div>
+</ion-content>

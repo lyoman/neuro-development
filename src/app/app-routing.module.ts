@@ -2,14 +2,12 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'home', loadChildren: () => import('./tebs/tebs.module').then(m => m.TebsPageModule) },
+  { path: 'login', loadChildren: () => import('./auth/login/login.module').then(m => m.LoginPageModule) },
   {
-    path: '',
-    redirectTo: '',
-    pathMatch: 'full'
-  },
-  {
-    path: '',
-    loadChildren: () => import('./tebs/tebs.module').then(m => m.TebsPageModule),
+    path: 'register',
+    loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterPageModule)
   },
   { path: '', loadChildren: './tebs/tebs.module#TebsPageModule' },
   { path: 'teb1', loadChildren: './teb1/teb1.module#Teb1PageModule' },
@@ -32,46 +30,14 @@ const routes: Routes = [
     path: 'teb4',
     loadChildren: () => import('./teb4/teb4.module').then( m => m.Teb4PageModule)
   },
+  { path: '', loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule) },
+  { path: 'tab1', loadChildren: () => import('./tab1/tab1.module').then(m => m.Tab1PageModule) },
+  { path: 'tab2', loadChildren: () => import('./tab2/tab2.module').then(m => m.Tab2PageModule) },
+  { path: 'tab3', loadChildren: () => import('./tab3/tab3.module').then(m => m.Tab3PageModule) },
   {
-    path: 'division',
-    loadChildren: () => import('./training/division/division.module').then( m => m.DivisionPageModule)
+    path: 'guardian',
+    loadChildren: () => import('./auth/guardian/guardian.module').then( m => m.GuardianPageModule)
   },
-  {
-    path: 'division/details',
-    loadChildren: () => import('./training/division/view-division/view-division.module').then( m => m.ViewDivisionPageModule)
-  },
-  {
-    path: 'algebra',
-    loadChildren: () => import('./training/algebra/algebra.module').then( m => m.AlgebraPageModule)
-  },
-  {
-    path: 'algebra/details',
-    loadChildren: () => import('./training/division/view-division/view-division.module').then( m => m.ViewDivisionPageModule)
-  },
-  {
-    path: 'sequential',
-    loadChildren: () => import('./memory/sequential/sequential.module').then( m => m.SequentialPageModule)
-  },
-  {
-    path: 'sequential/footprints',
-    loadChildren: () => import('./memory/footprints/footprints.module').then( m => m.FootprintsPageModule)
-  },
-  {
-    path: 'sequential/animals',
-    loadChildren: () => import('./memory/animals/animals.module').then( m => m.AnimalsPageModule)
-  },
-  {
-    path: 'sequential/anime',
-    loadChildren: () => import('./memory/anime/anime.module').then( m => m.AnimePageModule)
-  },
-  {
-    path: 'sequential/math',
-    loadChildren: () => import('./memory/math/math.module').then( m => m.MathPageModule)
-  },  {
-    path: 'privacy-policy',
-    loadChildren: () => import('./privacy-policy/privacy-policy.module').then( m => m.PrivacyPolicyPageModule)
-  },
-
 
 ];
 

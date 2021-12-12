@@ -1,0 +1,80 @@
+<!-- <ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            Home Page
+        </ion-title>
+    </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="ion-padding animated fadeIn login auth-page">
+    <div class="login-content" *ngIf="!loading">
+
+        <div padding-horizontal class="ion-text-center" class="animated fadeInDown" style="padding-top: 15%;">
+            <div class="ion-text-center">
+                <img class="img img-circle" src="assets/imgs/login_login1.png" style="height: auto;width: 300px;border-radius: 5%;">
+            </div>
+
+            <!-- <h3 style="text-align: center;color: #4d4dff;">Guardian Login</h3> -->
+        </div><br>
+        <hr>
+
+
+
+        <form class="list-form">
+
+            <ion-item>
+                <ion-label position="floating" style="color: #4d4dff;">
+                    <ion-icon name="person" item-start class="text-warning"></ion-icon>
+                    Email
+                </ion-label>
+                <ion-input type="email" [(ngModel)]="user.email" name="Email"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label position="floating" style="color:#4d4dff;">
+                    <ion-icon name="stop" item-start class="text-warning"></ion-icon>
+                    Password
+                </ion-label>
+                <ion-input type="password" [(ngModel)]="user.password" name="password"></ion-input>
+            </ion-item>
+
+            <!-- <ion-item>
+                <ion-label position="floating" style="color:#4d4dff;">
+                    <ion-icon name="play" item-start class="text-warning"></ion-icon>
+                    Login As
+                </ion-label>
+                <ion-select placeholder="Please select" name="who" [(ngModel)]="who">
+                    <ion-select-option value="gurdian">Gurdian</ion-select-option>
+                    <ion-select-option value="user">User</ion-select-option>
+                </ion-select>
+            </ion-item> -->
+
+        </form>
+        <p text-right>
+            <ion-text text-right color="primary" tappable end>
+                <strong>Forgot Password?</strong>
+            </ion-text>
+        </p>
+
+        <div margin-top>
+            <ion-button class="shary" shape="round" icon-start expand="block" color="warning" tappable (click)="login()">
+                <ion-icon color="light" name="log-in"></ion-icon>
+                <p color="light" style="color: #ffffff;">Log in</p>
+            </ion-button>
+
+
+        </div><br>
+        <div text-center margin-top>
+            <span tappable (click)="register()">
+                  <ion-text color="primary">Don't have an account? <strong style="color: #990099">register here</strong></ion-text>
+              </span>
+        </div>
+
+    </div>
+
+    <div *ngIf="loading">
+        <div class="text-center" style="align-content: center;">
+            <img class="ion-text-center" style="width: 100%;margin: auto;" src="assets/imgs/loader.gif">
+        </div>
+    </div>
+</ion-content>
