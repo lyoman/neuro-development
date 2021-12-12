@@ -67,7 +67,11 @@ const routes: Routes = [
   {
     path: 'sequential/math',
     loadChildren: () => import('./memory/math/math.module').then( m => m.MathPageModule)
+  },  {
+    path: 'privacy-policy',
+    loadChildren: () => import('./privacy-policy/privacy-policy.module').then( m => m.PrivacyPolicyPageModule)
   },
+
 
 ];
 
