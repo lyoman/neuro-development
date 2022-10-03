@@ -46,6 +46,11 @@ export class AppComponent implements OnInit {
       title: 'About',
       url: '/aboutus',
       icon: 'information-circle'
+    },
+    {
+      title: 'Privacy policy',
+      url: '/privacy-policy',
+      icon: 'information-circle'
     }
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
