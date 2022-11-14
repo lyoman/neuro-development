@@ -1,8 +1,8 @@
 {
     "name": "neuro-development",
-    "version": "0.0.1",
-    "author": "Ionic Framework",
-    "homepage": "https://ionicframework.com/",
+    "version": "3.0.0",
+    "author": "Leo Muchenje",
+    "homepage": "https://yourfamilyclinic.com",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
@@ -53,5 +53,5 @@
         "tslint": "~6.1.0",
         "typescript": "~3.9.5"
     },
-    "description": "An Ionic project"
+    "description": "Memory for Algebra mobile application"
 }
