@@ -47,11 +47,11 @@ export class AppComponent implements OnInit {
       url: '/aboutus',
       icon: 'information-circle'
     },
-    {
-      title: 'Privacy policy',
-      url: '/privacy-policy',
-      icon: 'information-circle'
-    }
+    // {
+    //   title: 'Privacy policy',
+    //   url: 'https://yourfamilyclinic.com/privacy.html',
+    //   icon: 'information-circle'
+    // }
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
